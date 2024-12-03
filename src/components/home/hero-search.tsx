@@ -9,7 +9,7 @@ export default function HeroSearch() {
             <div className="flex lg:items-center gap-3 flex-col lg:flex-row">
                 <Input
                     className="border-transparent w-full"
-                    placeholder="Skill, Keyword..."
+                    placeholder="مهارة، كلمة مفتاحية..."
                     placeholderIcon={
                         <Image width={24} height={24} src={icons.search} alt="Search" />
                     }
@@ -17,13 +17,13 @@ export default function HeroSearch() {
                 <span className="h-6 w-px bg-dark-100 hidden lg:block" />
                 <Input
                     className="border-transparent lg:max-w-52 w-full"
-                    placeholder="Your Location"
+                    placeholder="عنوانك"
                     placeholderIcon={
                         <Image width={24} height={24} src={icons.mapPin} alt="Map Pin" />
                     }
                 />
             </div>
-            <Button>Search</Button>
+            <Button>بحث</Button>
         </article>
     );
 }

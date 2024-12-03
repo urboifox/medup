@@ -7,11 +7,11 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-    { label: "Learn Skill", href: "/" },
-    { label: "Experts", href: "/" },
-    { label: "Library", href: "/" },
-    { label: "Blogs", href: "/" },
-    { label: "Digital Recruitment", href: "/" }
+    { label: "تعلم مهارة", href: "/" },
+    { label: "الخبراء", href: "/" },
+    { label: "المكتبة", href: "/" },
+    { label: "المقالات", href: "/" },
+    { label: "التعيين الرقمي", href: "/" }
 ];
 
 export default function Header() {
@@ -42,9 +42,9 @@ export default function Header() {
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-4">
                         <Link href={"/"} className="text-primary-main font-semibold">
-                            Log In
+                            دخول
                         </Link>
-                        <Button>Signup</Button>
+                        <Button>أبدأ الان</Button>
                     </div>
                 </div>
             </div>

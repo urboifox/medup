@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Providers from "@/providers";
 
 const montserrat = Montserrat({
     weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -22,7 +23,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${montserrat.variable} antialiased`}>
-                {children}
+                <Providers>{children}</Providers>
             </body>
         </html>
     );

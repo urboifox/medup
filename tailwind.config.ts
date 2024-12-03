@@ -9,7 +9,14 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "var(--primary)",
+                background: "var(--background)",
+                foreground: "var(--foreground)",
+                primary: {
+                    main: "var(--primary-main)",
+                    50: "var(--primary-50)",
+                    100: "var(--primary-100)",
+                    200: "var(--primary-200)"
+                },
                 error: {
                     main: "var(--error-main)",
                     50: "var(--error-50)",

@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 :root {
-    --primary: #3377ff;
+    --background: #ffffff;
+    --foreground: #24272d;
+    --primary-main: #108A00;
+    --primary-50: #69C469;
+    --primary-100: #46B546;
+    --primary-200: #158015;
     --error-main: #ff3b3b;
     --error-50: #ff8080;
     --error-100: #ff5c5c;
@@ -31,5 +36,7 @@
 }
 
 body {
+    color: var(--foreground);
+    background-color: var(--background);
     font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }

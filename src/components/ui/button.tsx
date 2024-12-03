@@ -6,12 +6,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: "primary" | "secondary";
 }
 
-export default function Button({
-    size = "md",
-    variant = "primary",
-    children,
-    ...rest
-}: Props) {
+export default function Button({ size = "md", variant = "primary", children, ...rest }: Props) {
     const baseStyles =
         "transition-colors duration-200 rounded-md flex items-center justify-center gap-2 font-semibold disabled:opacity-50";
 
@@ -31,12 +26,7 @@ export default function Button({
     return (
         <button
             {...rest}
-            className={cn(
-                baseStyles,
-                variantStyles[variant],
-                sizeStyles[size],
-                rest?.className
-            )}
+            className={cn(baseStyles, variantStyles[variant], sizeStyles[size], rest?.className)}
         >
             {children}
         </button>

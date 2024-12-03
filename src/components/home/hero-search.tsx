@@ -5,20 +5,23 @@ import icons from "@/lib/icons";
 
 export default function HeroSearch() {
     return (
-        <article className="p-3 bg-white rounded-lg shadow-md flex items-center gap-3 justify-between max-w-2xl">
-            <div className="flex items-center gap-3">
+        <article className="p-3 bg-white rounded-lg shadow-md flex lg:items-center gap-3 justify-between max-w-2xl flex-col lg:flex-row">
+            <div className="flex lg:items-center gap-3 flex-col lg:flex-row">
                 <Input
-                    className="border-transparent"
+                    className="border-transparent w-full"
                     placeholder="Skill, Keyword..."
                     placeholderIcon={
                         <Image width={24} height={24} src={icons.search} alt="Search" />
                     }
                 />
-                <span className="h-6 w-px bg-dark-100" />
-                <button className="flex items-center gap-2 text-dark-300">
-                    <Image width={24} height={24} src={icons.mapPin} alt="Map Pin" />
-                    <p className="line-clamp-1 max-w-52 text-start">Your Location</p>
-                </button>
+                <span className="h-6 w-px bg-dark-100 hidden lg:block" />
+                <Input
+                    className="border-transparent lg:max-w-52 w-full"
+                    placeholder="Your Location"
+                    placeholderIcon={
+                        <Image width={24} height={24} src={icons.mapPin} alt="Map Pin" />
+                    }
+                />
             </div>
             <Button>Search</Button>
         </article>

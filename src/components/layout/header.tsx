@@ -20,9 +20,7 @@ export default function Header() {
             <div className="container flex items-center justify-between h-full">
                 <div className="gap-10 flex items-center">
                     <Link href={"/"} className="flex items-center gap-2">
-                        <span className="text-2xl font-semibold text-[#18191c]">
-                            MedUp
-                        </span>
+                        <span className="text-2xl font-semibold text-[#18191c]">MedUp</span>
                     </Link>
                     <nav className="hidden lg:block">
                         <ul className="flex gap-6 items-center capitalize text-sm text-dark-300">
@@ -43,10 +41,7 @@ export default function Header() {
                 </div>
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-4">
-                        <Link
-                            href={"/"}
-                            className="text-primary-main font-semibold"
-                        >
+                        <Link href={"/"} className="text-primary-main font-semibold">
                             Log In
                         </Link>
                         <Button>Signup</Button>

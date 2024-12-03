@@ -1,10 +1,15 @@
+import { cookies } from "next/headers";
 import "server-only";
 
 export async function fetcher<T>(url: string, options?: RequestInit): Promise<T> {
+    const cookiesStore = await cookies();
+    const token = cookiesStore.get("token")?.value;
+
     const res: Response = await fetch(url, {
         ...options,
         headers: {
             "Content-Type": "application/json",
+            ...(token && { Authorization: `Bearer ${token}` }),
             ...options?.headers
         }
     }).catch((err) => {

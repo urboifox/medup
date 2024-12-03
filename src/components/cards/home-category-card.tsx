@@ -28,10 +28,10 @@ export default function HomeCategoryCard() {
 
             <Link
                 href="/"
-                className="text-primary-main group-hover:text-white transition-colors duration-200 font-bold flex items-center justify-center w-fit gap-2"
+                className="text-primary-main group-hover:text-white transition-colors duration-200 font-bold flex items-center justify-center w-fit gap-2 group"
             >
                 احجز استشارة
-                <FaArrowLeft />
+                <FaArrowLeft className="group-hover:-translate-x-2 transition-transform duration-200" />
             </Link>
         </article>
     );

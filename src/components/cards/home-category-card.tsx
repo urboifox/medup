@@ -1,6 +1,6 @@
 import icons from "@/lib/icons";
 import Link from "next/link";
-import { FaArrowLeft } from "react-icons/fa6";
+import { FiArrowLeft } from "react-icons/fi";
 
 export default function HomeCategoryCard() {
     return (
@@ -28,10 +28,10 @@ export default function HomeCategoryCard() {
 
             <Link
                 href="/"
-                className="text-primary-main group-hover:text-white transition-colors duration-200 font-bold flex items-center justify-center w-fit gap-2 group"
+                className="text-primary-main group-hover:text-white transition-colors duration-200 font-bold flex items-center justify-center w-fit gap-2 group/link"
             >
                 احجز استشارة
-                <FaArrowLeft className="group-hover:-translate-x-2 transition-transform duration-200" />
+                <FiArrowLeft className="group-hover/link:-translate-x-1 transition-transform duration-200" />
             </Link>
         </article>
     );

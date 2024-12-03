@@ -6,7 +6,7 @@ export default function ExpertCard() {
     return (
         <article className="flex flex-col gap-4 group">
             <div className="relative aspect-square rounded-lg overflow-hidden">
-                <Image src={images.doctor} alt="Doctor" fill className="object-cover" />
+                <Image src={images.doctorProfile} alt="Doctor" fill className="object-cover" />
                 <div className="absolute -bottom-10 start-4 flex items-center gap-2 group-hover:bottom-4 transition-all duration-300">
                     <a
                         href="https://facebook.com"

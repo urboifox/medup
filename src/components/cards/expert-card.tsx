@@ -32,7 +32,7 @@ export default function ExpertCard() {
                 <div className="flex flex-col gap-1">
                     <h3 className="lg:text-xl font-semibold">د. سامح محمود</h3>
                     <p className="text-dark-300 text-sm line-clamp-2">
-                        تبييض الأسنان، وتقنية إنفيزلاين، وواقيات الأسنان الليلية.
+                        تبييض الأسنان، تقنية إنفيزلاين، واقيات الأسنان الليلية
                     </p>
                 </div>
             </a>

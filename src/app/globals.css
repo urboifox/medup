@@ -4,7 +4,10 @@
 
 :root {
     --background: #ffffff;
-    --foreground: #24272d;
+    --foreground-main: #24272d;
+    --foreground-50: #A8B5C6;
+    --foreground-100: #626C85;
+    --foreground-200: #384464;
     --primary-main: #108A00;
     --primary-50: #69C469;
     --primary-100: #46B546;
@@ -36,7 +39,7 @@
 }
 
 body {
-    color: var(--foreground);
+    color: var(--foreground-main);
     background-color: var(--background);
     font-family: var(--font-tajawal), Arial, Helvetica, sans-serif;
 }

@@ -3,9 +3,10 @@ import CategoriesSection from "@/components/home/categories-section";
 import ExpertsSection from "@/components/home/experts-section";
 import ExploreSection from "@/components/home/explore-section";
 import HeroSection from "@/components/home/hero-section";
+import PopularSkillsSection from "@/components/home/popular-skills-section";
 import TestimonialsSection from "@/components/home/testimonials-section";
 
-export default function Home() {
+export default function HomePage() {
     return (
         <div>
             <HeroSection />
@@ -14,6 +15,7 @@ export default function Home() {
             <ActionsSection />
             <ExploreSection />
             <TestimonialsSection />
+            <PopularSkillsSection />
         </div>
     );
 }

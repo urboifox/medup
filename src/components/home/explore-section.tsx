@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ExploreSection() {
     return (
-        <section className="py-40">
+        <section className="py-20 lg:py-40">
             <div className="container flex gap-10 flex-col lg:flex-row lg:gap-40 items-center">
                 <div className="flex-1 w-full aspect-[1.3] relative rounded-[50px] overflow-hidden">
                     <Image

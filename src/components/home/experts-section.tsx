@@ -6,7 +6,7 @@ export default function ExpertsSection() {
     const experts = Array(8).fill(null);
 
     return (
-        <section className="container py-40 flex flex-col gap-20">
+        <section className="container py-20 lg:py-40 flex flex-col gap-20">
             <div className="flex flex-col gap-6 text-center items-center max-w-4xl mx-auto">
                 <h2 className="text-3xl lg:text-5xl font-bold">تعرف على أفضل خبرائنا</h2>
                 <p className="text-dark-300 text-lg lg:text-xl">

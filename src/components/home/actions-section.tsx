@@ -16,7 +16,6 @@ export default function ActionsSection() {
                         draggable={false}
                         className="object-cover -z-20 object-right"
                     />
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-l from-transparent to-black/30" />
                     <div className="flex flex-col gap-4">
                         <h3 className="text-foreground-main text-3xl font-semibold">وظف وكالة</h3>
                         <p className="text-foreground-100 text-sm max-w-sm">

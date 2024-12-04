@@ -30,7 +30,7 @@ export default function HomeCategoryCard() {
                 href="/"
                 className="text-primary-main group-hover:text-white transition-colors duration-200 font-bold flex items-center justify-center w-fit gap-2 group/link"
             >
-                احجز استشارة
+                أحجز استشارة
                 <FiArrowLeft className="group-hover/link:-translate-x-1 transition-transform duration-200" />
             </Link>
         </article>

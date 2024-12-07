@@ -7,7 +7,7 @@ export default function useQueryString() {
     const router = useRouter();
 
     const createQueryString = useCallback(
-        (entry: { [key: string]: any } | string, value?: any) => {
+        (entry: { [key: string]: string } | string, value?: string) => {
             const params = new URLSearchParams(searchParams.toString());
 
             if (typeof entry === "string") {

@@ -54,7 +54,7 @@ export default function ArticlePage() {
             </div>
 
             <div className="flex flex-col gap-10">
-                <h2 className="text-3xl font-bold">المحتوى المقترح</h2>
+                <h2 className="text-3xl font-bold">المقالات المقترحة</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {articles.map((_, idx) => {

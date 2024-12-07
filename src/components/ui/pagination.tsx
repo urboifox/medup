@@ -17,11 +17,11 @@ export default function Pagination({
     const { createQueryString } = useQueryString();
 
     function handleNextPage() {
-        createQueryString("page", currentPage + 1);
+        createQueryString("page", `${currentPage + 1}`);
     }
 
     function handlePrevPage() {
-        createQueryString("page", currentPage - 1);
+        createQueryString("page", `${currentPage - 1}`);
     }
 
     const getPageNumbers = (
@@ -74,7 +74,7 @@ export default function Pagination({
                                 page === currentPage && "bg-primary-main text-white"
                             )}
                             onClick={() => {
-                                createQueryString("page", page);
+                                createQueryString("page", page.toString());
                             }}
                         >
                             {page}

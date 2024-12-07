@@ -36,7 +36,7 @@ export default async function ArticlesPage({
                         return <ArticleCard key={idx} />;
                     })}
                 </div>
-                <Pagination currentPage={+String(page)} lastPage={10} />
+                <Pagination currentPage={parseInt((page as string) || "1")} lastPage={10} />
             </main>
         </div>
     );

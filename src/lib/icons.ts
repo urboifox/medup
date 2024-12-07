@@ -4,7 +4,8 @@ const icons = {
     stethoscope: "/icons/stethoscope.svg",
     quote: "/icons/quote.svg",
     star: "/icons/star.svg",
-    filters: "/icons/filters.svg"
+    filters: "/icons/filters.svg",
+    goto: "/icons/goto.svg"
 };
 
 export default icons;

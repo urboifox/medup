@@ -3,7 +3,7 @@ import Button from "../ui/button";
 import Link from "next/link";
 
 export default function ExpertsSection() {
-    const experts = Array(8).fill(null);
+    const experts = Array(12).fill(null);
 
     return (
         <section className="container py-20 lg:py-40 flex flex-col gap-20">
@@ -20,7 +20,7 @@ export default function ExpertsSection() {
                     return <ExpertCard key={idx} />;
                 })}
             </div>
-            <Link href="/" className="w-max mx-auto">
+            <Link href="/experts" className="w-max mx-auto">
                 <Button>أستكشف المزيد</Button>
             </Link>
         </section>

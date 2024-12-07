@@ -27,7 +27,7 @@ export default function HomeCategoryCard() {
             </p>
 
             <Link
-                href="/"
+                href="/experts"
                 className="text-primary-main group-hover:text-white transition-colors duration-200 font-bold flex items-center justify-center w-fit gap-2 group/link"
             >
                 أحجز استشارة

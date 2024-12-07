@@ -25,7 +25,7 @@ export default function ExpertCard() {
                     </Link>
                 </div>
             </div>
-            <Link className="flex flex-col gap-2" href="/">
+            <Link className="flex flex-col gap-2" href="/experts/1">
                 <div className="flex items-center gap-2 justify-between">
                     <p className="line-clamp-1 font-medium text-dark-400">أسنان</p>
                     <span className="text-sm font-medium text-primary-main">10 سنوات</span>

@@ -7,11 +7,10 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-    { label: "تعلم مهارة", href: "/" },
-    { label: "الخبراء", href: "/" },
-    { label: "المكتبة", href: "/" },
-    { label: "المقالات", href: "/" },
-    { label: "التعيين الرقمي", href: "/" }
+    { label: "الخبراء", href: "/experts" },
+    { label: "المكتبة", href: "/library" },
+    { label: "المقالات", href: "/articles" },
+    { label: "التعيين الرقمي", href: "/experts" }
 ];
 
 export default function Header() {

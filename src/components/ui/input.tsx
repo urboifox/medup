@@ -15,7 +15,7 @@ export default function Input({
     ...rest
 }: Props) {
     return (
-        <div className={cn("flex flex-col gap-2", containerClassName)}>
+        <div className={cn("w-full flex flex-col gap-2", containerClassName)}>
             {label && <label className="text-dark-300">{label}</label>}
             <div className="relative">
                 {placeholderIcon && (

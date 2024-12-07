@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/home/testimonials-section";
 
 export default function HomePage() {
     return (
-        <div>
+        <main>
             <HeroSection />
             <ExpertsSection />
             <CategoriesSection />
@@ -16,6 +16,6 @@ export default function HomePage() {
             <ExploreSection />
             <TestimonialsSection />
             <PopularSkillsSection />
-        </div>
+        </main>
     );
 }

@@ -25,7 +25,7 @@ export default function ExploreSection() {
                         استفد من التوجيه الشخصي والرؤى لتعزيز مهاراتك وثقتك في المجال الطبي. انضم
                         إلينا لإطلاق العنان لإمكاناتك اليوم!
                     </p>
-                    <Link href="/" className="w-max">
+                    <Link href="/experts" className="w-max">
                         <Button>أستكشف الآن</Button>
                     </Link>
                 </div>

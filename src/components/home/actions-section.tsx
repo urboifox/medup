@@ -42,7 +42,7 @@ export default function ActionsSection() {
                                 وفعالية.
                             </p>
                         </div>
-                        <Link href="/" className="w-max">
+                        <Link href="/experts" className="w-max">
                             <Button variant="secondary">
                                 استأجر الآن
                                 <FiArrowLeft />

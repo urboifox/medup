@@ -7,7 +7,7 @@ export default function CategoriesSection() {
                 <div className="flex items-center gap-10 flex-col lg:flex-row">
                     <div className="flex flex-col gap-8 max-w-3xl flex-1">
                         <h2 className="text-4xl font-semibold foreground-200">
-                            اكتشف مسارك في الطب
+                            اكتشف مسارك في مجالك
                         </h2>
                         <p className="text-foreground-50 font-semibold">
                             انغمس في مجموعة متنوعة من فرص التعلم المصممة خصيصًا للمهنيين الطبيين

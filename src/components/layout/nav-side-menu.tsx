@@ -15,7 +15,7 @@ export default function NavSideMenu({ navItems }: { navItems: NavItem[] }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <>
+        <div className="lg:hidden">
             <button className="text-2xl" onClick={() => setIsOpen(!isOpen)}>
                 <FiMenu />
             </button>
@@ -57,6 +57,6 @@ export default function NavSideMenu({ navItems }: { navItems: NavItem[] }) {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </>
+        </div>
     );
 }

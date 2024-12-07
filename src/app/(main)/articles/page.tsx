@@ -1,6 +1,13 @@
 import ArticleCard from "@/components/cards/article-card";
+import Pagination from "@/components/ui/pagination";
+import { SearchParams } from "next/dist/server/request/search-params";
 
-export default function ArticlesPage() {
+export default async function ArticlesPage({
+    searchParams
+}: {
+    searchParams: Promise<SearchParams>;
+}) {
+    const { page } = await searchParams;
     const articles = Array(6).fill(null);
 
     return (
@@ -29,6 +36,7 @@ export default function ArticlesPage() {
                         return <ArticleCard key={idx} />;
                     })}
                 </div>
+                <Pagination currentPage={+String(page)} lastPage={10} />
             </main>
         </div>
     );

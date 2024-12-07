@@ -38,6 +38,10 @@
     --light-400: #DDE5E9;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--foreground-main);
     background-color: var(--background);

@@ -15,7 +15,7 @@ export default function HomePage() {
             <ActionsSection />
             <ExploreSection />
             <TestimonialsSection />
-            <PopularSkillsSection />
+            {/* <PopularSkillsSection /> */}
         </main>
     );
 }

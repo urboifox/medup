@@ -3,8 +3,11 @@ import Image from "next/image";
 import Button from "../ui/button";
 import { Link } from "@/i18n/routing";
 import { FiArrowLeft } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
 export default function ActionsSection() {
+    const t = useTranslations();
+
     return (
         <section className="py-20">
             <div className="flex items-stretch gap-10 container flex-col lg:flex-row">
@@ -14,38 +17,37 @@ export default function ActionsSection() {
                         src={images.typingOnKeyboard}
                         alt="Typing on Keyboard"
                         draggable={false}
-                        className="object-cover -z-20 object-right"
+                        className="object-cover -z-20 object-right ltr:scale-x-[-1]"
                     />
                     <div className="flex flex-col gap-4">
-                        <h3 className="text-foreground-main text-3xl font-semibold">وظف وكالة</h3>
+                        <h3 className="text-foreground-main text-3xl font-semibold">
+                            {t("home.actions.agenciesHiring")}
+                        </h3>
                         <p className="text-foreground-100 text-sm max-w-sm">
-                            تواصل مباشرة مع متخصصي الصناعة للحصول على رؤى شخصية وإرشادات عملية. اطرح
-                            الأسئلة، ووضح المفاهيم، وعزز مهاراتك من خلال الدعم المخصص من خبراء ذوي
-                            خبرة في مجالك.
+                            {t("home.actions.agenciesHiringDescription")}
                         </p>
                     </div>
                     <Link href="/" className="w-max">
                         <Button>
-                            استكشف الآن
-                            <FiArrowLeft />
+                            {t("common.exploreNow")}
+                            <FiArrowLeft className="ltr:rotate-180" />
                         </Button>
                     </Link>
                 </article>
-                <article className="relative flex-1 p-12 rounded-lg overflow-hidden bg-info-main w-full flex gap-4 items-center">
+                <article className="relative flex-1 p-12 rounded-lg overflow-hidden bg-primary-main w-full flex gap-4 items-center">
                     <div className="flex flex-col gap-8">
                         <div className="flex flex-col gap-4">
-                            <h3 className="text-3xl font-semibold text-white">اسأل خبير</h3>
+                            <h3 className="text-3xl font-semibold text-white">
+                                {t("home.actions.digitalOnlineCourses")}
+                            </h3>
                             <p className="text-sm max-w-sm text-light-200">
-                                يمكنك التعاون مع الوكالات المتخصصة للوصول إلى مجموعة كبيرة من
-                                الموارد والخبرات. سواء كنت بحاجة إلى برامج تدريبية شاملة أو مساعدة
-                                في مشروع، فإن وكالاتنا مجهزة لمساعدتك على تحقيق أهدافك بكفاءة
-                                وفعالية.
+                                {t("home.actions.digitalOnlineCoursesDescription")}
                             </p>
                         </div>
                         <Link href="/experts" className="w-max">
                             <Button variant="secondary">
-                                استأجر الآن
-                                <FiArrowLeft />
+                                {t("common.hireNow")}
+                                <FiArrowLeft className="ltr:rotate-180" />
                             </Button>
                         </Link>
                     </div>
@@ -54,7 +56,7 @@ export default function ActionsSection() {
                             src={images.doctor}
                             alt="Doctor"
                             fill
-                            className="object-contain -translate-x-32 max-sm:hidden"
+                            className="object-contain ltr:scale-x-[-1] ltr:translate-x-32 -translate-x-32 max-sm:hidden"
                         />
                     </div>
                 </article>

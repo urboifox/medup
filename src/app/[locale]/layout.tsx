@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Tajawal } from "next/font/google";
+import { Tajawal, Poppins } from "next/font/google";
 import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
@@ -9,8 +9,15 @@ import { notFound } from "next/navigation";
 
 const tajawal = Tajawal({
     weight: ["300", "500", "700"],
-    subsets: ["latin", "arabic"],
+    subsets: ["arabic"],
     variable: "--font-tajawal",
+    display: "swap"
+});
+
+const poppins = Poppins({
+    weight: ["300", "400", "500", "600", "700"],
+    subsets: ["latin"],
+    variable: "--font-poppins",
     display: "swap"
 });
 
@@ -36,7 +43,7 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-            <body className={`${tajawal.variable} antialiased`}>
+            <body className={`${tajawal.variable} ${poppins.variable} antialiased`}>
                 <Providers messages={messages}>{children}</Providers>
             </body>
         </html>

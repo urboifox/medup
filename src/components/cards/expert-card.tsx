@@ -2,8 +2,11 @@ import images from "@/lib/images";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 export default function ExpertCard() {
+    const t = useTranslations();
+
     return (
         <article className="flex flex-col gap-4 group">
             <div className="relative aspect-square rounded-lg overflow-hidden">
@@ -27,14 +30,16 @@ export default function ExpertCard() {
             </div>
             <Link className="flex flex-col gap-2" href="/experts/1">
                 <div className="flex items-center gap-2 justify-between">
-                    <p className="line-clamp-1 font-medium text-dark-400">أسنان</p>
-                    <span className="text-sm font-medium text-primary-main">10 سنوات</span>
+                    <p className="line-clamp-1 text-sm text-foreground-100 font-medium">
+                        {t("temp.expertCategory")}
+                    </p>
+                    <span className="text-sm font-medium text-primary-main">
+                        10 {t("common.years")}
+                    </span>
                 </div>
                 <div className="flex flex-col gap-1">
-                    <h3 className="lg:text-xl font-semibold">د. سامح محمود</h3>
-                    <p className="text-dark-300 text-sm line-clamp-2">
-                        تبييض الأسنان، تقنية إنفيزلاين، واقيات الأسنان الليلية
-                    </p>
+                    <h3 className="lg:text-xl font-semibold">{t("temp.expertName")}</h3>
+                    <p className="text-dark-300 text-sm line-clamp-2">{t("temp.expertSkills")}</p>
                 </div>
             </Link>
         </article>

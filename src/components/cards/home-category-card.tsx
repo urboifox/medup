@@ -1,5 +1,5 @@
 import icons from "@/lib/icons";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { FiArrowLeft } from "react-icons/fi";
 
 export default function HomeCategoryCard() {

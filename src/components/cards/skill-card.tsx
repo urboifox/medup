@@ -1,7 +1,7 @@
 import icons from "@/lib/icons";
 import images from "@/lib/images";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 export default function SkillCard() {
     return (

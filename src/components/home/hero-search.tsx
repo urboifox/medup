@@ -2,8 +2,11 @@ import Image from "next/image";
 import Button from "../ui/button";
 import Input from "../ui/input";
 import icons from "@/lib/icons";
+import { useTranslations } from "next-intl";
 
 export default function HeroSearch() {
+    const t = useTranslations();
+
     return (
         <article className="p-3 bg-white rounded-lg shadow-md flex lg:items-center gap-3 justify-between max-w-2xl flex-col lg:flex-row">
             <div className="flex lg:items-center gap-3 flex-col lg:flex-row w-full">
@@ -24,7 +27,7 @@ export default function HeroSearch() {
                 {/*     } */}
                 {/* /> */}
             </div>
-            <Button>بحث</Button>
+            <Button>{t("common.search")}</Button>
         </article>
     );
 }

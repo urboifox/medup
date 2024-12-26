@@ -1,6 +1,6 @@
 import images from "@/lib/images";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 
 export default function ExpertCard() {

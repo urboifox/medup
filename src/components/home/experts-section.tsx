@@ -1,6 +1,6 @@
 import ExpertCard from "@/components/cards/expert-card";
 import Button from "../ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 export default function ExpertsSection() {
     const experts = Array(12).fill(null);

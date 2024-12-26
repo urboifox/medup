@@ -1,7 +1,7 @@
 import images from "@/lib/images";
 import Image from "next/image";
 import Button from "../ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { FiArrowLeft } from "react-icons/fi";
 
 export default function ActionsSection() {

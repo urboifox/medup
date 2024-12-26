@@ -8,7 +8,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({ size = "md", variant = "primary", children, ...rest }: Props) {
     const baseStyles =
-        "transition-colors duration-200 rounded-md flex items-center justify-center gap-2 font-semibold disabled:opacity-50";
+        "transition-colors duration-200 rounded-md flex items-center justify-center gap-2 font-medium disabled:opacity-50";
 
     const variantStyles = {
         primary:

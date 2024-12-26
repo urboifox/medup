@@ -45,5 +45,9 @@ html {
 body {
     color: var(--foreground-main);
     background-color: var(--background);
+    font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+html[lang="ar"] body {
     font-family: var(--font-tajawal), Arial, Helvetica, sans-serif;
 }

@@ -8,8 +8,10 @@ import TestimonialCard from "../cards/testimonial-card";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 export default function TestimonialsSection() {
+    const t = useTranslations();
     const testimonials = Array(10).fill(null);
 
     const swiperRef = useRef<SwiperCore | null>(null);
@@ -28,20 +30,19 @@ export default function TestimonialsSection() {
                 <div className="flex items-center gap-10 lg:gap-4 flex-col lg:flex-row justify-between">
                     <div className="flex flex-col gap-5">
                         <h3 className="max-w-md font-bold text-3xl lg:text-5xl text-foreground-200">
-                            ماذا يقول طلابنا!
+                            {t("home.testimonials.title")}
                         </h3>
                         <p className="text-dark-300 max-w-md">
-                            اقرأ شهادات الطلاب الذين اكتسبوا مهارات ورؤى واتصالات قيمة من خلال
-                            خبرائنا
+                            {t("home.testimonials.description")}
                         </p>
                     </div>
 
                     <div className="flex items-center gap-4">
                         <Button onClick={handlePrev} className="rounded-full aspect-square p-3">
-                            <FiChevronRight size={24} />
+                            <FiChevronRight size={24} className="ltr:rotate-180" />
                         </Button>
                         <Button onClick={handleNext} className="rounded-full aspect-square p-3">
-                            <FiChevronLeft size={24} />
+                            <FiChevronLeft size={24} className="ltr:rotate-180" />
                         </Button>
                     </div>
                 </div>

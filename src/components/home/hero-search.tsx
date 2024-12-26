@@ -13,7 +13,7 @@ export default function HeroSearch() {
                 <Input
                     containerClassName="w-full"
                     className="border-transparent w-full"
-                    placeholder="مهارة، كلمة مفتاحية..."
+                    placeholder={t("home.hero.searchPlaceholder")}
                     placeholderIcon={
                         <Image width={24} height={24} src={icons.search} alt="Search" />
                     }

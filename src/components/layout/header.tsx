@@ -1,20 +1,23 @@
 import { Link } from "@/i18n/routing";
 import Button from "../ui/button";
 import NavSideMenu from "./nav-side-menu";
+import { useTranslations } from "next-intl";
 
 type NavItem = {
     label: string;
     href: string;
 };
 
-const navItems: NavItem[] = [
-    { label: "الخبراء", href: "/experts" },
-    { label: "المكتبة", href: "/library" },
-    { label: "المقالات", href: "/articles" },
-    { label: "التعيين الرقمي", href: "/experts" }
-];
-
 export default function Header() {
+    const t = useTranslations();
+
+    const navItems: NavItem[] = [
+        { label: t("nav.experts"), href: "/experts" },
+        { label: t("nav.library"), href: "/library" },
+        { label: t("nav.articles"), href: "/articles" },
+        { label: t("nav.digitalAppointment"), href: "/experts" }
+    ];
+
     return (
         <header className="w-full h-24 shadow-[11px_4px_15px_0_#0000001A] max-lg:sticky top-0 bg-white z-20">
             <div className="container flex items-center justify-between h-full">
@@ -32,7 +35,7 @@ export default function Header() {
                                     <li key={idx}>
                                         <Link
                                             href={item.href}
-                                            className="transition-colors duration-100 hover:text-dark-400"
+                                            className="transition-colors duration-100 hover:text-dark-400 font-medium"
                                         >
                                             {item.label}
                                         </Link>
@@ -45,9 +48,9 @@ export default function Header() {
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-4">
                         <Link href={"/"} className="text-primary-main font-semibold">
-                            دخول
+                            {t("common.login")}
                         </Link>
-                        <Button>أبدأ الان</Button>
+                        <Button>{t("common.getStarted")}</Button>
                     </div>
                 </div>
             </div>

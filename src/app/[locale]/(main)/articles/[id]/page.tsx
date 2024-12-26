@@ -65,3 +65,7 @@ export default function ArticlePage() {
         </div>
     );
 }
+
+export async function generateStaticParams() {
+    return [{ id: "1" }];
+}

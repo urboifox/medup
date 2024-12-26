@@ -2,7 +2,7 @@ import moment from "moment";
 import Tag from "../ui/tag";
 import icons from "@/lib/icons";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import images from "@/lib/images";
 import { cn } from "@/utils/cn";
 

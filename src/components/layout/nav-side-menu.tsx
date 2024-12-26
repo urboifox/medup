@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";

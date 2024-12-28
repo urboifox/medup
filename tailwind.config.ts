@@ -59,6 +59,10 @@ export default {
                     400: "var(--light-400)"
                 }
             },
+            fontFamily: {
+                poppins: ["var(--font-poppins)"],
+                tajawal: ["var(--font-tajawal)"]
+            },
             container: {
                 center: true,
                 padding: "1rem"

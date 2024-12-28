@@ -2,6 +2,7 @@ import { Link } from "@/i18n/routing";
 import Button from "../ui/button";
 import NavSideMenu from "./nav-side-menu";
 import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./language-switcher";
 
 type NavItem = {
     label: string;
@@ -47,6 +48,7 @@ export default function Header() {
                 </div>
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-4">
+                        <LanguageSwitcher />
                         <Link href={"/"} className="text-primary-main font-semibold">
                             {t("common.login")}
                         </Link>

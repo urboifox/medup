@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Link } from "@/i18n/routing";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";

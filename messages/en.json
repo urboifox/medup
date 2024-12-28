@@ -7,7 +7,11 @@
         "categoryDescription": "Learn clinical practices and patient care fundamentals to prepare for real-world challenges in healthcare.",
         "testimonialName": "Kareem Mohamed",
         "testimonialContent": "Great team and great treatment from the best doctor in the world Great team and great treatment from the best doctor in the world",
-        "testimonialRole": "New Student"
+        "testimonialRole": "New Student",
+        "articleTitle": "How technology can affect modern medicine",
+        "articleAuthor": "Mohamed Ashraf",
+        "articleTag": "Research",
+        "articleDescription": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellen"
     },
     "common": {
         "experts": "Experts",
@@ -20,7 +24,8 @@
         "hireNow": "Hire Now",
         "filters": "Filters",
         "next": "Next",
-        "previous": "Previous"
+        "previous": "Previous",
+        "tags": "Tags"
     },
     "nav": {
         "experts": "Experts",
@@ -60,6 +65,11 @@
     },
     "experts": {
         "searchPlaceholder": "Search for a job title, skill, or a keyword..."
+    },
+    "articles": {
+        "title": "Latest Articles",
+        "allArticles": "All Articles",
+        "suggestedArticles": "Suggested Articles"
     },
     "footer": {
         "copyright": "Copyright © 2023 MedUp. All rights reserved.",

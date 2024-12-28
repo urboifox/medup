@@ -2,6 +2,7 @@
 
 import useQueryString from "@/hooks/useQueryString";
 import { cn } from "@/utils/cn";
+import { useTranslations } from "next-intl";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface Props {
@@ -14,6 +15,7 @@ export default function Pagination({
     lastPage = 1,
     maxVisible: maxVisibleProp = 3
 }: Props) {
+    const t = useTranslations();
     const { createQueryString } = useQueryString();
 
     function handleNextPage() {
@@ -59,7 +61,7 @@ export default function Pagination({
                 onClick={handlePrevPage}
                 disabled={currentPage <= 1}
             >
-                <FiChevronRight /> السابق
+                <FiChevronRight className="ltr:rotate-180" /> {t("common.previous")}
             </button>
             <div className="flex gap-2 items-center">
                 {pageNumbers.map((page, idx) => {
@@ -87,7 +89,7 @@ export default function Pagination({
                 onClick={handleNextPage}
                 disabled={currentPage >= lastPage}
             >
-                التالي <FiChevronLeft />
+                {t("common.next")} <FiChevronLeft className="ltr:rotate-180" />
             </button>
         </div>
     );

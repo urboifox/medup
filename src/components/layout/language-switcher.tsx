@@ -22,24 +22,31 @@ function LanguageDropdownMenu() {
         });
     }
 
+    const languages = [
+        {
+            label: "English",
+            value: "en"
+        },
+        {
+            label: "العربية",
+            value: "ar"
+        }
+    ];
+
     return (
         <ul className="p-4 rounded-lg bg-white shadow-lg flex flex-col gap-2">
-            <li>
-                <button
-                    onClick={() => handleLanguageChange("en")}
-                    className="font-medium px-8 py-2 rounded-md hover:bg-primary-main hover:text-white w-full"
-                >
-                    English
-                </button>
-            </li>
-            <li>
-                <button
-                    onClick={() => handleLanguageChange("ar")}
-                    className="font-medium px-8 py-2 rounded-md hover:bg-primary-main hover:text-white w-full font-tajawal"
-                >
-                    عربي
-                </button>
-            </li>
+            {languages.map((lang, idx) => {
+                return (
+                    <li key={idx}>
+                        <button
+                            onClick={() => handleLanguageChange(lang.value)}
+                            className="font-medium px-8 py-2 rounded-md hover:bg-primary-main hover:text-white w-full"
+                        >
+                            {lang.label}
+                        </button>
+                    </li>
+                );
+            })}
         </ul>
     );
 }

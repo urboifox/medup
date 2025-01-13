@@ -6,6 +6,9 @@ const icons = {
     star: "/icons/star.svg",
     filters: "/icons/filters.svg",
     goto: "/icons/goto.svg",
+    expert: "/icons/expert.svg",
+    student: "/icons/student.svg",
+    trainee: "/icons/trainee.svg"
 };
 
 export default icons;

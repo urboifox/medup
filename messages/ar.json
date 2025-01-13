@@ -20,7 +20,6 @@
         "experts": "الخبراء",
         "search": "بحث",
         "getStarted": "ابدأ الان",
-        "login": "دخول",
         "discoverMore": "اكتشف المزيد",
         "years": "سنوات",
         "exploreNow": "استكشف الآن",
@@ -29,13 +28,27 @@
         "next": "التالي",
         "previous": "السابق",
         "tags": "الشعارات",
-        "premium": "مميز"
+        "premium": "مميز",
+        "student": "طالب",
+        "trainee": "متدرب",
+        "expert": "خبراء",
+        "studentDescription": "أنا هنا للتعلم وتنمية معرفتي في المجال الطبي.",
+        "traineeDescription": "أريد أكتساب خبرة و بناء مهارات عملية في الطب.",
+        "expertDescription": "أتطلع إلى التدريس ومشاركة خبرتي مع الآخرين في المجتمع الطبي."
     },
     "nav": {
         "experts": "الخبراء",
         "library": "المكتبة",
         "articles": "المقالات",
         "digitalAppointment": "التعيين الرقمي"
+    },
+    "auth": {
+        "preRegisterTitle": "انضم إلى MedUp",
+        "preRegisterDescription": "انضم إلى أكبر مجتمع من الخبراء والمتعلمين، وشارك معرفتك وتعلم من الآخرين من جميع أنحاء العالم.",
+        "joinAs": "انضم كـ",
+        "login": "تسجيل الدخول",
+        "alreadyHaveAnAccount": "لديك حساب بالفعل؟",
+        "register": "التسجيل"
     },
     "home": {
         "hero": {

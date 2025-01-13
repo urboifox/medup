@@ -20,7 +20,6 @@
         "experts": "Experts",
         "search": "Search",
         "getStarted": "Get Started",
-        "login": "Login",
         "discoverMore": "Discover More",
         "years": "years",
         "exploreNow": "Explore Now",
@@ -29,13 +28,27 @@
         "next": "Next",
         "previous": "Previous",
         "tags": "Tags",
-        "premium": "Premium"
+        "premium": "Premium",
+        "student": "Student",
+        "trainee": "Trainee",
+        "expert": "Expert",
+        "studentDescription": "I'm here to learn and grow my knowledge, and experience in the medical field.",
+        "traineeDescription": "I'm gaining hands-on experience and building practical skills in medicine.",
+        "expertDescription": "I'm looking to teach, mentor, and share my expertise with others in the medical community."
     },
     "nav": {
         "experts": "Experts",
         "library": "Library",
         "articles": "Articles",
         "digitalAppointment": "Digital Appointment"
+    },
+    "auth": {
+        "preRegisterTitle": "Join MedUp",
+        "preRegisterDescription": "Join the biggest community of experts and learners, share your knowledge and learn from others all over the world.",
+        "joinAs": "Join as",
+        "login": "Login",
+        "alreadyHaveAnAccount": "Already have an account?",
+        "register": "Register"
     },
     "home": {
         "hero": {

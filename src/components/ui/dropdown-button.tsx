@@ -37,7 +37,7 @@ export default function DropdownButton({ children, menu, onClick, ...rest }: Pro
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, transition: { duration: 0.1 } }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full right-0 z-10"
+                        className="absolute top-full ltr:right-0 rtl:left-0 z-10"
                     >
                         {menu}
                     </motion.div>

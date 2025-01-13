@@ -38,16 +38,22 @@
     --light-400: #DDE5E9;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
 
-body {
-    color: var(--foreground-main);
-    background-color: var(--background);
-    font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
-}
+    body {
+        color: var(--foreground-main);
+        background-color: var(--background);
+        font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+    }
 
-html[lang="ar"] body {
-    font-family: var(--font-tajawal), Arial, Helvetica, sans-serif;
+    html[lang="ar"] body {
+        font-family: var(--font-tajawal), Arial, Helvetica, sans-serif;
+    }
+
+    a {
+        width: fit-content;
+    }
 }

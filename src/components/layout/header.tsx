@@ -49,10 +49,12 @@ export default function Header() {
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-4">
                         <LanguageSwitcher />
-                        <Link href={"/"} className="text-primary-main font-semibold">
-                            {t("common.login")}
+                        <Link href={"/login"} className="text-primary-main font-semibold">
+                            {t("auth.login")}
                         </Link>
-                        <Button>{t("common.getStarted")}</Button>
+                        <Link href="/register">
+                            <Button>{t("common.getStarted")}</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

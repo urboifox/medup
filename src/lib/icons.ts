@@ -5,7 +5,7 @@ const icons = {
     quote: "/icons/quote.svg",
     star: "/icons/star.svg",
     filters: "/icons/filters.svg",
-    goto: "/icons/goto.svg"
+    goto: "/icons/goto.svg",
 };
 
 export default icons;

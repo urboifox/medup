@@ -22,8 +22,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "Medup Skills",
-    description: "Medup Skills"
+    title: "Medup",
+    description: "Medup"
 };
 
 export default async function RootLayout({

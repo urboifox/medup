@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 
 export default async function ExpertsSection() {
     const t = await getTranslations();
-    const experts = Array(12).fill(null);
+    const experts = Array(16).fill(null);
 
     return (
         <section className="container py-20 lg:py-40 flex flex-col gap-20">

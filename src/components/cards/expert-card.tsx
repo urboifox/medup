@@ -2,7 +2,7 @@ import images from "@/lib/images";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { FaCrown, FaIdBadge, FaMapPin, FaStar, FaSuitcase } from "react-icons/fa6";
+import { FaCrown, FaMapPin, FaSuitcase } from "react-icons/fa6";
 import { FaUniversity } from "react-icons/fa";
 import { LuBadgeCheck } from "react-icons/lu";
 import StarsRating from "../ui/stars-rating";

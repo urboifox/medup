@@ -26,10 +26,10 @@ export async function GET(request: Request) {
             cookieStore.delete("refreshToken");
             return NextResponse.redirect(new URL("/login", request.url));
         }
-        const refresh_token_expires_at = String(cookieStore.get("refreshTokenExpiresAt")?.value);
-        const expiresAt = new Date(refresh_token_expires_at);
+        const refreshTokenExpiresAt = String(cookieStore.get("refreshTokenExpiresAt")?.value);
+        const expiresAt = new Date(refreshTokenExpiresAt);
         const now = new Date();
-        if (expiresAt.getTime() - now.getTime() < 24 * 60 * 60 * 1000) {
+        if (expiresAt.getTime() - now.getTime() < 24 * 60 * 60 * 1000 || !refreshTokenExpiresAt) {
             const rotatedToken = await rotateToken();
             if (rotatedToken) {
                 cookieStore.set("refreshToken", rotatedToken.token, {

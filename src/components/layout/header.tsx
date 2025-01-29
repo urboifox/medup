@@ -26,7 +26,7 @@ export default function Header() {
                     <div className="flex items-center gap-4">
                         <NavSideMenu navItems={navItems} />
                         <Link href={"/"} className="flex items-center gap-2">
-                            <span className="text-2xl font-semibold text-[#18191c]">MedUp</span>
+                            <span className="text-2xl font-semibold text-[#18191c]">Med<span className="text-primary-main">Up</span></span>
                         </Link>
                     </div>
                     <nav className="hidden lg:block">

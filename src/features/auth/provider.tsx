@@ -15,7 +15,7 @@ export default function AuthProvider({ children, user, token }: Props) {
         if (user && token) {
             login(token, user);
         }
-    }, [user, token]);
+    }, [user, token, login]);
 
     return children;
 }

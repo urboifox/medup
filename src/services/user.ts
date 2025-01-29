@@ -12,7 +12,7 @@ export async function getUser(): Promise<User | null> {
     try {
         const res = await fetcher<ApiResponse<User>>("/auth/profile", undefined);
         return res?.data as User;
-    } catch (error) {
+    } catch {
         return null;
     }
 }

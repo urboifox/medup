@@ -1,5 +1,4 @@
 import { Link } from "@/i18n/routing";
-import Button from "../ui/button";
 import NavSideMenu from "./nav-side-menu";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./language-switcher";

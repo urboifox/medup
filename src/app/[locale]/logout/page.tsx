@@ -18,7 +18,7 @@ export default function Logout() {
             });
         }
         logoutUser();
-    }, []);
+    }, [logout, router]);
 
     return null;
 }

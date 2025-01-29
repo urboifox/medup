@@ -7,7 +7,7 @@ export async function POST() {
 
     try {
         await fetcher("/auth/logout", { method: "POST" });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ message: "Error logging out on server" });
     } finally {
         cookieStore.delete("token");

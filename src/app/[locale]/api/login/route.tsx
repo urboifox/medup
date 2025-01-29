@@ -37,7 +37,7 @@ export async function POST(request: Request) {
         }
 
         return NextResponse.json(data, { status: res.status });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ message: t("errors.somethingWentWrong") }, { status: 500 });
     }
 }

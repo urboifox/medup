@@ -17,6 +17,7 @@
         "expertSkill": "Orthodontics"
     },
     "common": {
+        "loading": "Loading...",
         "experts": "Experts",
         "search": "Search",
         "getStarted": "Get Started",
@@ -36,6 +37,9 @@
         "traineeDescription": "I'm gaining hands-on experience and building practical skills in medicine.",
         "expertDescription": "I'm looking to teach, mentor, and share my expertise with others in the medical community."
     },
+    "errors": {
+        "somethingWentWrong": "Something went wrong"
+    },
     "nav": {
         "experts": "Experts",
         "library": "Library",
@@ -48,7 +52,8 @@
         "joinAs": "Join as",
         "login": "Login",
         "alreadyHaveAnAccount": "Already have an account?",
-        "register": "Register"
+        "register": "Register",
+        "logout": "Logout"
     },
     "home": {
         "hero": {

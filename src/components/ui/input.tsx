@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/utils/cn";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -5,6 +6,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     containerClassName?: string;
     placeholderIcon?: React.ReactNode;
+    error?: string | string[];
 }
 
 export default function Input({
@@ -12,6 +14,7 @@ export default function Input({
     className,
     placeholderIcon,
     containerClassName,
+    error,
     ...rest
 }: Props) {
     return (
@@ -27,11 +30,17 @@ export default function Input({
                     className={cn(
                         "focus:outline-none p-3 border border-[#66666659] rounded-xl",
                         placeholderIcon && "ps-10",
+                        error && "border-red-500",
                         className
                     )}
                     type={rest?.type ?? "text"}
                     {...rest}
                 />
+            </div>
+            <div className="text-sm text-red-500">
+                {typeof error === "string"
+                    ? error
+                    : error?.map((e, index) => <p key={index}>{e}</p>)}
             </div>
         </div>
     );

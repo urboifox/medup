@@ -17,6 +17,7 @@
         "expertSkill": "العلاج"
     },
     "common": {
+        "loading": "جاري التحميل...",
         "experts": "الخبراء",
         "search": "بحث",
         "getStarted": "ابدأ الان",
@@ -36,6 +37,9 @@
         "traineeDescription": "أريد أكتساب خبرة و بناء مهارات عملية في الطب.",
         "expertDescription": "أتطلع إلى التدريس ومشاركة خبرتي مع الآخرين في المجتمع الطبي."
     },
+    "errors": {
+        "somethingWentWrong": "حدث خطأ ما"
+    },
     "nav": {
         "experts": "الخبراء",
         "library": "المكتبة",
@@ -48,7 +52,8 @@
         "joinAs": "انضم كـ",
         "login": "تسجيل الدخول",
         "alreadyHaveAnAccount": "لديك حساب بالفعل؟",
-        "register": "التسجيل"
+        "register": "التسجيل",
+        "logout": "تسجيل الخروج"
     },
     "home": {
         "hero": {

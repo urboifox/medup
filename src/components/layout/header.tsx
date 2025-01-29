@@ -3,6 +3,7 @@ import Button from "../ui/button";
 import NavSideMenu from "./nav-side-menu";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./language-switcher";
+import UserHeaderInfo from "./user-header-info";
 
 type NavItem = {
     label: string;
@@ -49,12 +50,7 @@ export default function Header() {
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-4">
                         <LanguageSwitcher />
-                        <Link href={"/login"} className="text-primary-main font-semibold">
-                            {t("auth.login")}
-                        </Link>
-                        <Link href="/register">
-                            <Button>{t("common.getStarted")}</Button>
-                        </Link>
+                        <UserHeaderInfo />
                     </div>
                 </div>
             </div>

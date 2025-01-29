@@ -8,7 +8,7 @@ const PRIVATE_ROUTES = ["/experts"];
 export const intlMiddleware = createMiddleware(routing);
 
 export default async function middleware(req: NextRequest) {
-    const token = req.cookies.get("token")?.value;
+    const token = req.cookies.get("refreshToken")?.value;
     const url = req.nextUrl.clone();
     const pathname = "/" + url.pathname.split("/").slice(2).join("/");
 

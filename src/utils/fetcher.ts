@@ -1,27 +1,43 @@
 import { API_URL } from "@/constants";
-import { useAuthStore } from "@/features/auth/store";
+import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import { refreshToken } from "./refresh-token";
 
 export async function fetcher<T>(url: string, init?: RequestInit): Promise<T> {
-    let token;
+    const cookiesStore = await cookies();
+    const token = cookiesStore.get("token")?.value;
     const requestUrl = url.startsWith("http") ? url : `${API_URL}${url}`;
 
-    if (typeof window === "undefined") {
-        const cookiesStore = await cookies();
-        token = cookiesStore.get("token")?.value;
-    } else {
-        token = useAuthStore.getState().token;
+    const newInit = {
+        ...init,
+        headers: {
+            ...init?.headers,
+            "Content-Type": "application/json",
+            Authorization: token ? `Bearer ${token}` : ""
+        }
+    };
+
+    if (!token && cookiesStore.get("refreshToken")?.value) {
+        const newTokenData = await refreshToken();
+        if (newTokenData) {
+            newInit.headers.Authorization = `Bearer ${newTokenData.token}`;
+        } else {
+            redirect("/login");
+        }
     }
 
     try {
-        const res = await fetch(requestUrl, {
-            ...init,
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: token ? `Bearer ${token}` : "",
-                ...init?.headers
+        let res = await fetch(requestUrl, newInit);
+
+        if (res.status === 401) {
+            const newTokenData = await refreshToken();
+            if (newTokenData) {
+                newInit.headers.Authorization = `Bearer ${newTokenData.token}`;
+                res = await fetch(requestUrl, newInit);
+            } else {
+                redirect("/login");
             }
-        });
+        }
 
         const data = await res.json();
         return data;

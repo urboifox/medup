@@ -34,6 +34,13 @@ export async function POST(request: Request) {
                 sameSite: "lax",
                 secure: process.env.NODE_ENV === "production"
             });
+            cookieStore.set("refreshTokenExpiresAt", data?.data?.refresh_token_expires_at, {
+                path: "/",
+                expires: new Date(data?.data?.refresh_token_expires_at),
+                httpOnly: true,
+                sameSite: "lax",
+                secure: process.env.NODE_ENV === "production"
+            });
         }
 
         return NextResponse.json(data, { status: res.status });

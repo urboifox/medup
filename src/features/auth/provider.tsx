@@ -1,21 +1,20 @@
 "use client";
-import { User } from "@/types/types";
 import { useLayoutEffect } from "react";
 import { useAuthStore } from "./store";
 
-interface Props {
-    children: React.ReactNode;
-    user: User | null;
-    token: string | null;
-}
-export default function AuthProvider({ children, user, token }: Props) {
+export default function AuthProvider({ children }: { children: React.ReactNode }) {
     const login = useAuthStore((state) => state.login);
 
     useLayoutEffect(() => {
-        if (user && token) {
-            login(token, user);
+        async function getUser() {
+            const res = await fetch("/api/profile");
+            const data = await res.json();
+            if (data?.token && data?.user) {
+                login(data.token, data.user);
+            }
         }
-    }, [user, token, login]);
+        getUser();
+    }, []);
 
     return children;
 }

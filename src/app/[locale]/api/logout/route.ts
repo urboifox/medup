@@ -12,6 +12,7 @@ export async function POST() {
     } finally {
         cookieStore.delete("token");
         cookieStore.delete("refreshToken");
+        cookieStore.delete("refreshTokenExpiresAt");
     }
 
     return NextResponse.json({ message: "Logged out successfully" });

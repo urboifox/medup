@@ -23,7 +23,7 @@ export default function StarsRating({
                         </span>
                     );
                 })}
-            {showNumber && <span className="text-xs font-medium text-foreground-100">(4.5)</span>}
+            {showNumber && <span className="text-xs font-medium text-foreground-100">({value})</span>}
         </div>
     );
 }

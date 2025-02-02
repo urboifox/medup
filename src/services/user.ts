@@ -1,5 +1,4 @@
-import { ApiResponse } from "@/types/response";
-import { User } from "@/types/types";
+import { User } from "@/types/user";
 import { fetcher } from "@/utils/fetcher";
 import { cookies } from "next/headers";
 
@@ -9,10 +8,11 @@ export async function getUser(): Promise<User | null> {
         return null;
     }
 
-    try {
-        const res = await fetcher<ApiResponse<User>>("/auth/profile");
-        return res?.data as User;
-    } catch {
+    const { data, success } = await fetcher<User>("/auth/profile");
+
+    if (!success) {
         return null;
     }
+
+    return data.data as User;
 }

@@ -1,16 +1,27 @@
+"use client";
 import Image from "next/image";
 import Button from "../ui/button";
 import Input from "../ui/input";
 import icons from "@/lib/icons";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HeroSearch() {
     const t = useTranslations();
+    const router = useRouter();
+    const [search, setSearch] = useState("");
+
+    function handleSearch() {
+        router.push(`/experts?handle=${search}`);
+    }
 
     return (
         <article className="p-3 bg-white rounded-lg shadow-md flex lg:items-center gap-3 justify-between max-w-2xl flex-col lg:flex-row">
             <div className="flex lg:items-center gap-3 flex-col lg:flex-row w-full">
                 <Input
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
                     containerClassName="w-full"
                     className="border-transparent w-full"
                     placeholder={t("home.hero.searchPlaceholder")}
@@ -27,7 +38,7 @@ export default function HeroSearch() {
                 {/*     } */}
                 {/* /> */}
             </div>
-            <Button>{t("common.search")}</Button>
+            <Button onClick={handleSearch}>{t("common.search")}</Button>
         </article>
     );
 }

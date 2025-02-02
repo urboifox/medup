@@ -2,10 +2,19 @@ import ExpertCard from "@/components/cards/expert-card";
 import Button from "../ui/button";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
+import { getAllExperts } from "@/features/experts/services";
+import { isSuccess } from "@/utils/fetcher";
 
 export default async function ExpertsSection() {
     const t = await getTranslations();
-    const experts = Array(16).fill(null);
+
+    let res = await getAllExperts({
+        params: { only_top: "0" }
+    });
+    if (!isSuccess(res)) {
+        throw new Error("Error fetching experts");
+    }
+    const experts = res.data;
 
     return (
         <section className="container py-20 lg:py-40 flex flex-col gap-20">
@@ -14,8 +23,8 @@ export default async function ExpertsSection() {
                 <p className="text-dark-300 text-lg lg:text-xl">{t("home.experts.description")}</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
-                {experts.map((_, idx) => {
-                    return <ExpertCard key={idx} />;
+                {experts.data?.map((expert) => {
+                    return <ExpertCard key={expert.id} expert={expert} />;
                 })}
             </div>
             <Link href="/experts" className="w-max mx-auto">

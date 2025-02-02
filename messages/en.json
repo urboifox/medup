@@ -17,6 +17,8 @@
         "expertSkill": "Orthodontics"
     },
     "common": {
+        "retry": "Retry",
+        "goHome": "Go Home",
         "loading": "Loading...",
         "experts": "Experts",
         "search": "Search",

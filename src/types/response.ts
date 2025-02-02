@@ -13,3 +13,9 @@ export type ApiResponse<T> = {
     showToast?: boolean;
     meta?: ResponseMeta;
 };
+
+export type RequestParams = {
+    page?: number;
+    handle?: string;
+    per_page?: number;
+};

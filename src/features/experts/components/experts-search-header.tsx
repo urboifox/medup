@@ -17,8 +17,7 @@ export default function ExpertsSearchHeader() {
         if (!value) {
             removeQueryString("handle");
             return;
-        }
-        clearTimeout(timeoutRef.current);
+        } clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
             createQueryString("handle", value);
         }, 300);

@@ -12,13 +12,17 @@ export default function HeroSearch() {
     const router = useRouter();
     const [search, setSearch] = useState("");
 
-    function handleSearch() {
+    function handleSearch(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
         router.push(`/experts?handle=${search}`);
     }
 
     return (
         <article className="p-3 bg-white rounded-lg shadow-md flex lg:items-center gap-3 justify-between max-w-2xl flex-col lg:flex-row">
-            <div className="flex lg:items-center gap-3 flex-col lg:flex-row w-full">
+            <form
+                className="flex lg:items-center gap-3 flex-col lg:flex-row w-full"
+                onSubmit={handleSearch}
+            >
                 <Input
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
@@ -37,8 +41,8 @@ export default function HeroSearch() {
                 {/*         <Image width={24} height={24} src={icons.mapPin} alt="Map Pin" /> */}
                 {/*     } */}
                 {/* /> */}
-            </div>
-            <Button onClick={handleSearch}>{t("common.search")}</Button>
+            </form>
+            <Button type="submit">{t("common.search")}</Button>
         </article>
     );
 }

@@ -12,6 +12,7 @@ export async function POST() {
         cookieStore.delete("refreshTokenExpiresAt");
         return NextResponse.json({ message: "Logged out successfully" });
     } catch (error) {
+        console.error(error);
         return NextResponse.json({ message: "Error logging out on server" });
     }
 }

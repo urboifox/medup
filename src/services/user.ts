@@ -8,11 +8,7 @@ export async function getUser(): Promise<User | null> {
         return null;
     }
 
-    const { data, success } = await fetcher<User>("/auth/profile");
+    const res = await fetcher<User>("/auth/profile");
 
-    if (!success) {
-        return null;
-    }
-
-    return data;
+    return res.data as User;
 }

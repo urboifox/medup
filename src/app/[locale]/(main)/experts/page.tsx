@@ -12,7 +12,7 @@ export default async function ExpertsPage({
 }) {
     const { handle, page } = await searchParams;
 
-    let res = await getAllExperts({
+    const res = await getAllExperts({
         params: { only_top: "0", handle: (handle as string) || "", page: (page as string) || "" }
     });
     if (!isSuccess(res)) {

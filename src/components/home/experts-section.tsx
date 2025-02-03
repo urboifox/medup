@@ -8,7 +8,7 @@ import { isSuccess } from "@/utils/fetcher";
 export default async function ExpertsSection() {
     const t = await getTranslations();
 
-    let res = await getAllExperts({
+    const res = await getAllExperts({
         params: { only_top: "0" }
     });
     if (!isSuccess(res)) {

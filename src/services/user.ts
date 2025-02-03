@@ -14,5 +14,5 @@ export async function getUser(): Promise<User | null> {
         return null;
     }
 
-    return data.data as User;
+    return data;
 }

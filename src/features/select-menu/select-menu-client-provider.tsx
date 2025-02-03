@@ -29,7 +29,7 @@ export default function SelectMenuClientProvider({
         setSkills(skills);
         setColleges(colleges);
         setSpecialities(specialities);
-    }, []);
+    }, [setCountries, setCities, setSkills, setColleges, setSpecialities, countries, cities, skills, colleges, specialities]);
 
     return children;
 }

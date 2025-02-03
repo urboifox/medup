@@ -91,7 +91,10 @@
         "searchPlaceholder": "Search for a job title, skill, or a keyword...",
         "locationSearchPlaceholder": "City, state or zip code",
         "premiumExperts": "Premium Experts",
-        "allExperts": "All Experts"
+        "allExperts": "All Experts",
+        "college": "College",
+        "speciality": "Speciality",
+        "skill": "Skill"
     },
     "articles": {
         "title": "Latest Articles",

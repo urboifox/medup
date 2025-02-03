@@ -1,31 +1,6 @@
+import { BaseEntity } from "@/types";
 import { User } from "@/types/user";
-
-export type Skill = {
-    id: number;
-    name: string;
-};
-
-export type College = {
-    id: number;
-    name: string;
-};
-
-export type Speciality = {
-    id: number;
-    name: string;
-    college: College;
-};
-
-export type Country = {
-    id: number;
-    name: string;
-};
-
-export type City = {
-    id: number;
-    name: string;
-    country: Country;
-};
+import { City, Skill, Speciality } from "../select-menu/types";
 
 export type Expert = {
     id: number;

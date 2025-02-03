@@ -1,6 +1,7 @@
+import AuthProvider from "@/features/auth/provider";
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { Toaster } from "sonner";
-import AuthProvider from "./features/auth/provider";
+import SelectMenuProvider from "@/features/select-menu/select-menu-provider";
 
 export default function Providers({
     children,
@@ -12,8 +13,10 @@ export default function Providers({
     return (
         <NextIntlClientProvider messages={messages}>
             <AuthProvider>
-                <Toaster />
-                {children}
+                <SelectMenuProvider>
+                    <Toaster />
+                    {children}
+                </SelectMenuProvider>
             </AuthProvider>
         </NextIntlClientProvider>
     );

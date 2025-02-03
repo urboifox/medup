@@ -91,7 +91,10 @@
         "searchPlaceholder": "أبحث عن مسمى وظيفي أو مهارة أو كلمة مفتاحية...",
         "locationSearchPlaceholder": "مدينة، ولاية أو رمز بريدي",
         "premiumExperts": "الخبراء المميزة",
-        "allExperts": "جميع الخبراء"
+        "allExperts": "جميع الخبراء",
+        "college": "الكلية",
+        "speciality": "التخصص",
+        "skill": "المهارة"
     },
     "articles": {
         "title": "المقالات المنشورة حديثًا",

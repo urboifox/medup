@@ -2,17 +2,20 @@ import ExpertCard from "@/components/cards/expert-card";
 import Pagination from "@/components/ui/pagination";
 import ExpertsSearchHeader from "@/features/experts/components/experts-search-header";
 import { getAllExperts } from "@/features/experts/services";
-import { SearchParams } from "next/dist/server/request/search-params";
 
 export default async function ExpertsPage({
     searchParams
 }: {
-    searchParams: Promise<SearchParams>;
+    searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
     const { handle, page } = await searchParams;
 
     const { data: experts, meta } = await getAllExperts({
-        params: { only_top: "0", handle: (handle as string) || "", page: (page as string) || "" }
+        params: {
+            only_top: "0",
+            handle: handle ?? "",
+            page: page ?? ""
+        }
     });
 
     return (

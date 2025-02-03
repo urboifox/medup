@@ -88,7 +88,10 @@
         }
     },
     "experts": {
-        "searchPlaceholder": "Search for a job title, skill, or a keyword..."
+        "searchPlaceholder": "Search for a job title, skill, or a keyword...",
+        "locationSearchPlaceholder": "City, state or zip code",
+        "premiumExperts": "Premium Experts",
+        "allExperts": "All Experts"
     },
     "articles": {
         "title": "Latest Articles",

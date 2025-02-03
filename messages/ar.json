@@ -88,7 +88,10 @@
         }
     },
     "experts": {
-        "searchPlaceholder": "أبحث عن مسمى وظيفي أو مهارة أو كلمة مفتاحية..."
+        "searchPlaceholder": "أبحث عن مسمى وظيفي أو مهارة أو كلمة مفتاحية...",
+        "locationSearchPlaceholder": "مدينة، ولاية أو رمز بريدي",
+        "premiumExperts": "الخبراء المميزة",
+        "allExperts": "جميع الخبراء"
     },
     "articles": {
         "title": "المقالات المنشورة حديثًا",

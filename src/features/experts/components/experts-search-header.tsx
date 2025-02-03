@@ -1,9 +1,7 @@
 "use client";
-import Button from "@/components/ui/button";
+import Radio from "@/components/ui/radio";
 import useQueryString from "@/hooks/useQueryString";
-import icons from "@/lib/icons";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { LuMapPin } from "react-icons/lu";
@@ -22,7 +20,7 @@ export default function ExpertsSearchHeader() {
         clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
             createQueryString(name, value);
-        }, 300);
+        }, 200);
     }
 
     return (
@@ -35,7 +33,7 @@ export default function ExpertsSearchHeader() {
                     defaultValue={getQueryString("handle") as string}
                     onInput={handleQuery}
                     placeholder={t("experts.searchPlaceholder")}
-                    className="focus:outline-none w-full h-20"
+                    className="focus:outline-none w-full h-full"
                 />
             </div>
             <div className="flex items-center gap-2 w-full h-full">
@@ -45,16 +43,31 @@ export default function ExpertsSearchHeader() {
                 <input
                     defaultValue={getQueryString("handle") as string}
                     onInput={(e) => handleQuery(e, "location")}
-                    placeholder={t("experts.searchPlaceholder")}
-                    className="focus:outline-none w-full h-20"
+                    placeholder={t("experts.locationSearchPlaceholder")}
+                    className="focus:outline-none w-full h-full"
                 />
             </div>
-            <div className="flex justify-end gap-2 flex-1">
-                <Button variant="secondary">
-                    <Image src={icons.filters} alt="Filters" width={24} height={24} />
-                    {t("common.filters")}
-                </Button>
+            <div className="flex items-center gap-2">
+                <Radio
+                    name="is_premium"
+                    label={t("experts.premiumExperts")}
+                    defaultChecked
+                    value="1"
+                    onChange={(e) => handleQuery(e, "is_premium")}
+                />
+                <Radio
+                    name="is_premium"
+                    label={t("experts.allExperts")}
+                    value="0"
+                    onChange={(e) => handleQuery(e, "is_premium")}
+                />
             </div>
+            {/* <div className="flex justify-end gap-2 flex-1"> */}
+            {/*     <Button variant="secondary"> */}
+            {/*         <Image src={icons.filters} alt="Filters" width={24} height={24} /> */}
+            {/*         {t("common.filters")} */}
+            {/*     </Button> */}
+            {/* </div> */}
         </header>
     );
 }

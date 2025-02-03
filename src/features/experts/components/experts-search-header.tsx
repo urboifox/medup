@@ -2,14 +2,20 @@
 import Radio from "@/components/ui/radio";
 import useQueryString from "@/hooks/useQueryString";
 import { useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { LuMapPin } from "react-icons/lu";
 import ExpertsSearchFilters from "./experts-search-filters";
+import { AnimatePresence, motion } from "motion/react";
+import Button from "@/components/ui/button";
+import Image from "next/image";
+import icons from "@/lib/icons";
 
 export default function ExpertsSearchHeader() {
     const t = useTranslations();
     const { createQueryString, removeQueryString, getQueryString } = useQueryString();
+    const [filtersVisible, setFiltersVisible] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
 
     const timeoutRef = useRef<NodeJS.Timeout>();
     function handleQuery(event: React.FormEvent<HTMLInputElement>, name = "handle") {
@@ -49,7 +55,7 @@ export default function ExpertsSearchHeader() {
                         className="focus:outline-none w-full h-full py-5 lg:py-0"
                     />
                 </div>
-                <div className="flex items-center gap-2 max-lg:py-5 flex-col sm:flex-row">
+                <div className="flex items-start sm:items-center gap-2 max-lg:py-5 max-sm:flex-wrap sm:flex-row">
                     <Radio
                         name="is_premium"
                         label={t("experts.premiumExperts")}
@@ -64,8 +70,33 @@ export default function ExpertsSearchHeader() {
                         onChange={(e) => handleQuery(e, "is_premium")}
                     />
                 </div>
+                <div className="flex justify-end gap-2 flex-1 max-lg:pb-5 w-full">
+                    <Button
+                        variant="secondary"
+                        onClick={() => setFiltersVisible(!filtersVisible)}
+                        className="w-full"
+                    >
+                        <Image src={icons.filters} alt="Filters" width={24} height={24} />
+                        {t("common.filters")}
+                    </Button>
+                </div>
             </header>
-            <ExpertsSearchFilters />
+            <AnimatePresence initial={false}>
+                {filtersVisible && (
+                    <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        onAnimationStart={() => setIsAnimating(true)}
+                        onAnimationComplete={() => setIsAnimating(false)}
+                        className={isAnimating ? "overflow-hidden" : "overflow-visible"}
+                    >
+                        <ExpertsSearchFilters />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }

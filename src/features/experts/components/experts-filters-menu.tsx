@@ -44,7 +44,7 @@ export default function ExpertsFiltersMenu({
         : options;
 
     return (
-        <div className="py-4 px-2 bg-white rounded-md shadow-lg flex flex-col gap-4 max-h-80 overflow-y-auto">
+        <div className="py-4 px-2 bg-white rounded-md shadow-lg flex flex-col gap-4">
             <input
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
@@ -52,17 +52,19 @@ export default function ExpertsFiltersMenu({
                 placeholder={t("common.search")}
             />
             <hr />
-            {filteredOptions?.map((option, idx) => {
-                return (
-                    <div key={idx}>
-                        <Checkbox
-                            label={option.name}
-                            checked={selectedOptions.includes(option.id)}
-                            onChange={() => handleCheckboxChange(option.id)}
-                        />
-                    </div>
-                );
-            })}
+            <div className="flex flex-col gap-4 max-h-80 overflow-y-auto">
+                {filteredOptions?.map((option, idx) => {
+                    return (
+                        <div key={idx}>
+                            <Checkbox
+                                label={option.name}
+                                checked={selectedOptions.includes(option.id)}
+                                onChange={() => handleCheckboxChange(option.id)}
+                            />
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }

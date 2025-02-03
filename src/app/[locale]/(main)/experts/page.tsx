@@ -19,7 +19,7 @@ export default async function ExpertsPage({
     });
 
     return (
-        <div className="min-h-screen container py-10 flex flex-col gap-20">
+        <div className="min-h-screen container py-10 flex flex-col gap-10">
             <ExpertsSearchHeader />
             <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
                 {experts?.map((expert) => {

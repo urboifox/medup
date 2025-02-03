@@ -3,7 +3,6 @@ import Button from "../ui/button";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import { getAllExperts } from "@/features/experts/services";
-import { isSuccess } from "@/utils/fetcher";
 
 export default async function ExpertsSection() {
     const t = await getTranslations();
@@ -11,9 +10,6 @@ export default async function ExpertsSection() {
     const res = await getAllExperts({
         params: { only_top: "0" }
     });
-    if (!isSuccess(res)) {
-        throw new Error("Error fetching experts");
-    }
     const experts = res.data;
 
     return (
@@ -23,7 +19,7 @@ export default async function ExpertsSection() {
                 <p className="text-dark-300 text-lg lg:text-xl">{t("home.experts.description")}</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
-                {experts.data?.map((expert) => {
+                {experts?.map((expert) => {
                     return <ExpertCard key={expert.id} expert={expert} />;
                 })}
             </div>

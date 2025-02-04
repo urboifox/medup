@@ -20,7 +20,8 @@ export default async function ExpertsPageContent({
             skills,
             colleges,
             specialities
-        })
+        }),
+        cache: "no-store"
     });
 
     return (

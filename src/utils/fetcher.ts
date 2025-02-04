@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { refreshToken } from "./refresh-token";
 import { ApiResponse } from "@/types/response";
+import { getLocale } from "next-intl/server";
 
 export type FetcherOptions = RequestInit & {
     params?: Record<string, string>;
@@ -26,6 +27,7 @@ async function getAuthToken(): Promise<string | null> {
 }
 
 export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<ApiResponse<T>> {
+    const locale = await getLocale();
     let newUrl = url.startsWith("http") ? url : `${API_URL}${url}`;
 
     const requestInit: FetcherOptions = {
@@ -33,6 +35,7 @@ export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<Ap
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            Locale: locale,
             ...(init?.headers || {})
         }
     };

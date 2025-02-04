@@ -2,11 +2,10 @@
 
 import { useEffect } from "react";
 import { useSelectMenuStore } from "./store";
-import { City, College, Country, Skill, Speciality } from "./types";
+import { College, Country, Skill, Speciality } from "./types";
 
 interface Props extends React.PropsWithChildren {
     countries: Country[];
-    cities: City[];
     skills: Skill[];
     colleges: College[];
     specialities: Speciality[];
@@ -15,21 +14,27 @@ interface Props extends React.PropsWithChildren {
 export default function SelectMenuClientProvider({
     children,
     countries,
-    cities,
     skills,
     colleges,
     specialities
 }: Props) {
-    const { setCountries, setCities, setSkills, setColleges, setSpecialities } =
-        useSelectMenuStore();
+    const { setCountries, setSkills, setColleges, setSpecialities } = useSelectMenuStore();
 
     useEffect(() => {
         setCountries(countries);
-        setCities(cities);
         setSkills(skills);
         setColleges(colleges);
         setSpecialities(specialities);
-    }, [setCountries, setCities, setSkills, setColleges, setSpecialities, countries, cities, skills, colleges, specialities]);
+    }, [
+        setCountries,
+        setSkills,
+        setColleges,
+        setSpecialities,
+        countries,
+        skills,
+        colleges,
+        specialities
+    ]);
 
     return children;
 }

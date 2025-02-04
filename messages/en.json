@@ -18,6 +18,7 @@
     },
     "common": {
         "retry": "Retry",
+        "noResults": "No results found",
         "goHome": "Go Home",
         "loading": "Loading...",
         "experts": "Experts",

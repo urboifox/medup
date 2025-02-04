@@ -56,6 +56,7 @@
         "login": "تسجيل الدخول",
         "alreadyHaveAnAccount": "لديك حساب بالفعل؟",
         "dontHaveAnAccount": "ليس لديك حساب؟",
+        "forgotPassword": "نسيت رمز مرورك؟",
         "register": "التسجيل",
         "logout": "تسجيل الخروج",
         "loginToYourAccount": "تسجيل الدخول إلى حسابك"

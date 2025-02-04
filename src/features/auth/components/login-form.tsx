@@ -64,13 +64,18 @@ export default function LoginForm() {
                 error={errors?.email}
                 defaultValue="expert@admin.com"
             />
-            <Input
-                label="Password"
-                name="password"
-                type="password"
-                error={errors?.password}
-                defaultValue="expert"
-            />
+            <div className="flex flex-col gap-1 items-end w-full">
+                <Input
+                    label="Password"
+                    name="password"
+                    type="password"
+                    error={errors?.password}
+                    defaultValue="expert"
+                />
+                <Link href="/forgot-password" className="text-sm text-dark-300 hover:text-black transition-colors duration-200">
+                    {t("auth.forgotPassword")}
+                </Link>
+            </div>
             <Button type="submit" disabled={loading} className="mt-4">
                 {loading ? t("common.loading") : t("auth.login")}
             </Button>

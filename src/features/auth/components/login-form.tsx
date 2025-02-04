@@ -72,7 +72,10 @@ export default function LoginForm() {
                     error={errors?.password}
                     defaultValue="expert"
                 />
-                <Link href="/forgot-password" className="text-sm text-dark-300 hover:text-black transition-colors duration-200">
+                <Link
+                    href="/forgot-password"
+                    className="text-sm text-dark-300 hover:text-black transition-colors duration-200"
+                >
                     {t("auth.forgotPassword")}
                 </Link>
             </div>

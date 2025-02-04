@@ -5,13 +5,15 @@ import { cookies } from "next/headers";
 import { refreshToken } from "./refresh-token";
 import { ApiResponse } from "@/types/response";
 import { getLocale } from "next-intl/server";
+// import { getLocale } from "next-intl/server";
 
 export type FetcherOptions = RequestInit & {
     params?: Record<string, string>;
     skipAuth?: boolean;
+    skipLocale?: boolean;
 };
 
-async function getAuthToken(): Promise<string | null> {
+export async function getAuthToken(): Promise<string | null> {
     const cookiesStore = await cookies();
     let token = cookiesStore.get("token")?.value;
 
@@ -27,8 +29,13 @@ async function getAuthToken(): Promise<string | null> {
 }
 
 export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<ApiResponse<T>> {
-    const locale = await getLocale();
     let newUrl = url.startsWith("http") ? url : `${API_URL}${url}`;
+    let locale = "en";
+
+    if (!init?.skipLocale) {
+        const intlLocale = await getLocale();
+        locale = intlLocale;
+    }
 
     const requestInit: FetcherOptions = {
         ...init,

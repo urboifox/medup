@@ -6,6 +6,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
 }
 
 export async function generateStaticParams() {
-    const { data: experts } = await getAllExperts();
-    return experts?.map((expert) => ({ id: expert.id })) || [];
+    const { data: experts } = await getAllExperts({ skipAuth: true, skipLocale: true });
+    const staticParams = experts?.map((expert) => ({ id: expert.id.toString() }));
+    return staticParams ?? [];
 }

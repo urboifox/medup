@@ -8,7 +8,7 @@ export default function ExpertsFiltersMenu({
     options,
     queryName
 }: {
-    options: BaseEntity[];
+    options: (BaseEntity & { experts_count: number })[];
     queryName: string;
 }) {
     const t = useTranslations();
@@ -55,13 +55,18 @@ export default function ExpertsFiltersMenu({
             <div className="flex flex-col gap-4 max-h-80 overflow-y-auto">
                 {filteredOptions?.map((option, idx) => {
                     return (
-                        <div key={idx}>
+                        <label key={idx} className="flex items-center cursor-pointer">
                             <Checkbox
-                                label={option.name}
                                 checked={selectedOptions.includes(option.id)}
                                 onChange={() => handleCheckboxChange(option.id)}
                             />
-                        </div>
+                            <span>
+                                {option?.name}{" "}
+                                <span className="text-sm text-gray-500">
+                                    ({option.experts_count})
+                                </span>
+                            </span>
+                        </label>
                     );
                 })}
             </div>

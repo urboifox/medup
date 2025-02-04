@@ -1,21 +1,23 @@
 "use client";
 import DropdownButton from "@/components/ui/dropdown-button";
 import { useTranslations } from "next-intl";
-import { FaChevronDown } from "react-icons/fa6";
+import { FaChevronDown, FaX } from "react-icons/fa6";
 import ExpertsFiltersMenu from "./experts-filters-menu";
 import { useSelectMenuStore } from "@/features/select-menu/store";
 import { useSearchParams } from "next/navigation";
 import { BaseEntity } from "@/types";
+import useQueryString from "@/hooks/useQueryString";
 
 interface FilterConfig {
     queryName: string;
-    options: BaseEntity[];
+    options: (BaseEntity & { experts_count: number })[];
     selected: number[] | null;
     defaultText: string;
 }
 
 export default function ExpertsSearchFilters() {
     const t = useTranslations();
+    const { removeQueryString } = useQueryString();
     const colleges = useSelectMenuStore((state) => state.colleges);
     const skills = useSelectMenuStore((state) => state.skills);
     const specialities = useSelectMenuStore((state) => state.specialities);
@@ -71,7 +73,21 @@ export default function ExpertsSearchFilters() {
                 activeClassName="border-black/50 text-black"
             >
                 <span className="line-clamp-1 text-start">{displayText}</span>
-                <FaChevronDown size={16} strokeWidth={0.2} />
+                <div className="flex items-center gap-2">
+                    <FaChevronDown size={16} strokeWidth={0.2} />
+                    {selected && (
+                        <div
+                            role="button"
+                            className="text-error-main"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                removeQueryString(queryName);
+                            }}
+                        >
+                            <FaX />
+                        </div>
+                    )}
+                </div>
             </DropdownButton>
         );
     };

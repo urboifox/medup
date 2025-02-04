@@ -55,8 +55,10 @@
         "joinAs": "انضم كـ",
         "login": "تسجيل الدخول",
         "alreadyHaveAnAccount": "لديك حساب بالفعل؟",
+        "dontHaveAnAccount": "ليس لديك حساب؟",
         "register": "التسجيل",
-        "logout": "تسجيل الخروج"
+        "logout": "تسجيل الخروج",
+        "loginToYourAccount": "تسجيل الدخول إلى حسابك"
     },
     "home": {
         "hero": {

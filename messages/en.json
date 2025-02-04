@@ -55,8 +55,10 @@
         "joinAs": "Join as",
         "login": "Login",
         "alreadyHaveAnAccount": "Already have an account?",
+        "dontHaveAnAccount": "Don't have an account?",
         "register": "Register",
-        "logout": "Logout"
+        "logout": "Logout",
+        "loginToYourAccount": "Login to your account"
     },
     "home": {
         "hero": {

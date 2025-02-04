@@ -12,7 +12,7 @@ export default function ExpertCard({ expert }: { expert: Expert }) {
 
     return (
         <article className="flex flex-col gap-3">
-            <div className="relative aspect-square rounded-lg overflow-hidden">
+            <div className="relative aspect-square rounded-3xl overflow-hidden">
                 <Image
                     src={expert.user?.avatar}
                     alt={expert.user?.name}

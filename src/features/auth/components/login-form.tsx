@@ -8,6 +8,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useAuthStore } from "../store";
 import { useRouter } from "next/navigation";
+import { Link } from "@/i18n/routing";
 
 export default function LoginForm() {
     const t = useTranslations();
@@ -56,7 +57,7 @@ export default function LoginForm() {
     }
 
     return (
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form className="flex w-full flex-col gap-4" onSubmit={handleSubmit}>
             <Input
                 label="Email"
                 name="email"
@@ -70,9 +71,15 @@ export default function LoginForm() {
                 error={errors?.password}
                 defaultValue="expert"
             />
-            <Button type="submit" disabled={loading}>
+            <Button type="submit" disabled={loading} className="mt-4">
                 {loading ? t("common.loading") : t("auth.login")}
             </Button>
+            <p className="text-center">
+                {t("auth.dontHaveAnAccount")}{" "}
+                <Link href="/register" className="text-primary-main">
+                    {t("auth.register")}
+                </Link>
+            </p>
         </form>
     );
 }

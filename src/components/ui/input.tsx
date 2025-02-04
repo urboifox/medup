@@ -28,7 +28,7 @@ export default function Input({
                 )}
                 <input
                     className={cn(
-                        "focus:outline-none p-3 border border-[#66666659] rounded-xl",
+                        "focus:outline-none p-3 border border-[#66666659] rounded-xl w-full",
                         placeholderIcon && "ps-10",
                         error && "border-red-500",
                         className

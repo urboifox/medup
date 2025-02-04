@@ -8,13 +8,13 @@ export default async function ExpertsPage({
 }: {
     searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-    const { handle, page, is_premium } = await searchParams;
+    const { handle, page, only_premium } = await searchParams;
 
     const { data: experts, meta } = await getAllExperts({
         params: {
             handle: handle ?? "",
             page: page ?? "",
-            is_premium: is_premium === "0" ? "" : "1"
+            only_premium: only_premium === "0" ? "" : "1"
         }
     });
 

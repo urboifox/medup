@@ -49,25 +49,25 @@ export default function ExpertsSearchHeader() {
                         <LuMapPin size={26} />
                     </span>
                     <input
-                        defaultValue={getQueryString("location") as string}
-                        onInput={(e) => handleQuery(e, "location")}
+                        defaultValue={getQueryString("city") as string}
+                        onInput={(e) => handleQuery(e, "city")}
                         placeholder={t("experts.locationSearchPlaceholder")}
                         className="focus:outline-none w-full h-full py-5 lg:py-0"
                     />
                 </div>
                 <div className="flex items-start sm:items-center gap-2 max-lg:py-5 max-sm:flex-wrap sm:flex-row">
                     <Radio
-                        name="is_premium"
+                        name="only_premium"
                         label={t("experts.premiumExperts")}
                         defaultChecked
                         value="1"
-                        onChange={(e) => handleQuery(e, "is_premium")}
+                        onChange={(e) => handleQuery(e, "only_premium")}
                     />
                     <Radio
-                        name="is_premium"
+                        name="only_premium"
                         label={t("experts.allExperts")}
                         value="0"
-                        onChange={(e) => handleQuery(e, "is_premium")}
+                        onChange={(e) => handleQuery(e, "only_premium")}
                     />
                 </div>
                 <div className="flex justify-end gap-2 flex-1 max-lg:pb-5 w-full">

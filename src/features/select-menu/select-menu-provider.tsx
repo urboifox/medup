@@ -1,7 +1,7 @@
 import { getColleges, getCountries, getSkills, getSpecialities } from "@/services/select-menu";
 import SelectMenuClientProvider from "./select-menu-client-provider";
 
-export default async function SelectMenuProvider({ children }: { children: React.ReactNode }) {
+export default async function SelectMenuProvider() {
     const [countries, skills, colleges, specialities] = await Promise.all([
         getCountries(),
         getSkills(),
@@ -15,8 +15,6 @@ export default async function SelectMenuProvider({ children }: { children: React
             skills={skills?.data || []}
             colleges={colleges?.data || []}
             specialities={specialities?.data || []}
-        >
-            {children}
-        </SelectMenuClientProvider>
+        />
     );
 }

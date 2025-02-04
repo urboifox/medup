@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSelectMenuStore } from "./store";
 import { College, Country, Skill, Speciality } from "./types";
 
-interface Props extends React.PropsWithChildren {
+interface Props {
     countries: Country[];
     skills: Skill[];
     colleges: College[];
@@ -12,7 +12,6 @@ interface Props extends React.PropsWithChildren {
 }
 
 export default function SelectMenuClientProvider({
-    children,
     countries,
     skills,
     colleges,
@@ -36,5 +35,5 @@ export default function SelectMenuClientProvider({
         specialities
     ]);
 
-    return children;
+    return null;
 }

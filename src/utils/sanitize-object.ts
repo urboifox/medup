@@ -1,5 +1,5 @@
-export function sanitizeObject(obj: Record<string, any>) {
-    const newObj: Record<string, any> = {};
+export function sanitizeObject(obj: Record<string, string | undefined | null>) {
+    const newObj: Record<string, string> = {};
 
     for (const key in obj) {
         if (obj[key] === undefined || obj[key] === null) {

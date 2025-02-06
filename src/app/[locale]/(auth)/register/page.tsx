@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 
-type UserType = "student" | "trainee" | "expert";
+type UserType = "student" | "trainee" | "expert" | "researcher";
 
 export default function RegisterPage() {
     const t = useTranslations();
@@ -17,9 +17,7 @@ export default function RegisterPage() {
         <div className="py-40">
             <div className="container flex flex-col gap-14">
                 <div className="flex flex-col gap-4 items-center text-center">
-                    <Link href="/">
-                        <h1 className="text-4xl font-semibold">{t("auth.preRegisterTitle")}</h1>
-                    </Link>
+                    <h1 className="text-4xl font-semibold">{t("auth.preRegisterTitle")}</h1>
                     <p className="text-dark-300 max-w-2xl">{t("auth.preRegisterDescription")}</p>
                 </div>
 
@@ -65,6 +63,20 @@ export default function RegisterPage() {
                         }
                         title={t("common.expert")}
                         description={t("common.expertDescription")}
+                    />
+                    <UserTypeCard
+                        isSelected={userType === "researcher"}
+                        onClick={() => setUserType("researcher")}
+                        icon={
+                            <Image
+                                src={icons.researcher}
+                                alt={t("common.researcher")}
+                                width={40}
+                                height={40}
+                            />
+                        }
+                        title={t("common.researcher")}
+                        description={t("common.researcherDescription")}
                     />
                 </div>
 

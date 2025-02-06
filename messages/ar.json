@@ -36,9 +36,11 @@
         "student": "طالب",
         "trainee": "متدرب",
         "expert": "خبراء",
+        "researcher": "باحث",
         "studentDescription": "أنا هنا للتعلم وتنمية معرفتي في المجال الطبي.",
         "traineeDescription": "أريد أكتساب خبرة و بناء مهارات عملية في الطب.",
-        "expertDescription": "أتطلع إلى التدريس ومشاركة خبرتي مع الآخرين في المجتمع الطبي."
+        "expertDescription": "أتطلع إلى التدريس ومشاركة خبرتي مع الآخرين في المجتمع الطبي.",
+        "researcherDescription": "أنا متخصص أبحث عن توسيع معرفتي في المجال الطبي."
     },
     "errors": {
         "somethingWentWrong": "حدث خطأ ما"

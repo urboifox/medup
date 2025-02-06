@@ -84,7 +84,7 @@ export default function LoginForm() {
             </Button>
             <p className="text-center">
                 {t("auth.dontHaveAnAccount")}{" "}
-                <Link href="/register" className="text-primary-main">
+                <Link href="/register" className="text-primary-main underline font-semibold">
                     {t("auth.register")}
                 </Link>
             </p>

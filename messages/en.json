@@ -36,9 +36,11 @@
         "student": "Student",
         "trainee": "Trainee",
         "expert": "Expert",
+        "researcher": "Researcher",
         "studentDescription": "I'm here to learn and grow my knowledge, and experience in the medical field.",
         "traineeDescription": "I'm gaining hands-on experience and building practical skills in medicine.",
-        "expertDescription": "I'm looking to teach, mentor, and share my expertise with others in the medical community."
+        "expertDescription": "I'm looking to teach, mentor, and share my expertise with others in the medical community.",
+        "researcherDescription": "I'm an experienced professional looking to expand my knowledge in the medical field."
     },
     "errors": {
         "somethingWentWrong": "Something went wrong"

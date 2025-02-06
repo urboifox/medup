@@ -8,7 +8,8 @@ const icons = {
     goto: "/icons/goto.svg",
     expert: "/icons/expert.svg",
     student: "/icons/student.svg",
-    trainee: "/icons/trainee.svg"
+    trainee: "/icons/trainee.svg",
+    researcher: "/icons/researcher.svg"
 };
 
 export default icons;

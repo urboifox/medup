@@ -1,27 +1,26 @@
 "use client";
 import { cn } from "@/utils/cn";
-import { useState } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { FaChevronDown } from "react-icons/fa6";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.InputHTMLAttributes<HTMLSelectElement> {
     label?: string;
     className?: string;
     containerClassName?: string;
     placeholderIcon?: React.ReactNode;
     error?: string | string[];
+    children: React.ReactNode;
 }
 
-export default function Input({
+export default function Select({
     label,
     className,
     placeholderIcon,
     containerClassName,
     error,
     type,
+    children,
     ...rest
 }: Props) {
-    const [localType, setLocalType] = useState<typeof type>(type ?? "text");
-
     return (
         <label className={cn("w-full flex flex-col gap-2", containerClassName)}>
             {label && <span className="text-dark-300">{label}</span>}
@@ -31,26 +30,21 @@ export default function Input({
                         {placeholderIcon}
                     </div>
                 )}
-                <input
+                <select
                     className={cn(
-                        "focus:outline-none p-3 border border-[#66666659] rounded-xl w-full focus:border-primary-main transition-colors duration-200",
+                        "focus:outline-none bg-transparent p-3 border border-[#66666659] rounded-xl w-full [&:not(:disabled)]:active:border-primary-main appearance-none transition-colors duration-200",
                         placeholderIcon && "ps-10",
                         error && "border-red-500",
                         rest?.disabled && "cursor-not-allowed",
                         className
                     )}
-                    type={localType}
                     {...rest}
-                />
-                {type === "password" && (
-                    <button
-                        type="button"
-                        className="absolute top-1/2 right-3 -translate-y-1/2 text-dark-300"
-                        onClick={() => setLocalType(localType === "password" ? "text" : "password")}
-                    >
-                        {localType === "text" ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
-                    </button>
-                )}
+                >
+                    {children}
+                </select>
+                <div className="absolute top-1/2 right-3 -translate-y-1/2 text-dark-300">
+                    <FaChevronDown />
+                </div>
             </div>
             <div className="text-sm text-red-500">
                 {typeof error === "string"

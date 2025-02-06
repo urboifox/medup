@@ -40,10 +40,35 @@
         "studentDescription": "I'm here to learn and grow my knowledge, and experience in the medical field.",
         "traineeDescription": "I'm gaining hands-on experience and building practical skills in medicine.",
         "expertDescription": "I'm looking to teach, mentor, and share my expertise with others in the medical community.",
-        "researcherDescription": "I'm an experienced professional looking to expand my knowledge in the medical field."
+        "researcherDescription": "I'm an experienced professional looking to expand my knowledge in the medical field.",
+        "bachelor": "Bachelor",
+        "master": "Master",
+        "phd": "PhD"
     },
     "errors": {
-        "somethingWentWrong": "Something went wrong"
+        "somethingWentWrong": "Something went wrong",
+        "noUserLoggedIn": "No user logged in"
+    },
+    "labels": {
+        "firstName": "First Name",
+        "middleName": "Middle Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "cv": "CV",
+        "phone": "Phone",
+        "degree": "Degree",
+        "speciality": "Speciality",
+        "country": "Country",
+        "city": "City"
+    },
+    "placeholders": {
+        "email": "example@email.com",
+        "password": "********",
+        "phone": "+201234567890",
+        "firstName": "John",
+        "middleName": "Doe"
     },
     "nav": {
         "experts": "Experts",
@@ -61,7 +86,8 @@
         "forgotPassword": "Forgot your password?",
         "register": "Register",
         "logout": "Logout",
-        "loginToYourAccount": "Login to your account"
+        "loginToYourAccount": "Login to your account",
+        "pleaseSelectACountry": "Please select a country"
     },
     "home": {
         "hero": {

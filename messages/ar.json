@@ -40,10 +40,35 @@
         "studentDescription": "أنا هنا للتعلم وتنمية معرفتي في المجال الطبي.",
         "traineeDescription": "أريد أكتساب خبرة و بناء مهارات عملية في الطب.",
         "expertDescription": "أتطلع إلى التدريس ومشاركة خبرتي مع الآخرين في المجتمع الطبي.",
-        "researcherDescription": "أنا متخصص أبحث عن توسيع معرفتي في المجال الطبي."
+        "researcherDescription": "أنا متخصص أبحث عن توسيع معرفتي في المجال الطبي.",
+        "bachelor": "Bachelor",
+        "master": "Master",
+        "phd": "PhD"
     },
     "errors": {
-        "somethingWentWrong": "حدث خطأ ما"
+        "somethingWentWrong": "حدث خطأ ما",
+        "noUserLoggedIn": "لا يوجد مستخدم سجل الدخول"
+    },
+    "labels": {
+        "firstName": "الاسم الأول",
+        "middleName": "الاسم الوسطى",
+        "lastName": "الاسم الأخير",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "confirmPassword": "تأكيد كلمة المرور",
+        "cv": "الملف الشخصي",
+        "phone": "الهاتف",
+        "degree": "الشهادة",
+        "speciality": "التخصص",
+        "country": "الدولة",
+        "city": "المدينة"
+    },
+    "placeholders": {
+        "email": "example@email.com",
+        "password": "********",
+        "phone": "+201234567890",
+        "firstName": "John",
+        "middleName": "Doe"
     },
     "nav": {
         "experts": "الخبراء",
@@ -61,7 +86,8 @@
         "forgotPassword": "نسيت رمز مرورك؟",
         "register": "التسجيل",
         "logout": "تسجيل الخروج",
-        "loginToYourAccount": "تسجيل الدخول إلى حسابك"
+        "loginToYourAccount": "تسجيل الدخول إلى حسابك",
+        "pleaseSelectACountry": "الرجاء تحديد دولة"
     },
     "home": {
         "hero": {

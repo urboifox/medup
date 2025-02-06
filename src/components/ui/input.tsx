@@ -45,7 +45,7 @@ export default function Input({
                 {type === "password" && (
                     <button
                         type="button"
-                        className="absolute top-1/2 right-3 -translate-y-1/2 text-dark-300"
+                        className="absolute top-1/2 end-3 -translate-y-1/2 text-dark-300"
                         onClick={() => setLocalType(localType === "password" ? "text" : "password")}
                     >
                         {localType === "text" ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}

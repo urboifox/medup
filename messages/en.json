@@ -61,14 +61,21 @@
         "degree": "Degree",
         "speciality": "Speciality",
         "country": "Country",
-        "city": "City"
+        "city": "City",
+        "image": "Image",
+        "skills": "Skills"
     },
     "placeholders": {
         "email": "example@email.com",
         "password": "********",
         "phone": "+201234567890",
         "firstName": "John",
-        "middleName": "Doe"
+        "middleName": "Doe",
+        "selectFile": "Please select a file",
+        "selectOneOrMoreFiles": "Please select one or more files",
+        "filesSelected": "file(s) selected",
+        "skills": "Select your skills",
+        "selectOneOrMoreOptions": "Select one or more options"
     },
     "nav": {
         "experts": "Experts",

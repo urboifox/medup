@@ -35,7 +35,7 @@
         "premium": "مميز",
         "student": "طالب",
         "trainee": "متدرب",
-        "expert": "خبراء",
+        "expert": "خبير",
         "researcher": "باحث",
         "studentDescription": "أنا هنا للتعلم وتنمية معرفتي في المجال الطبي.",
         "traineeDescription": "أريد أكتساب خبرة و بناء مهارات عملية في الطب.",
@@ -61,14 +61,21 @@
         "degree": "الشهادة",
         "speciality": "التخصص",
         "country": "الدولة",
-        "city": "المدينة"
+        "city": "المدينة",
+        "image": "الصورة الشخصية",
+        "skills": "المهارات"
     },
     "placeholders": {
         "email": "example@email.com",
         "password": "********",
         "phone": "+201234567890",
         "firstName": "John",
-        "middleName": "Doe"
+        "middleName": "Doe",
+        "selectFile": "يرجى تحديد ملف",
+        "selectOneOrMoreFiles": "يرجى تحديد ملف أو أكثر",
+        "filesSelected": "ملف(ات) مختارة",
+        "skills": "اختر مهاراتك",
+        "selectOneOrMoreOptions": "اختر واحد أو أكثر من الخيارات"
     },
     "nav": {
         "experts": "الخبراء",

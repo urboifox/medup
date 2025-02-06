@@ -2,7 +2,7 @@ import { API_URL } from "@/constants";
 import { ApiResponse } from "@/types/response";
 import { useAuthStore } from "@/features/auth/store";
 
-export type FetcherOptions = RequestInit & {
+export type FetcherClientOptions = RequestInit & {
     params?: Record<string, string>;
     skipAuth?: boolean;
     skipLocale?: boolean;
@@ -10,10 +10,10 @@ export type FetcherOptions = RequestInit & {
 
 export async function fetcherClient<T>(
     url: string,
-    init?: FetcherOptions
+    init?: FetcherClientOptions
 ): Promise<ApiResponse<T>> {
     let newUrl = url.startsWith("http") ? url : `${API_URL}${url}`;
-    let locale = "en";
+    const locale = "en";
 
     if (!init?.skipLocale) {
         // TODO: Get locale from next-intl
@@ -21,7 +21,7 @@ export async function fetcherClient<T>(
         // locale = intlLocale;
     }
 
-    const requestInit: FetcherOptions = {
+    const requestInit: FetcherClientOptions = {
         ...init,
         headers: {
             "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export async function fetcherClient<T>(
         newUrl = `${newUrl}?${params.toString()}`;
     }
 
-    let res = await fetch(newUrl, requestInit);
+    const res = await fetch(newUrl, requestInit);
 
     if (res.status === 401 && !requestInit.skipAuth) {
         // TODO: Refresh token and try again

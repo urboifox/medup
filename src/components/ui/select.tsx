@@ -17,7 +17,6 @@ export default function Select({
     placeholderIcon,
     containerClassName,
     error,
-    type,
     children,
     ...rest
 }: Props) {
@@ -42,7 +41,7 @@ export default function Select({
                 >
                     {children}
                 </select>
-                <div className="absolute top-1/2 right-3 -translate-y-1/2 text-dark-300">
+                <div className="absolute top-1/2 end-3 -translate-y-1/2 text-dark-300">
                     <FaChevronDown />
                 </div>
             </div>

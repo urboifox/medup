@@ -14,7 +14,7 @@ import { expertRegisterAction } from "../actions";
 import FileInput from "@/components/ui/file-input";
 import MultiSelect from "@/components/ui/multi-select";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 
 export default function ExpertRegisterForm() {
     const t = useTranslations();
@@ -223,8 +223,14 @@ export default function ExpertRegisterForm() {
             />
 
             <Button type="submit" disabled={pending}>
-                {t("auth.register")} {t("common.as")}{" "}
-                {t(pathname.includes("student") ? "common.researcher" : "common.expert")}
+                {pending ? (
+                    t("common.loading")
+                ) : (
+                    <>
+                        {t("auth.register")} {t("common.as")}{" "}
+                        {t(pathname.includes("student") ? "common.researcher" : "common.expert")}
+                    </>
+                )}
             </Button>
         </form>
     );

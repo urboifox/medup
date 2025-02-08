@@ -9,7 +9,8 @@ const icons = {
     expert: "/icons/expert.svg",
     student: "/icons/student.svg",
     trainee: "/icons/trainee.svg",
-    researcher: "/icons/researcher.svg"
+    researcher: "/icons/researcher.svg",
+    done: "/icons/done.svg"
 };
 
 export default icons;

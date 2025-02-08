@@ -12,11 +12,13 @@ import { RxAvatar } from "react-icons/rx";
 import { studentRegisterAction } from "../actions";
 import FileInput from "@/components/ui/file-input";
 import { toast } from "sonner";
+import { useRouter } from "@/i18n/routing";
 
 export default function StudentRegisterForm() {
     const t = useTranslations();
     const pathname = usePathname();
     const locale = useLocale();
+    const router = useRouter();
 
     const [state, action, pending] = useActionState(studentRegisterAction, {
         success: false,
@@ -41,6 +43,9 @@ export default function StudentRegisterForm() {
     }, [pathname, setCities]);
 
     useEffect(() => {
+        if (state.success) {
+            router.push("/register/verify?handle=" + state.formData?.get("email"));
+        }
         if (state.message) {
             toast.error(state.message);
         }
@@ -170,8 +175,14 @@ export default function StudentRegisterForm() {
             </div>
 
             <Button type="submit" disabled={pending}>
-                {t("auth.register")} {t("common.as")}{" "}
-                {t(pathname.includes("student") ? "common.student" : "common.trainee")}
+                {pending ? (
+                    t("common.loading")
+                ) : (
+                    <>
+                        {t("auth.register")} {t("common.as")}{" "}
+                        {t(pathname.includes("student") ? "common.researcher" : "common.expert")}
+                    </>
+                )}
             </Button>
         </form>
     );

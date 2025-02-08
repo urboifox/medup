@@ -36,6 +36,8 @@
         "student": "Student",
         "trainee": "Trainee",
         "expert": "Expert",
+        "submit": "Submit",
+        "now": "now",
         "researcher": "Researcher",
         "studentDescription": "I'm here to learn and grow my knowledge, and experience in the medical field.",
         "traineeDescription": "I'm gaining hands-on experience and building practical skills in medicine.",
@@ -64,7 +66,8 @@
         "country": "Country",
         "city": "City",
         "image": "Image",
-        "skills": "Skills"
+        "skills": "Skills",
+        "code": "Code"
     },
     "placeholders": {
         "email": "example@email.com",
@@ -76,7 +79,8 @@
         "selectOneOrMoreFiles": "Please select one or more files",
         "filesSelected": "file(s) selected",
         "skills": "Select your skills",
-        "selectOneOrMoreOptions": "Select one or more options"
+        "selectOneOrMoreOptions": "Select one or more options",
+        "code": "Enter the code sent to your email"
     },
     "nav": {
         "experts": "Experts",
@@ -95,7 +99,12 @@
         "register": "Register",
         "logout": "Logout",
         "loginToYourAccount": "Login to your account",
-        "pleaseSelectACountry": "Please select a country"
+        "pleaseSelectACountry": "Please select a country",
+        "verifyYourAccount": "Verify your account",
+        "accountVerified": "Account verified successfully",
+        "accountVerifiedDescription": "Your account has been verified successfully. You can now log in to your account.",
+        "didntRecieveCode": "Didn't receive the code?",
+        "resend": "Resend"
     },
     "home": {
         "hero": {

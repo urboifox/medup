@@ -32,10 +32,12 @@
         "next": "التالي",
         "previous": "السابق",
         "tags": "الشعارات",
+        "submit": "إرسال",
         "premium": "مميز",
         "student": "طالب",
         "trainee": "متدرب",
         "expert": "خبير",
+        "now": "الآن",
         "researcher": "باحث",
         "studentDescription": "أنا هنا للتعلم وتنمية معرفتي في المجال الطبي.",
         "traineeDescription": "أريد أكتساب خبرة و بناء مهارات عملية في الطب.",
@@ -64,7 +66,8 @@
         "country": "الدولة",
         "city": "المدينة",
         "image": "الصورة الشخصية",
-        "skills": "المهارات"
+        "skills": "المهارات",
+        "code": "الرمز"
     },
     "placeholders": {
         "email": "example@email.com",
@@ -76,7 +79,8 @@
         "selectOneOrMoreFiles": "يرجى تحديد ملف أو أكثر",
         "filesSelected": "ملف(ات) مختارة",
         "skills": "اختر مهاراتك",
-        "selectOneOrMoreOptions": "اختر واحد أو أكثر من الخيارات"
+        "selectOneOrMoreOptions": "اختر واحد أو أكثر من الخيارات",
+        "code": "أدخل الرمز المرسل إلى بريدك الإلكتروني"
     },
     "nav": {
         "experts": "الخبراء",
@@ -95,7 +99,12 @@
         "register": "التسجيل",
         "logout": "تسجيل الخروج",
         "loginToYourAccount": "تسجيل الدخول إلى حسابك",
-        "pleaseSelectACountry": "الرجاء تحديد دولة"
+        "pleaseSelectACountry": "الرجاء تحديد دولة",
+        "verifyYourAccount": "تأكيد حسابك",
+        "accountVerified": "تم تأكيد الحساب بنجاح",
+        "accountVerifiedDescription": "تم تأكيد حسابك بنجاح. يمكنك الآن تسجيل الدخول إلى حسابك.",
+        "didntRecieveCode": "لم تتلق رمز التأكيد؟",
+        "resend": "إعادة الإرسال"
     },
     "home": {
         "hero": {

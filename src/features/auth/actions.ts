@@ -71,3 +71,58 @@ export async function studentRegisterAction(
 
     return { success: true, formData };
 }
+
+export async function verifyAccountAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/auth/verify_user", {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(formData.entries()))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    return { success: true, formData };
+}
+
+export async function resendCodeAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    console.log("handle:", formData.get("handle"));
+    try {
+        await fetcher("/auth/verify_user/resend", {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(formData.entries()))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    return { success: true, formData };
+}

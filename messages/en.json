@@ -21,8 +21,10 @@
         "noResults": "No results found",
         "goHome": "Go Home",
         "loading": "Loading...",
+        "instead": "Instead",
         "experts": "Experts",
         "search": "Search",
+        "continue": "Continue",
         "getStarted": "Get Started",
         "discoverMore": "Discover More",
         "years": "years",
@@ -89,6 +91,8 @@
         "digitalAppointment": "Digital Appointment"
     },
     "auth": {
+        "resetPassword": "Reset Password",
+        "passwordResetSuccess": "Password reset successfully",
         "preRegisterTitle": "Join MedUp",
         "preRegisterDescription": "Join the biggest community of experts and learners, share your knowledge and learn from others all over the world.",
         "joinAs": "Join as",
@@ -101,6 +105,7 @@
         "loginToYourAccount": "Login to your account",
         "pleaseSelectACountry": "Please select a country",
         "verifyYourAccount": "Verify your account",
+        "verifyYourEmail": "Verify your email",
         "accountVerified": "Account verified successfully",
         "accountVerifiedDescription": "Your account has been verified successfully. You can now log in to your account.",
         "didntRecieveCode": "Didn't receive the code?",

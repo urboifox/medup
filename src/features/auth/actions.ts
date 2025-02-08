@@ -105,9 +105,89 @@ export async function resendCodeAction(
 ): Promise<RegisterAction> {
     const t = await getTranslations();
 
-    console.log("handle:", formData.get("handle"));
     try {
         await fetcher("/auth/verify_user/resend", {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(formData.entries()))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    return { success: true, formData };
+}
+
+export async function verifyEmailAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/auth/password/validate_code", {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(formData.entries()))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    return { success: true, formData };
+}
+
+export async function forgotPasswordAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/auth/password/forgot_password", {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(formData.entries()))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    return { success: true, formData };
+}
+
+export async function resetPasswordAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/auth/password/reset_password", {
             method: "POST",
             body: JSON.stringify(Object.fromEntries(formData.entries()))
         });

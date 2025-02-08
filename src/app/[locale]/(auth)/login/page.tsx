@@ -8,9 +8,7 @@ export default function LoginPage() {
     return (
         <FormContainer>
             <h1 className="text-xl sm:text-4xl font-semibold">{t("auth.loginToYourAccount")}</h1>
-            <div className="px-4 sm:px-20 lg:px-32 w-full">
-                <LoginForm />
-            </div>
+            <LoginForm />
         </FormContainer>
     );
 }

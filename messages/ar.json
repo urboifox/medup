@@ -25,8 +25,10 @@
         "search": "بحث",
         "getStarted": "ابدأ الان",
         "discoverMore": "اكتشف المزيد",
+        "instead": "بدلا من ذلك",
         "years": "سنوات",
         "exploreNow": "استكشف الآن",
+        "continue": "متابعة",
         "hireNow": "بدأ التوظيف الآن",
         "filters": "الفلتر",
         "next": "التالي",
@@ -89,6 +91,8 @@
         "digitalAppointment": "التعيين الرقمي"
     },
     "auth": {
+        "resetPassword": "إعادة تعيين كلمة المرور",
+        "passwordResetSuccess": "تم إعادة تعيين كلمة المرور بنجاح",
         "preRegisterTitle": "انضم إلى MedUp",
         "preRegisterDescription": "انضم إلى أكبر مجتمع من الخبراء والمتعلمين، وشارك معرفتك وتعلم من الآخرين من جميع أنحاء العالم.",
         "joinAs": "انضم كـ",
@@ -101,6 +105,7 @@
         "loginToYourAccount": "تسجيل الدخول إلى حسابك",
         "pleaseSelectACountry": "الرجاء تحديد دولة",
         "verifyYourAccount": "تأكيد حسابك",
+        "verifyYourEmail": "تأكيد بريدك الإلكتروني",
         "accountVerified": "تم تأكيد الحساب بنجاح",
         "accountVerifiedDescription": "تم تأكيد حسابك بنجاح. يمكنك الآن تسجيل الدخول إلى حسابك.",
         "didntRecieveCode": "لم تتلق رمز التأكيد؟",

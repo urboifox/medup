@@ -5,12 +5,13 @@ import { cookies } from "next/headers";
 import { refreshToken } from "./refresh-token";
 import { ApiResponse } from "@/types/response";
 import { getLocale } from "next-intl/server";
-// import { getLocale } from "next-intl/server";
+import { FetcherError } from "@/lib/exceptions";
 
 export type FetcherOptions = RequestInit & {
     params?: Record<string, string>;
     skipAuth?: boolean;
     skipLocale?: boolean;
+    skipHeaders?: boolean;
 };
 
 export async function getAuthToken(): Promise<string | null> {
@@ -30,22 +31,25 @@ export async function getAuthToken(): Promise<string | null> {
 
 export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<ApiResponse<T>> {
     let newUrl = url.startsWith("http") ? url : `${API_URL}${url}`;
-    let locale = "en";
+
+    const requestInit: FetcherOptions = init || {};
 
     if (!init?.skipLocale) {
         const intlLocale = await getLocale();
-        locale = intlLocale;
+        const locale = intlLocale;
+        requestInit.headers = {
+            ...requestInit.headers,
+            Locale: locale
+        };
     }
 
-    const requestInit: FetcherOptions = {
-        ...init,
-        headers: {
+    if (!init?.skipHeaders) {
+        requestInit.headers = {
+            ...requestInit.headers,
             "Content-Type": "application/json",
-            Accept: "application/json",
-            Locale: locale,
-            ...(init?.headers || {})
-        }
-    };
+            Accept: "application/json"
+        };
+    }
 
     if (!init?.skipAuth) {
         const token = await getAuthToken();
@@ -75,9 +79,11 @@ export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<Ap
         }
     }
 
+    const data = await res.json();
+
     if (!res.ok) {
-        throw new Error("Error fetching data");
+        throw new FetcherError("Error fetching data from:" + newUrl, data);
     }
 
-    return res.json();
+    return data;
 }

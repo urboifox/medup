@@ -32,6 +32,7 @@ export default function DropdownButton({
     return (
         <div className={cn("relative", containerClassName)} ref={containerRef}>
             <button
+                type="button"
                 {...rest}
                 className={cn(
                     "transition-colors duration-100",

@@ -43,7 +43,8 @@
         "researcherDescription": "أنا متخصص أبحث عن توسيع معرفتي في المجال الطبي.",
         "bachelor": "Bachelor",
         "master": "Master",
-        "phd": "PhD"
+        "phd": "PhD",
+        "as": "ك"
     },
     "errors": {
         "somethingWentWrong": "حدث خطأ ما",

@@ -43,7 +43,8 @@
         "researcherDescription": "I'm an experienced professional looking to expand my knowledge in the medical field.",
         "bachelor": "Bachelor",
         "master": "Master",
-        "phd": "PhD"
+        "phd": "PhD",
+        "as": "as"
     },
     "errors": {
         "somethingWentWrong": "Something went wrong",

@@ -1,11 +1,13 @@
 import { API_URL } from "@/constants";
 import { ApiResponse } from "@/types/response";
 import { useAuthStore } from "@/features/auth/store";
+import { FetcherError } from "@/lib/exceptions";
 
 export type FetcherClientOptions = RequestInit & {
     params?: Record<string, string>;
     skipAuth?: boolean;
     skipLocale?: boolean;
+    skipHeaders?: boolean;
 };
 
 export async function fetcherClient<T>(
@@ -13,7 +15,8 @@ export async function fetcherClient<T>(
     init?: FetcherClientOptions
 ): Promise<ApiResponse<T>> {
     let newUrl = url.startsWith("http") ? url : `${API_URL}${url}`;
-    const locale = "en";
+
+    const requestInit: FetcherClientOptions = init || {};
 
     if (!init?.skipLocale) {
         // TODO: Get locale from next-intl
@@ -21,15 +24,13 @@ export async function fetcherClient<T>(
         // locale = intlLocale;
     }
 
-    const requestInit: FetcherClientOptions = {
-        ...init,
-        headers: {
+    if (!init?.skipHeaders) {
+        requestInit.headers = {
+            ...requestInit.headers,
             "Content-Type": "application/json",
-            Accept: "application/json",
-            Locale: locale,
-            ...(init?.headers || {})
-        }
-    };
+            Accept: "application/json"
+        };
+    }
 
     if (!init?.skipAuth) {
         const token = useAuthStore.getState().token;
@@ -51,9 +52,11 @@ export async function fetcherClient<T>(
         window.location.href = "/login";
     }
 
+    const data = await res.json();
+
     if (!res.ok) {
-        throw new Error("Error fetching data");
+        throw new FetcherError("Error fetching data from:" + newUrl, data);
     }
 
-    return res.json();
+    return data;
 }

@@ -8,39 +8,27 @@ import { usePathname } from "@/i18n/routing";
 import { getCitiesByCountry } from "@/services/select-menu-client";
 import { useLocale, useTranslations } from "next-intl";
 import { useActionState, useEffect, useState } from "react";
-import { FaFilePdf } from "react-icons/fa6";
 import { RxAvatar } from "react-icons/rx";
-import { expertRegisterAction } from "../actions";
+import { studentRegisterAction } from "../actions";
 import FileInput from "@/components/ui/file-input";
-import MultiSelect from "@/components/ui/multi-select";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 
-export default function ExpertRegisterForm() {
+export default function StudentRegisterForm() {
     const t = useTranslations();
     const pathname = usePathname();
     const locale = useLocale();
-    const router = useRouter();
 
-    const [state, action, pending] = useActionState(expertRegisterAction, {
+    const [state, action, pending] = useActionState(studentRegisterAction, {
         success: false,
         formData: new FormData()
     });
 
-    const [cvFile, setCvFile] = useState<File>();
     const [avatarFile, setAvatarFile] = useState<File>();
 
-    const skills = useSelectMenuStore((state) => state.skills);
     const specialities = useSelectMenuStore((state) => state.specialities);
     const countries = useSelectMenuStore((state) => state.countries);
     const cities = useSelectMenuStore((state) => state.cities);
     const setCities = useSelectMenuStore((state) => state.setCities);
-
-    const degreeOptions = [
-        { value: "bachelor", label: "Bachelor" },
-        { value: "master", label: "Master" },
-        { value: "phd", label: "Doctor" }
-    ];
 
     async function handleCountryChange(e: React.ChangeEvent<HTMLSelectElement>) {
         const countryId = e.target.value;
@@ -53,9 +41,6 @@ export default function ExpertRegisterForm() {
     }, [pathname, setCities]);
 
     useEffect(() => {
-        if (state.success) {
-            router.push("/register/verify?handle=" + state.formData?.get("email"));
-        }
         if (state.message) {
             toast.error(state.message);
         }
@@ -65,12 +50,11 @@ export default function ExpertRegisterForm() {
         <form
             className="w-full flex flex-col gap-4"
             action={(formData) => {
-                if (cvFile) formData.set("cv", cvFile);
                 if (avatarFile) formData.set("avatar", avatarFile);
                 action(formData);
             }}
         >
-            <input type="hidden" name="type" value={pathname.includes("researcher") ? "4" : "1"} />
+            <input type="hidden" name="type" value={pathname.includes("student") ? "3" : "2"} />
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Input
                     label={t("labels.firstName")}
@@ -122,9 +106,9 @@ export default function ExpertRegisterForm() {
             <FileInput
                 accept="image/*"
                 onFilesChange={(files) => setAvatarFile(files[0])}
-                error={state.errors?.avatar}
                 name="avatar"
                 label={t("labels.image")}
+                error={state.errors?.avatar}
                 placeholderIcon={
                     <span className="text-primary-main text-xl">
                         <RxAvatar />
@@ -132,45 +116,21 @@ export default function ExpertRegisterForm() {
                 }
             />
 
-            <div className="flex items-center gap-4 flex-col sm:flex-row">
-                <Select
-                    label={t("labels.degree")}
-                    error={state.errors?.degree}
-                    name="degree"
-                    defaultValue={state.formData?.get("degree") as string}
-                    key={state.formData?.get("degree") as string}
-                >
-                    {degreeOptions.map((option) => {
-                        return (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        );
-                    })}
-                </Select>
-                <Select
-                    label={t("labels.speciality")}
-                    error={state.errors?.speciality_id}
-                    name="speciality_id"
-                    defaultValue={state.formData?.get("speciality_id") as string}
-                    key={`${state.formData?.get("speciality_id") as string}-speciality`}
-                >
-                    {specialities.map((speciality) => {
-                        return (
-                            <option key={speciality.id} value={speciality.id}>
-                                {speciality.name}
-                            </option>
-                        );
-                    })}
-                </Select>
-            </div>
-            <MultiSelect
-                error={state.errors?.skills}
-                defaultValue={state.formData?.getAll("skills") as string[]}
-                name="skills"
-                options={skills.map((skill) => ({ label: skill.name, value: skill.id.toString() }))}
-                label={t("labels.skills")}
-            />
+            <Select
+                label={t("labels.speciality")}
+                name="speciality_id"
+                error={state.errors?.speciality_id}
+                defaultValue={state.formData?.get("speciality_id") as string}
+                key={`${state.formData?.get("speciality_id") as string}-speciality`}
+            >
+                {specialities.map((speciality) => {
+                    return (
+                        <option key={speciality.id} value={speciality.id}>
+                            {speciality.name}
+                        </option>
+                    );
+                })}
+            </Select>
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select
                     label={t("labels.country")}
@@ -209,22 +169,9 @@ export default function ExpertRegisterForm() {
                 </Select>
             </div>
 
-            <FileInput
-                error={state.errors?.cv}
-                accept="application/pdf"
-                onFilesChange={(files) => setCvFile(files[0])}
-                name="cv"
-                label={t("labels.cv")}
-                placeholderIcon={
-                    <span className="text-primary-main text-xl">
-                        <FaFilePdf />
-                    </span>
-                }
-            />
-
             <Button type="submit" disabled={pending}>
                 {t("auth.register")} {t("common.as")}{" "}
-                {t(pathname.includes("student") ? "common.researcher" : "common.expert")}
+                {t(pathname.includes("student") ? "common.student" : "common.trainee")}
             </Button>
         </form>
     );

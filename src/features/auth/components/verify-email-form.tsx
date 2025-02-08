@@ -36,7 +36,7 @@ export default function VerifyEmailForm() {
         if (!verifyState.success && verifyState.message) {
             toast.error(verifyState.message);
         }
-    }, [verifyState]);
+    }, [verifyState, router, email]);
 
     useEffect(() => {
         if (resendState.success) {

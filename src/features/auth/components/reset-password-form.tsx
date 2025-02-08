@@ -29,7 +29,7 @@ export default function ResetPasswordForm() {
         if (!state.success && state.message) {
             toast.error(state.message);
         }
-    }, [state]);
+    }, [state, router, t]);
 
     return (
         <>

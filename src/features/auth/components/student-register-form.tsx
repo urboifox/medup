@@ -49,7 +49,7 @@ export default function StudentRegisterForm() {
         if (state.message) {
             toast.error(state.message);
         }
-    }, [state]);
+    }, [state, router]);
 
     return (
         <form

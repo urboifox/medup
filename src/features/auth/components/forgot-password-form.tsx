@@ -24,7 +24,7 @@ export default function ForgotPasswordForm() {
         if (!state.success && state.message) {
             toast.error(state.message);
         }
-    }, [state]);
+    }, [state, router]);
 
     return (
         <>

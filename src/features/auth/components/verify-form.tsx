@@ -34,7 +34,7 @@ export default function VerifyForm() {
         if (!verifyState.success && verifyState.message) {
             toast.error(verifyState.message);
         }
-    }, [verifyState]);
+    }, [verifyState, router]);
 
     useEffect(() => {
         if (resendState.success) {

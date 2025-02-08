@@ -41,7 +41,7 @@ export default function ForgotPasswordForm() {
                     {t(pending ? "common.loading" : "common.continue")}
                 </Button>
                 <Link href="/login" className="w-full">
-                    <Button className="w-full" variant="secondary">
+                    <Button className="w-full" variant="secondary" size="sm">
                         {t("auth.login")} {t("common.instead")}
                     </Button>
                 </Link>

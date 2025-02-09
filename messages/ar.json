@@ -143,7 +143,7 @@
     },
     "experts": {
         "searchPlaceholder": "أبحث عن مسمى وظيفي أو مهارة أو كلمة مفتاحية...",
-        "locationSearchPlaceholder": "مدينة، ولاية أو رمز بريدي",
+        "locationSearchPlaceholder": "مدينة، ولاية",
         "premiumExperts": "الخبراء المميزة",
         "allExperts": "جميع الخبراء",
         "college": "الكلية",

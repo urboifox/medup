@@ -63,7 +63,13 @@ export default function VerifyForm() {
         <>
             <form className="flex flex-col gap-4 w-full" action={verifyAction}>
                 <input type="hidden" name="handle" value={email} />
-                <Input label={t("labels.code")} name="code" placeholder={t("placeholders.code")} />
+                <Input
+                    label={t("labels.code")}
+                    name="code"
+                    placeholder={t("placeholders.code")}
+                    defaultValue={verifyState.formData.get("code") as string}
+                    error={verifyState.errors?.code}
+                />
 
                 <Button disabled={verifyPending}>
                     {t(verifyPending ? "common.loading" : "common.submit")}

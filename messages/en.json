@@ -143,7 +143,7 @@
     },
     "experts": {
         "searchPlaceholder": "Search for a job title, skill, or a keyword...",
-        "locationSearchPlaceholder": "City, state or zip code",
+        "locationSearchPlaceholder": "City, state",
         "premiumExperts": "Premium Experts",
         "allExperts": "All Experts",
         "college": "College",

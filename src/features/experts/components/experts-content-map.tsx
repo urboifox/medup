@@ -3,7 +3,7 @@ import { getAllExperts } from "../services";
 
 export default async function ExpertsContentMap() {
     const res = await getAllExperts({
-        params: { only_top: "0" },
+        params: { only_top: "1" },
         next: {
             revalidate: 60
         }

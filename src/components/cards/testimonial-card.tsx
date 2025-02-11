@@ -1,7 +1,15 @@
 import { Testimonial } from "@/features/home/types";
 import icons from "@/lib/icons";
+import { UserType } from "@/types/user";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+
+const userTypesTranslationKey = {
+    [UserType.Expert]: "common.expert",
+    [UserType.Trainee]: "common.trainee",
+    [UserType.Student]: "common.student",
+    [UserType.Researcher]: "common.researcher"
+} as const;
 
 export default function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     const t = useTranslations();
@@ -29,7 +37,9 @@ export default function TestimonialCard({ testimonial }: { testimonial: Testimon
                     >
                         {testimonial.user.name}
                     </p>
-                    <p className="text-dark-200 text-sm">{t("temp.testimonialRole")}</p>
+                    <p className="text-dark-200 text-sm">
+                        {t(userTypesTranslationKey[testimonial.user.type])}
+                    </p>
                 </div>
             </div>
         </article>

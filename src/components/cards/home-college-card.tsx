@@ -1,9 +1,9 @@
-import icons from "@/lib/icons";
 import { Link } from "@/i18n/routing";
 import { FiArrowLeft } from "react-icons/fi";
 import { useTranslations } from "next-intl";
+import { College } from "@/features/select-menu/types";
 
-export default function HomeCategoryCard() {
+export default function HomeCollegeCard({ college }: { college: College }) {
     const t = useTranslations();
 
     return (
@@ -11,8 +11,8 @@ export default function HomeCategoryCard() {
             <div
                 className="w-12 h-12 bg-primary-main mask mask-image flex items-center justify-center transition-all duration-200 group-hover:bg-white"
                 style={{
-                    maskImage: `url(${icons.stethoscope})`,
-                    WebkitMaskImage: `url(${icons.stethoscope})`,
+                    maskImage: `url(${college.icon})`,
+                    WebkitMaskImage: `url(${college.icon})`,
                     maskSize: "contain",
                     WebkitMaskSize: "contain",
                     maskRepeat: "no-repeat",
@@ -22,14 +22,18 @@ export default function HomeCategoryCard() {
                 }}
             ></div>
             <h3 className="font-semibold text-xl text-foreground-100 group-hover:text-white transition-colors duration-200">
-                {t("temp.categoryName")}
+                {college.name}
             </h3>
             <p className="text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md">
-                {t("temp.categoryDescription")}
+                {college.description}
+            </p>
+
+            <p className="text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md">
+                {t("common.experts")}: {college.experts_count}
             </p>
 
             <Link
-                href="/experts"
+                href={`/experts?colleges=${college.id}`}
                 className="text-primary-main group-hover:text-white transition-colors duration-200 font-semibold flex items-center justify-center w-fit gap-2 group/link"
             >
                 {t("home.categories.cta")}

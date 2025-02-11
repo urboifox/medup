@@ -82,7 +82,9 @@ function FooterLink({ href, label }: { href: string; label: string }) {
             className="relative group text-dark-300 hover:text-dark-100 active:text-dark-200"
         >
             <FiArrowLeft className="ltr:rotate-180 opacity-0 transition-all duration-200 group-hover:opacity-100 absolute top-1/2 -translate-y-1/2 -start-6 group-hover:-start-2" />
-            <p className="transition-all duration-200 group-hover:-translate-x-4 ltr:group-hover:translate-x-4">{label}</p>
+            <p className="transition-all duration-200 group-hover:-translate-x-4 ltr:group-hover:translate-x-4">
+                {label}
+            </p>
         </Link>
     );
 }

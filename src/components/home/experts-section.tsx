@@ -9,7 +9,7 @@ export default async function ExpertsSection() {
     const t = await getTranslations();
 
     return (
-        <section className="container py-20 lg:py-40 flex flex-col gap-20">
+        <section className="container py-10 flex flex-col gap-20">
             <div className="flex flex-col gap-6 text-center items-center max-w-4xl mx-auto">
                 <h2 className="text-3xl lg:text-5xl font-semibold">{t("home.experts.title")}</h2>
                 <p className="text-dark-300 text-lg lg:text-xl">{t("home.experts.description")}</p>

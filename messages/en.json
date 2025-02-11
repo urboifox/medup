@@ -11,6 +11,7 @@
         "goHome": "Go Home",
         "loading": "Loading...",
         "instead": "Instead",
+        "consultNow": "Consult Now",
         "experts": "Experts",
         "search": "Search",
         "continue": "Continue",
@@ -111,6 +112,10 @@
             "title": "Discover our best experts",
             "description": "Discover a world-class community of professionals who are redefining the way skills are shared. Whether you’re just starting out or looking to take your game to the next level, our experts are here to guide you."
         },
+        "contact": {
+            "title": "Contact the best experts now",
+            "description": "We have many medical organizations that provide educational lessons and specialized workshops in various medical areas. Just let us know what you need, and we will make it available for you"
+        },
         "colleges": {
             "title": "Discover experts in all colleges and fields",
             "description": "Connect with leading experts across various disciplines and colleges. Select a college to dive into a curated list of professionals who excel in their fields.",
@@ -118,9 +123,12 @@
         },
         "actions": {
             "digitalOnlineCourses": "Digital Online Courses",
-            "digitalOnlineCoursesDescription": "Connect directly with industry professionals to gain personalized insights and hands-on guidance. Ask questions, clarify concepts, and enhance your skills with tailored support from experienced experts in your field.",
+            "digitalOnlineCoursesDescription": "We have many medical organizations that provide educational lessons and specialized workshops in various medical areas. Just let us know what you need, and we will make it lavailable for you",
             "agenciesHiring": "Agencies Hiring",
-            "agenciesHiringDescription": "Partner with specialized agencies to access a wealth of resources and expertise. Whether you need comprehensive training programs or project assistance, our agencies are equipped to help you achieve your goals efficiently and effectively."
+            "agenciesHiringDescriptionOne": "Select the field or skill you need.",
+            "agenciesHiringDescriptionTwo": "We find the right expert for you.",
+            "agenciesHiringDescriptionThree": "We coordinate travel and accommodation (if needed).",
+            "agenciesHiringDescriptionFour": "The expert arrives at your location to provide the required consultation or training."
         },
         "explore": {
             "title": "World-class training of trainees through expert guidance",

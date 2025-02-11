@@ -1,6 +1,7 @@
 import ActionsSection from "@/components/home/actions-section";
 import AdSection from "@/components/home/ad-section";
 import CollegesSection from "@/components/home/colleges-section";
+import ContactSection from "@/components/home/contact-section";
 import ExpertsSection from "@/components/home/experts-section";
 import ExploreSection from "@/components/home/explore-section";
 import HeroSection from "@/components/home/hero-section";
@@ -12,6 +13,7 @@ export default function HomePage() {
             <HeroSection />
             <AdSection />
             <ExpertsSection />
+            <ContactSection />
             <CollegesSection />
             <ActionsSection />
             <ExploreSection />

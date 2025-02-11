@@ -123,6 +123,10 @@
             "fourthTitle": "Payment on Medupskills",
             "fourthDescription": "with a 7.5% fee for premium users or 10% for standard users"
         },
+        "specialized": {
+            "specializedSkills": "Specialized Skills",
+            "description": "our platform empowers you to elevate your medical expertise. Dive into cutting-edge courses and stay ahead in the ever-evolving world of healthcare. Unlock your potential and make a lasting impact on patient care."
+        },
         "contact": {
             "title": "Contact the best experts now",
             "description": "We have many medical organizations that provide educational lessons and specialized workshops in various medical areas. Just let us know what you need, and we will make it available for you"

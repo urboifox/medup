@@ -11,6 +11,7 @@ export default function HomeCollegeCard({ college }: { college: College }) {
             <div
                 className="w-12 h-12 bg-primary-main mask mask-image flex items-center justify-center transition-all duration-200 group-hover:bg-white"
                 style={{
+                    // backgroundImage: `url(${college.icon})`,
                     maskImage: `url(${college.icon})`,
                     WebkitMaskImage: `url(${college.icon})`,
                     maskSize: "contain",
@@ -20,7 +21,7 @@ export default function HomeCollegeCard({ college }: { college: College }) {
                     maskPosition: "center",
                     WebkitMaskPosition: "center"
                 }}
-            ></div>
+            />
             <h3 className="font-semibold text-xl text-foreground-100 group-hover:text-white transition-colors duration-200">
                 {college.name}
             </h3>

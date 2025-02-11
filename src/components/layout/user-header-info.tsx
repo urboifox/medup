@@ -14,11 +14,11 @@ export default function UserHeaderInfo() {
                 <Link href="/logout" className="font-semibold">{t("auth.logout")}</Link>
             ) : (
                 <>
-                    <Link href={"/login"} className="text-primary-main font-semibold">
+                    <Link href={"/login"} className="text-primary-main font-semibold hidden sm:block">
                         {t("auth.login")}
                     </Link>
                     <Link href="/register">
-                        <Button>{t("common.getStarted")}</Button>
+                        <Button className="text-sm sm:text-base max-sm:px-4">{t("common.getStarted")}</Button>
                     </Link>
                 </>
             )}

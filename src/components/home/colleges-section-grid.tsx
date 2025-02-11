@@ -6,7 +6,7 @@ export default async function CollegesSectionGrid() {
     const colleges = res.data;
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-10">
             {colleges &&
                 colleges.map((college) => {
                     return <HomeCollegeCard key={college.id} college={college} />;

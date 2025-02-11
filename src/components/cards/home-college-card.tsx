@@ -32,16 +32,15 @@ export default function HomeCollegeCard({ college }: { college: College }) {
             <p className="text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md">
                 {college.description}
             </p>
-
-            <p className="text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md">
-                {t("common.experts")}: {college.experts_count}
-            </p>
+            {/* <p className="text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md"> */}
+            {/*     {t("common.experts")}: {college.experts_count} */}
+            {/* </p> */}
 
             <Link
                 href={`/experts?colleges=${college.id}`}
                 className="text-primary-main group-hover:text-white transition-colors duration-200 font-semibold flex items-center justify-center w-fit gap-2 group/link"
             >
-                {t("home.categories.cta")}
+                {t("home.colleges.cta")}
                 <FiArrowLeft className="ltr:rotate-180 ltr:group-hover/link:translate-x-1 group-hover/link:-translate-x-1 transition-transform duration-200" />
             </Link>
         </article>

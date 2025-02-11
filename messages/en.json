@@ -1,20 +1,9 @@
 {
     "temp": {
-        "expertCategory": "Dentist",
-        "expertFaculty": "Faculty of Dentistry",
-        "expertAddress": "Cairo, Egypt",
-        "expertName": "Dr. Sami Hammoud",
-        "expertSkills": "Cardiology, Neurology, Orthopedics, Plastic Surgery, Urology",
-        "categoryName": "Human Anatomy",
-        "categoryDescription": "Learn clinical practices and patient care fundamentals to prepare for real-world challenges in healthcare.",
-        "testimonialName": "Kareem Mohamed",
-        "testimonialContent": "Great team and great treatment from the best doctor in the world Great team and great treatment from the best doctor in the world",
-        "testimonialRole": "New Student",
         "articleTitle": "How technology can affect modern medicine",
         "articleAuthor": "Mohamed Ashraf",
         "articleTag": "Research",
-        "articleDescription": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellen",
-        "expertSkill": "Orthodontics"
+        "articleDescription": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellen"
     },
     "common": {
         "retry": "Retry",
@@ -122,9 +111,9 @@
             "title": "Discover our best experts",
             "description": "Discover a world-class community of professionals who are redefining the way skills are shared. Whether you’re just starting out or looking to take your game to the next level, our experts are here to guide you."
         },
-        "categories": {
-            "title": "Find your path in your field",
-            "description": "Immerse yourself in a variety of learning opportunities designed specifically for aspiring medical professionals. Browse our expertly curated categories to find courses and resources designed to deepen your understanding of the medical field and connect you with industry experts. Unleash your potential today!",
+        "colleges": {
+            "title": "Discover experts in all colleges and fields",
+            "description": "Connect with leading experts across various disciplines and colleges. Select a college to dive into a curated list of professionals who excel in their fields.",
             "cta": "Meet experts"
         },
         "actions": {

@@ -7,13 +7,13 @@ export default function CollegesSection() {
 
     return (
         <section className="py-20">
-            <div className="flex flex-col gap-20 container">
-                <div className="flex flex-col gap-8 max-w-3xl flex-1">
+            <div className="flex flex-col gap-20 container items-center">
+                <div className="flex flex-col gap-8 max-w-3xl flex-1 text-center">
                     <h2 className="text-4xl font-semibold foreground-200">
-                        {t("home.categories.title")}
+                        {t("home.colleges.title")}
                     </h2>
                     <p className="text-foreground-50 font-medium">
-                        {t("home.categories.description")}
+                        {t("home.colleges.description")}
                     </p>
                 </div>
 

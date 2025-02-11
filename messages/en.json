@@ -112,6 +112,17 @@
             "title": "Discover our best experts",
             "description": "Discover a world-class community of professionals who are redefining the way skills are shared. Whether you’re just starting out or looking to take your game to the next level, our experts are here to guide you."
         },
+        "how": {
+            "title": "How to give your skill on MedUpskills?",
+            "firstTitle": "Just introduce yourself",
+            "firstDescription": "your skills, your location. through professional profile",
+            "secondTitle": "More postgraduate",
+            "secondDescription": "and student will see your profile",
+            "thirdTitle": "They will massage  and contract with u to learn them in your private.",
+            "thirdDescription": "(if hands on like surgery, endoscopy Dental Implantation,......etc) or E-learning",
+            "fourthTitle": "Payment on Medupskills",
+            "fourthDescription": "with a 7.5% fee for premium users or 10% for standard users"
+        },
         "contact": {
             "title": "Contact the best experts now",
             "description": "We have many medical organizations that provide educational lessons and specialized workshops in various medical areas. Just let us know what you need, and we will make it available for you"

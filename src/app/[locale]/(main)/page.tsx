@@ -5,6 +5,7 @@ import ContactSection from "@/components/home/contact-section";
 import ExpertsSection from "@/components/home/experts-section";
 import ExploreSection from "@/components/home/explore-section";
 import HeroSection from "@/components/home/hero-section";
+import HowItWorksSection from "@/components/home/how-it-works-section";
 import TestimonialsSection from "@/components/home/testimonials-section";
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
             <HeroSection />
             <AdSection />
             <ExpertsSection />
+            <HowItWorksSection />
             <ContactSection />
             <CollegesSection />
             <ActionsSection />

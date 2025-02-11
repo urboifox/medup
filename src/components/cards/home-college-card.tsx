@@ -8,20 +8,24 @@ export default function HomeCollegeCard({ college }: { college: College }) {
 
     return (
         <article className="transition-colors duration-200 hover:bg-primary-main px-8 py-10 flex-1 flex flex-col gap-6 group">
-            <div
-                className="w-12 h-12 bg-primary-main mask mask-image flex items-center justify-center transition-all duration-200 group-hover:bg-white"
-                style={{
-                    // backgroundImage: `url(${college.icon})`,
-                    maskImage: `url(${college.icon})`,
-                    WebkitMaskImage: `url(${college.icon})`,
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center"
-                }}
-            />
+            <div>
+                {/*
+                    INFO: Brwoser will block the background image SVG with mask using external image
+                    so loading it before the mask elements makes the browser happy
+                */}
+                <div
+                    style={{ backgroundImage: `url(${college.icon})` }}
+                    className="invisible h-0"
+                />
+                <div
+                    className="w-12 h-12 bg-primary-main transition-all duration-200 group-hover:bg-white"
+                    style={{
+                        mask: `url(${college.icon}) no-repeat center / contain`,
+                        WebkitMask: `url(${college.icon}) no-repeat center / contain`
+                    }}
+                />
+            </div>
+
             <h3 className="font-semibold text-xl text-foreground-100 group-hover:text-white transition-colors duration-200">
                 {college.name}
             </h3>

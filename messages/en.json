@@ -125,7 +125,15 @@
         },
         "specialized": {
             "specializedSkills": "Specialized Skills",
-            "description": "our platform empowers you to elevate your medical expertise. Dive into cutting-edge courses and stay ahead in the ever-evolving world of healthcare. Unlock your potential and make a lasting impact on patient care."
+            "description": "our platform empowers you to elevate your medical expertise. Dive into cutting-edge courses and stay ahead in the ever-evolving world of healthcare. Unlock your potential and make a lasting impact on patient care.",
+            "firstTitle": "Post a skill",
+            "firstDescription": "Showcase your expertise by posting your skills and services on our platform, making it easy for learners to find you.",
+            "secondTitle": "Collaborate",
+            "secondDescription": "Connect with students and other professionals effortlessly through our user-friendly messaging and scheduling tools.",
+            "thirdTitle": "Payment simplified",
+            "thirdDescription": "Enjoy hassle-free transactions with our secure payment system, ensuring you get paid promptly for your services.",
+            "fourthTitle": "Direct Contract",
+            "fourthDescription": "Establish direct contracts with learners, allowing for clear agreements and tailored learning experiences."
         },
         "contact": {
             "title": "Contact the best experts now",

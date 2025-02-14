@@ -3,7 +3,8 @@
 import useOutsideClick from "@/hooks/useOutsideClick";
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "motion/react";
-import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
@@ -22,6 +23,11 @@ export default function DropdownButton({
     ...rest
 }: Props) {
     const [visible, setVisible] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        setVisible(false);
+    }, [pathname]);
 
     const containerRef = useRef<HTMLDivElement>(null);
     useOutsideClick({

@@ -7,6 +7,8 @@
     },
     "common": {
         "retry": "إعادة المحاولة",
+        "about": "حول",
+        "information": "معلومات",
         "myProfile": "ملفي الشخصي",
         "noResults": "لم يتم العثور على نتائج",
         "goHome": "الذهاب إلى الصفحة الرئيسية",
@@ -170,7 +172,11 @@
         "allExperts": "جميع الخبراء",
         "college": "الكلية",
         "speciality": "التخصص",
-        "skill": "المهارة"
+        "skill": "المهارة",
+        "chatNow": "بدأ محادثة الآن",
+        "onlineMedicalConsultation": "استشارة طبية عبر الإنترنت",
+        "onlineMedicalConsultationDescription": "كطالب، يمكنك استشارة خبير لاكتساب الخبرة، وإذا كنت مريضًا، يمكنك استشارة طبيب للشفاء السريع",
+        "consultNow": "استشارة الآن"
     },
     "articles": {
         "title": "المقالات المنشورة حديثًا",

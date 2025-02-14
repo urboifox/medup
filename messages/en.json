@@ -7,10 +7,12 @@
     },
     "common": {
         "retry": "Retry",
+        "about": "About",
         "myProfile": "My Profile",
         "noResults": "No results found",
         "goHome": "Go Home",
         "loading": "Loading...",
+        "information": "Information",
         "instead": "Instead",
         "consultNow": "Consult Now",
         "experts": "Experts",
@@ -170,7 +172,11 @@
         "allExperts": "All Experts",
         "college": "College",
         "speciality": "Speciality",
-        "skill": "Skill"
+        "skill": "Skill",
+        "chatNow": "Chat Now",
+        "onlineMedicalConsultation": "Online Medical Consultation",
+        "onlineMedicalConsultationDescription": "As a student, you can consult an expert to gain experience  If you are sick, you can consult a doctor for a speedy recovery",
+        "consultNow": "Consult Now"
     },
     "articles": {
         "title": "Latest Articles",

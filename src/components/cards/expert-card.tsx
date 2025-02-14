@@ -49,7 +49,7 @@ export default function ExpertCard({ expert }: { expert: Expert }) {
                 </p>
                 <span className="text-sm font-medium text-primary-main capitalize flex items-center gap-1">
                     <LuBadgeCheck size={18} />
-                    10 {t("common.years")}
+                    {expert?.experience_years || 0} {t("common.years")}
                 </span>
             </div>
             <div className="flex flex-wrap gap-2 max-h-16 overflow-hidden">

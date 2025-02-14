@@ -13,5 +13,6 @@ export type Expert = {
     city: City;
     speciality: ExpertSpeciality;
     skills: Skill[];
+    experience_years: number | null;
     user: User;
 };

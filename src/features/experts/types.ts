@@ -40,10 +40,10 @@ export type Expert = {
     speciality: ExpertSpeciality;
     skills: Skill[];
     social_contacts: {
-        facebook: string;
-        twitter: string;
-        linkedin: string;
-        email: string;
+        facebook?: string;
+        twitter?: string;
+        linkedin?: string;
+        email?: string;
     };
     experience_years: number | null;
     experiences: ExpertExperience[];

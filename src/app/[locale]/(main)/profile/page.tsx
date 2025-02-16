@@ -64,12 +64,13 @@ export default async function ProfilePage() {
                         <InfoCardWrapper label={t("common.information")}>
                             <ExpertProfileInformation expert={expert} />
                         </InfoCardWrapper>
-                        {Object.values(expert.social_contacts).filter(Boolean).length > 0 && (
-                            <InfoCardWrapper label={t("common.socialMedia")}>
-                                <ExpertProfileSocialMedia expert={expert} />
-                            </InfoCardWrapper>
-                        )}
-                        <InfoCardWrapper label={t("common.certification")}>
+                        <InfoCardWrapper label={t("common.socialMedia")}>
+                            <ExpertProfileSocialMedia social_contacts={expert.social_contacts} />
+                        </InfoCardWrapper>
+                        <InfoCardWrapper
+                            label={t("common.certification")}
+                            editUrl="/profile/certification"
+                        >
                             {certification ? (
                                 <ExpertProfileCertification certification={certification} />
                             ) : (

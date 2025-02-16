@@ -11,4 +11,5 @@ export type User = {
     name: string;
     avatar: string;
     type: UserType;
+    created_at: string;
 };

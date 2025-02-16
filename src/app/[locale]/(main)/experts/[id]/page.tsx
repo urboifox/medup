@@ -1,9 +1,20 @@
 import Button from "@/components/ui/button";
 import ExpertBaseInfo from "@/features/experts/components/expert-base-info";
+import ExpertProfileExperience from "@/features/experts/components/expert-profile-experience";
+import ExpertProfileInformation from "@/features/experts/components/expert-profile-information";
 import { getAllExperts, getExpert } from "@/features/experts/services";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
+
+function InfoCardWrapper({ children, label }: { children?: React.ReactNode; label?: string }) {
+    return (
+        <div className="p-6 rounded-lg border-2 border-info-50 flex flex-col gap-6">
+            <h3 className="font-semibold text-xl">{label}</h3>
+            <div className="flex flex-col gap-4">{children}</div>
+        </div>
+    );
+}
 
 export default async function ExpertPage({ params }: { params: Promise<{ id: string }> }) {
     const t = await getTranslations();
@@ -27,7 +38,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                         </h3>
                     </div>
 
-                    {/* experience */}
+                    <ExpertProfileExperience expert={expert} />
                 </div>
 
                 <div className="flex flex-col gap-10">
@@ -38,21 +49,17 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                         </span>
                     </Button>
                     <div className="flex flex-col gap-5 max-w-lg">
-                        <div className="p-6 rounded-lg border-2 border-info-50 flex flex-col gap-6">
+                        <InfoCardWrapper label={t("experts.onlineMedicalConsultation")}>
                             <div className="flex flex-col gap-2">
-                                <h3 className="font-semibold text-xl">
-                                    {t("experts.onlineMedicalConsultation")}
-                                </h3>
                                 <p className="text-dark-300">
                                     {t("experts.onlineMedicalConsultationDescription")}
                                 </p>
                             </div>
                             <Button>{t("experts.consultNow")}</Button>
-                        </div>
-                        <div className="p-6 rounded-lg border-2 border-info-50 flex flex-col gap-6">
-                            <h3 className="font-semibold text-xl">{t("common.information")}</h3>
-                            <div className="grid grid-cols-3 gap-3"></div>
-                        </div>
+                        </InfoCardWrapper>
+                        <InfoCardWrapper label={t("common.information")}>
+                            <ExpertProfileInformation expert={expert} />
+                        </InfoCardWrapper>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ export default function ExpertBaseInfo({ expert }: { expert: Expert }) {
     const t = useTranslations();
 
     return (
-        <div className="flex items-center gap-6 flex-col lg:flex-row">
+        <div className="flex items-center gap-6 flex-col md:flex-row">
             <Image
                 src={expert.user.avatar}
                 alt={expert.user.name}

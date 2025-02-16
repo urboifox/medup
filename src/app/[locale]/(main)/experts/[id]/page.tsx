@@ -1,23 +1,17 @@
 import Button from "@/components/ui/button";
 import ExpertBaseInfo from "@/features/experts/components/expert-base-info";
 import ExpertProfileActionButton from "@/features/experts/components/expert-profile-action-button";
+import ExpertProfileCertification from "@/features/experts/components/expert-profile-certification";
 import ExpertProfileExperience from "@/features/experts/components/expert-profile-experience";
 import ExpertProfileInformation from "@/features/experts/components/expert-profile-information";
+import ExpertProfileSocialMedia from "@/features/experts/components/expert-profile-social-media";
 import ExpertsContentSkeleton from "@/features/experts/components/experts-content-skeleton";
+import InfoCardWrapper from "@/features/experts/components/info-card-wrapper";
 import RecommendedExpertsContentMap from "@/features/experts/components/recommended-experts-content-map";
 import { getAllExperts, getExpert } from "@/features/experts/services";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-
-function InfoCardWrapper({ children, label }: { children?: React.ReactNode; label?: string }) {
-    return (
-        <div className="p-6 rounded-lg border-2 border-info-50 flex flex-col gap-6">
-            <h3 className="font-semibold text-xl">{label}</h3>
-            <div className="flex flex-col gap-4">{children}</div>
-        </div>
-    );
-}
 
 export default async function ExpertPage({ params }: { params: Promise<{ id: string }> }) {
     const t = await getTranslations();
@@ -31,7 +25,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
 
     return (
         <div className="container py-20 flex flex-col gap-20">
-            <div className="flex flex-col lg:flex-row gap-5 justify-between">
+            <div className="flex flex-col lg:flex-row gap-10 justify-between">
                 <div className="flex flex-col gap-10">
                     <ExpertBaseInfo expert={expert} />
 
@@ -42,7 +36,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                         <p className="text-dark-300">{expert.headline ?? t("experts.noAbout")}</p>
                     </div>
 
-                    <ExpertProfileExperience expert={expert} />
+                    <ExpertProfileExperience experience={expert.experiences} />
                 </div>
 
                 <div className="flex flex-col gap-10">
@@ -58,6 +52,18 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                         </InfoCardWrapper>
                         <InfoCardWrapper label={t("common.information")}>
                             <ExpertProfileInformation expert={expert} />
+                        </InfoCardWrapper>
+                        {Object.values(expert.social_contacts).filter(Boolean).length > 0 && (
+                            <InfoCardWrapper label={t("common.socialMedia")}>
+                                <ExpertProfileSocialMedia expert={expert} />
+                            </InfoCardWrapper>
+                        )}
+                        <InfoCardWrapper label={t("common.certification")}>
+                            {expert?.certification ? (
+                                <ExpertProfileCertification certification={expert.certification} />
+                            ) : (
+                                <p>{t("experts.noCertification")}</p>
+                            )}
                         </InfoCardWrapper>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
+import { useLocale } from "next-intl";
 
 type NavItem = {
     label: string;
@@ -13,6 +14,7 @@ type NavItem = {
 
 export default function NavSideMenu({ navItems }: { navItems: NavItem[] }) {
     const [isOpen, setIsOpen] = useState(false);
+    const locale = useLocale();
 
     return (
         <div className="lg:hidden">
@@ -30,9 +32,9 @@ export default function NavSideMenu({ navItems }: { navItems: NavItem[] }) {
                         className="fixed inset-0 w-full h-full z-50 bg-black/50 backdrop-blur-sm"
                     >
                         <motion.div
-                            initial={{ opacity: 0, x: "100%" }}
+                            initial={{ opacity: 0, x: locale === "en" ? "-100%" : "100%" }}
                             animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: "100%" }}
+                            exit={{ opacity: 0, x: locale === "en" ? "-100%" : "100%" }}
                             transition={{ duration: 0.3 }}
                             className="h-full bg-white w-80 flex flex-col py-10 px-4 gap-10"
                         >

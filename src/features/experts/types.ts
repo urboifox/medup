@@ -24,6 +24,13 @@ export type ExpertExperience = {
     city: City;
 };
 
+export type ExpertCertification = {
+    id: number;
+    name: string;
+    date: string;
+    file: string;
+};
+
 export type Expert = {
     id: number;
     rating_average: number;
@@ -32,7 +39,14 @@ export type Expert = {
     headline: string;
     speciality: ExpertSpeciality;
     skills: Skill[];
+    social_contacts: {
+        facebook: string;
+        twitter: string;
+        linkedin: string;
+        email: string;
+    };
     experience_years: number | null;
     experiences: ExpertExperience[];
+    certification: ExpertCertification;
     user: User;
 };

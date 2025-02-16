@@ -28,7 +28,7 @@ export default function ExpertCard({ expert }: { expert: Expert }) {
             </div>
             <StarsRating value={expert?.rating_average} showNumber />
             <Link className="flex flex-col gap-2" href={`/experts/${expert.id}`}>
-                <h3 className="lg:text-xl font-semibold line-clamp-2" title={expert.user.name}>
+                <h3 className="lg:text-xl font-semibold line-clamp-1" title={expert.user.name}>
                     {expert.user?.name}
                 </h3>
             </Link>

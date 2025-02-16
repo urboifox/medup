@@ -2,7 +2,7 @@ import Button from "@/components/ui/button";
 import ExpertBaseInfo from "@/features/experts/components/expert-base-info";
 import { getAllExperts, getExpert } from "@/features/experts/services";
 import { getTranslations } from "next-intl/server";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
 
 export default async function ExpertPage({ params }: { params: Promise<{ id: string }> }) {
@@ -12,7 +12,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
     const expert = res?.data;
 
     if (!expert) {
-        return redirect("/experts");
+        return notFound();
     }
 
     return (

@@ -179,7 +179,10 @@
         "chatNow": "Chat Now",
         "onlineMedicalConsultation": "Online Medical Consultation",
         "onlineMedicalConsultationDescription": "As a student, you can consult an expert to gain experience  If you are sick, you can consult a doctor for a speedy recovery",
-        "consultNow": "Consult Now"
+        "consultNow": "Consult Now",
+        "noAbout": "No bio yet",
+        "editProfile": "Edit Profile",
+        "recommendedExperts": "Recommended Experts"
     },
     "articles": {
         "title": "Latest Articles",

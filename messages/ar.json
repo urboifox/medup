@@ -179,7 +179,10 @@
         "chatNow": "بدأ محادثة الآن",
         "onlineMedicalConsultation": "استشارة طبية عبر الإنترنت",
         "onlineMedicalConsultationDescription": "كطالب، يمكنك استشارة خبير لاكتساب الخبرة، وإذا كنت مريضًا، يمكنك استشارة طبيب للشفاء السريع",
-        "consultNow": "استشارة الآن"
+        "consultNow": "استشارة الآن",
+        "noAbout": "لا يوجد معلومات بعد",
+        "editProfile": "تعديل الملف الشخصي",
+        "recommendedExperts": "خبراء مقترحين"
     },
     "articles": {
         "title": "المقالات المنشورة حديثًا",

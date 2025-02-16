@@ -39,7 +39,7 @@ export default async function ProfilePage() {
                         <p className="text-dark-300">{expert.headline ?? t("experts.noAbout")}</p>
                     </div>
 
-                    <ExpertProfileExperience experience={experiences || []} />
+                    <ExpertProfileExperience experience={experiences || []} editUrl="/profile/experience" />
                 </div>
 
                 <div className="flex flex-col gap-10">

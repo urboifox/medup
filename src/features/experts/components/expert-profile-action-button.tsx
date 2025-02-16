@@ -13,7 +13,7 @@ export default function ExpertProfileActionButton({ expert }: { expert: Expert }
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="self-end">
             <Button className="w-fit self-end" type="submit">
                 {t("experts.chatNow")}
                 <span className="rtl:rotate-180">

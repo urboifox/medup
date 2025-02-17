@@ -180,7 +180,7 @@ export default function ExpertBasicProfileForm({ expert }: Props) {
                     defaultValue={
                         (state.formData?.get("city_id") as string) || expert.city.id.toString()
                     }
-                    key={`${state.formData?.get("city_id") as string || cities.length.toString()}-city`}
+                    key={`${(state.formData?.get("city_id") as string) || cities.length.toString()}-city`}
                 >
                     {cities.length === 0 && (
                         <option value="">{t("auth.pleaseSelectACountry")}</option>

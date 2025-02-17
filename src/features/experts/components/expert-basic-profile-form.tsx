@@ -4,7 +4,6 @@ import Button from "@/components/ui/button";
 import Input from "@/components/ui/input";
 import Select from "@/components/ui/select";
 import { useSelectMenuStore } from "@/features/select-menu/store";
-import { usePathname } from "@/i18n/routing";
 import { getCitiesByCountry } from "@/services/select-menu-client";
 import { useLocale, useTranslations } from "next-intl";
 import { useActionState, useEffect, useState } from "react";
@@ -23,7 +22,6 @@ interface Props {
 
 export default function ExpertBasicProfileForm({ expert }: Props) {
     const t = useTranslations();
-    const pathname = usePathname();
     const locale = useLocale();
     const router = useRouter();
 
@@ -59,8 +57,15 @@ export default function ExpertBasicProfileForm({ expert }: Props) {
     }
 
     useEffect(() => {
-        setCities([]);
-    }, [pathname, setCities]);
+        async function getInitialCities() {
+            const cities = await getCitiesByCountry(expert.city.country.id.toString(), {
+                headers: { Locale: locale }
+            });
+            setCities(cities.data || []);
+        }
+
+        getInitialCities();
+    }, []);
 
     useEffect(() => {
         if (state.success) {
@@ -153,8 +158,11 @@ export default function ExpertBasicProfileForm({ expert }: Props) {
                     error={state.errors?.country_id}
                     name="country_id"
                     onChange={handleCountryChange}
-                    defaultValue={state.formData?.get("country_id") as string}
-                    key={`${state.formData?.get("country_id") as string}-country`}
+                    defaultValue={
+                        (state.formData?.get("country_id") as string) ||
+                        expert.city.country?.id.toString()
+                    }
+                    key={`${(state.formData?.get("country_id") as string) || countries.length.toString()}-country`}
                 >
                     {countries.map((country) => {
                         return (
@@ -169,8 +177,10 @@ export default function ExpertBasicProfileForm({ expert }: Props) {
                     error={state.errors?.city_id}
                     name="city_id"
                     disabled={cities.length === 0}
-                    defaultValue={state.formData?.get("city_id") as string}
-                    key={`${state.formData?.get("city_id") as string}-city`}
+                    defaultValue={
+                        (state.formData?.get("city_id") as string) || expert.city.id.toString()
+                    }
+                    key={`${state.formData?.get("city_id") as string || cities.length.toString()}-city`}
                 >
                     {cities.length === 0 && (
                         <option value="">{t("auth.pleaseSelectACountry")}</option>

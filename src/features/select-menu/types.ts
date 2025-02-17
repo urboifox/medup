@@ -18,6 +18,5 @@ export type Speciality = BaseEntity & {
 export type Country = BaseEntity;
 
 export type City = BaseEntity & {
-    country_id?: number;
-    country?: Country;
+    country: Country;
 };

@@ -13,8 +13,6 @@ export default async function EditProfilePage() {
         return redirect("/logout");
     }
 
-    console.log(expert.user);
-
     return (
         <FormContainer>
             <h1 className="text-3xl font-semibold">{t("common.editYourProfile")}</h1>

@@ -1,15 +1,16 @@
 import BasicProfileForm from "@/features/auth/components/basic-profile-form";
 import FormContainer from "@/features/auth/components/form-container";
-import ExpertBasicProfileForm from "@/features/experts/components/expert-basic-profile-form";
-import { getBasicProfile } from "@/features/experts/services";
+import { getBasicProfile } from "@/features/auth/services";
+import ExpertBasicProfileFormContainer from "@/features/experts/components/expert-basic-profile-form-container";
+import { UserType } from "@/types/user";
 import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 
 export default async function EditProfilePage() {
     const t = await getTranslations();
-    const { data: expert } = await getBasicProfile();
+    const { data: user } = await getBasicProfile();
 
-    if (!expert) {
+    if (!user) {
         return redirect("/logout");
     }
 
@@ -17,10 +18,9 @@ export default async function EditProfilePage() {
         <FormContainer>
             <h1 className="text-3xl font-semibold">{t("common.editYourProfile")}</h1>
             <h2 className="text-2xl font-semibold text-start w-full">{t("common.userProfile")}</h2>
-            <BasicProfileForm user={expert.user} />
+            <BasicProfileForm user={user} />
             <span className="bg-light-300 h-1 w-full my-4" />
-            <h2 className="text-2xl font-semibold text-start w-full">{t("common.expertProfile")}</h2>
-            <ExpertBasicProfileForm expert={expert} />
+            {user.type === UserType.Expert && <ExpertBasicProfileFormContainer />}
         </FormContainer>
     );
 }

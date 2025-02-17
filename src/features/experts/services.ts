@@ -9,7 +9,7 @@ export async function getExpert(id: string, options?: FetcherOptions) {
     return await fetcher<Expert>("/api/public/experts/" + id, options);
 }
 
-export async function getBasicProfile(options?: FetcherOptions) {
+export async function getExpertProfile(options?: FetcherOptions) {
     return await fetcher<Expert>("/api/experts/me", options);
 }
 

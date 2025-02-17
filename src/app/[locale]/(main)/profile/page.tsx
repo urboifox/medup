@@ -5,7 +5,7 @@ import ExpertProfileInformation from "@/features/experts/components/expert-profi
 import ExpertProfileSocialMedia from "@/features/experts/components/expert-profile-social-media";
 import InfoCardWrapper from "@/features/experts/components/info-card-wrapper";
 import {
-    getBasicProfile,
+    getExpertProfile,
     getProfileCertification,
     getProfileExperiences
 } from "@/features/experts/services";
@@ -19,7 +19,7 @@ import { MdEdit } from "react-icons/md";
 
 export default async function ProfilePage() {
     const t = await getTranslations();
-    const { data: expert } = await getBasicProfile();
+    const { data: expert } = await getExpertProfile();
     const { data: experiences } = await getProfileExperiences();
     const { data: certification } = await getProfileCertification();
 
@@ -30,7 +30,7 @@ export default async function ProfilePage() {
     return (
         <div className="container py-20">
             <div className="flex flex-col lg:flex-row gap-10 justify-between">
-                <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-10 max-w-3xl">
                     <ExpertBaseInfo expert={expert} />
 
                     <div className="flex flex-col gap-4">
@@ -53,16 +53,15 @@ export default async function ProfilePage() {
                 </div>
 
                 <div className="flex flex-col gap-10">
-                    <Link href="/profile/edit" className="self-end">
+                    <Link href="/profile/edit" className="lg:self-end">
                         <Button className="w-fit self-end" variant="secondary">
                             <FaEdit size={20} />
                             {t("experts.editProfile")}
                         </Button>
                     </Link>
-                    <div className="flex flex-col gap-5 max-w-lg">
+                    <div className="flex flex-col gap-5 max-w-lg min-w-80">
                         <InfoCardWrapper label={t("experts.transactions")}>
                             <div className="flex flex-col gap-4 items-center">
-                                {/* <p className="text-primary-main font-semibold text-2xl">${139}</p> */}
                                 <Link href="/profile/wallet" className="w-full">
                                     <Button className="w-full">
                                         <CiBank size={28} />

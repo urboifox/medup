@@ -15,6 +15,7 @@ import { redirect } from "next/navigation";
 import { FaEdit } from "react-icons/fa";
 import { CiBank } from "react-icons/ci";
 import ExpertProfileCertification from "@/features/experts/components/expert-profile-certification";
+import { MdEdit } from "react-icons/md";
 
 export default async function ProfilePage() {
     const t = await getTranslations();
@@ -33,13 +34,22 @@ export default async function ProfilePage() {
                     <ExpertBaseInfo expert={expert} />
 
                     <div className="flex flex-col gap-4">
-                        <h3 className="text-xl font-semibold">
-                            {t("common.about")} {expert.user.name}
-                        </h3>
+                        <div className="flex items-center gap-2 justify-between">
+                            <h3 className="text-xl font-semibold">{t("common.aboutYout")}</h3>
+                            <Link
+                                href={"/profile/edit"}
+                                className="text-dark-300 transition-colors duration-200 hover:text-dark-400"
+                            >
+                                <MdEdit size={20} />
+                            </Link>
+                        </div>
                         <p className="text-dark-300">{expert.headline ?? t("experts.noAbout")}</p>
                     </div>
 
-                    <ExpertProfileExperience experience={experiences || []} editUrl="/profile/experience" />
+                    <ExpertProfileExperience
+                        experience={experiences || []}
+                        editUrl="/profile/experience"
+                    />
                 </div>
 
                 <div className="flex flex-col gap-10">

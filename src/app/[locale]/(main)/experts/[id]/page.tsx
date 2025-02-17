@@ -60,7 +60,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                             {expert?.certification ? (
                                 <ExpertProfileCertification certification={expert.certification} />
                             ) : (
-                                <p>{t("experts.noCertification")}</p>
+                                <p className="text-dark-300">{t("experts.noCertification")}</p>
                             )}
                         </InfoCardWrapper>
                     </div>

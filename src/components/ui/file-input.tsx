@@ -108,7 +108,7 @@ export default function FileInput({
                             {file.type.includes("image") && (
                                 <Image
                                     src={URL.createObjectURL(file)}
-                                    alt={file.name}
+                                    alt={file.name || "File"}
                                     height={100}
                                     width={100}
                                     className="rounded-lg object-cover w-full h-64"

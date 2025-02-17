@@ -59,7 +59,6 @@ export default function ExpertsSearchHeader() {
                     <Radio
                         name="only_premium"
                         label={t("experts.premiumExperts")}
-                        defaultChecked
                         value="1"
                         onChange={(e) => handleQuery(e, "only_premium")}
                     />
@@ -68,6 +67,7 @@ export default function ExpertsSearchHeader() {
                         label={t("experts.allExperts")}
                         value="0"
                         onChange={(e) => handleQuery(e, "only_premium")}
+                        defaultChecked
                     />
                 </div>
                 <div className="flex justify-end gap-2 flex-1 max-lg:pb-5 w-full">

@@ -3,6 +3,7 @@
 import { FetcherError } from "@/lib/exceptions";
 import { fetcher } from "@/utils/fetcher";
 import { getTranslations } from "next-intl/server";
+import { revalidatePath } from "next/cache";
 
 type RegisterAction = {
     success: boolean;
@@ -204,5 +205,36 @@ export async function resetPasswordAction(
         return { success: false, formData, message: t("errors.somethingWentWrong") };
     }
 
+    return { success: true, formData };
+}
+
+export async function basicProfileAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    if ((formData.get("avatar") as File)?.size === 0) formData.delete("avatar");
+
+    try {
+        await fetcher("/auth/profile", {
+            method: "POST",
+            body: formData,
+            skipHeaders: true
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    revalidatePath("/profile");
     return { success: true, formData };
 }

@@ -74,8 +74,11 @@ export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<Ap
                 Authorization: `Bearer ${newTokenData.token}`
             };
             res = await fetch(newUrl, requestInit);
+            if (!res.ok) {
+                redirect("/logout");
+            }
         } else {
-            redirect("/login");
+            redirect("/logout");
         }
     }
 

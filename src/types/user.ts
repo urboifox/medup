@@ -8,7 +8,10 @@ export enum UserType {
 export type User = {
     id: number;
     email: string;
+    phone: string;
     name: string;
+    first_name: string;
+    middle_name: string;
     avatar: string;
     type: UserType;
     created_at: string;

@@ -15,7 +15,7 @@ export default async function ExpertsPageContent({
         params: sanitizeObject({
             handle,
             page,
-            only_premium: only_premium === "0" ? "" : "1",
+            only_premium: only_premium === "1" ? "1" : "0",
             city,
             skills,
             colleges,

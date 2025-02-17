@@ -48,5 +48,9 @@ export type Expert = {
     experience_years: number | null;
     experiences: ExpertExperience[];
     certification: ExpertCertification;
+    cv: string;
     user: User;
+    degree: string;
+    education: string;
+    graduation_year: number;
 };

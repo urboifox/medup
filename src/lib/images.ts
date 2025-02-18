@@ -5,7 +5,8 @@ const images = {
     doctor: "/images/doctor.webp",
     explore: "/images/explore.webp",
     skill: "/images/skill.png",
-    contactSection: "/images/contact-section.webp"
+    contactSection: "/images/contact-section.webp",
+    logo: "/images/logo.png"
 };
 
 export default images;

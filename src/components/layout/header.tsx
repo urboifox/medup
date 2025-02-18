@@ -3,6 +3,7 @@ import NavSideMenu from "./nav-side-menu";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./language-switcher";
 import UserHeaderInfo from "./user-header-info";
+import Logo from "../ui/logo";
 
 type NavItem = {
     label: string;
@@ -26,7 +27,7 @@ export default function Header() {
                     <div className="flex items-center gap-4">
                         <NavSideMenu navItems={navItems} />
                         <Link href={"/"} className="flex items-center gap-2">
-                            <span className="text-2xl font-semibold text-[#18191c]">Med<span className="text-primary-main">Up</span></span>
+                            <Logo />
                         </Link>
                     </div>
                     <nav className="hidden lg:block">

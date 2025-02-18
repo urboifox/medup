@@ -46,6 +46,17 @@ export default function ExpertEditExperienceProfileForm({
         }
     }, [state, router]);
 
+    useEffect(() => {
+        async function getInitialCities() {
+            const cities = await getCitiesByCountry(experience.city.country.id.toString(), {
+                headers: { Locale: locale }
+            });
+            setCities(cities.data || []);
+        }
+
+        getInitialCities();
+    }, []);
+
     const workTypeOptions = [
         { value: 0, label: t("common.fullTime") },
         { value: 1, label: t("common.partTime") },

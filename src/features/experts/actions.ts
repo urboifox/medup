@@ -133,3 +133,32 @@ export async function expertDeleteExperienceProfileAction(
     revalidatePath("/profile");
     return { success: true, formData };
 }
+
+export async function expertAddCertificateProfileAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/api/experts/certification", {
+            method: "POST",
+            body: formData,
+            skipHeaders: true
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    revalidatePath("/profile");
+    return { success: true, formData };
+}

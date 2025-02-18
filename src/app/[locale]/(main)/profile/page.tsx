@@ -78,7 +78,7 @@ export default async function ProfilePage() {
                         </InfoCardWrapper>
                         <InfoCardWrapper
                             label={t("common.certification")}
-                            editUrl="/profile/certification"
+                            editUrl="/profile/certification/add"
                         >
                             {certification ? (
                                 <ExpertProfileCertification certification={certification} />

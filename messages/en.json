@@ -8,6 +8,8 @@
     "common": {
         "retry": "Retry",
         "about": "About",
+        "addCertificate": "Add certificate",
+        "editCertificate": "Edit certificate",
         "addExperience": "Add experience",
         "confirm": "Confirm",
         "cancel": "Cancel",
@@ -70,10 +72,13 @@
     "labels": {
         "firstName": "First Name",
         "description": "Description",
+        "certificateName": "Certificate Name",
         "workType": "Work type",
         "hospitalName": "Hospital Name",
         "yearsOfExperience": "Years of Experience",
         "jobTitle": "Job Title",
+        "file": "File",
+        "date": "Date",
         "educationBackground": "Education Background",
         "startDate": "Start Date",
         "endDate": "End Date",
@@ -223,7 +228,12 @@
         "consultNow": "Consult Now",
         "noAbout": "No bio yet",
         "editProfile": "Edit Profile",
-        "recommendedExperts": "Recommended Experts"
+        "recommendedExperts": "Recommended Experts",
+        "certificate": {
+            "one": "Please choose a CV file in PDF or DOC form.",
+            "two": "Make sure the file size does not exceed 5MB.",
+            "three": "Make sure the resume contains the correct contact information."
+        }
     },
     "articles": {
         "title": "Latest Articles",

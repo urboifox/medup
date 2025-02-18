@@ -9,6 +9,8 @@
         "addExperience": "اضافة خبرة",
         "editExperience": "تعديل الخبرة",
         "confirm": "تأكيد",
+        "addCertificate": "أضف شهادة",
+        "editCertificate": "تعديل الشهادة",
         "cancel": "الغاء",
         "retry": "إعادة المحاولة",
         "about": "حول",
@@ -68,6 +70,7 @@
         "noUserLoggedIn": "لا يوجد مستخدم سجل الدخول"
     },
     "labels": {
+        "certificateName": "اسم الشهادة",
         "firstName": "الاسم الأول",
         "description": "الوصف",
         "middleName": "الاسم الوسطى",
@@ -83,6 +86,8 @@
         "lastName": "الاسم الأخير",
         "location": "العنوان",
         "workType": "نوع العمل",
+        "file": "الملف",
+        "date": "التاريخ",
         "dateJoined": "تاريخ الانضمام",
         "experience": "الخبرة",
         "email": "البريد الإلكتروني",
@@ -223,7 +228,12 @@
         "consultNow": "استشارة الآن",
         "noAbout": "لا يوجد معلومات بعد",
         "editProfile": "تعديل الملف الشخصي",
-        "recommendedExperts": "خبراء مقترحين"
+        "recommendedExperts": "خبراء مقترحين",
+        "certificate": {
+            "one": "يرجى اختيار ملف السيرة الذاتية بصيغة PDF أو DOC.",
+            "two": "تأكد من أن حجم الملف لا يتجاوز 5 ميجا بايت.",
+            "three": "تأكد من أن السيرة الذاتية تحتوي على معلومات الاتصال الصحيحة."
+        }
     },
     "articles": {
         "title": "المقالات المنشورة حديثًا",

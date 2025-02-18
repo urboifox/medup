@@ -35,6 +35,7 @@ export default function ExpertExperienceProfileForm() {
     useEffect(() => {
         if (state.success) {
             toast.success(t("common.changesSaved"));
+            router.push("/profile");
         }
         if (state.message) {
             toast.error(state.message);

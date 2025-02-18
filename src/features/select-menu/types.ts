@@ -20,3 +20,4 @@ export type Country = BaseEntity;
 export type City = BaseEntity & {
     country: Country;
 };
+

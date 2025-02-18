@@ -17,6 +17,10 @@ export async function getProfileExperiences(options?: FetcherOptions) {
     return await fetcher<ExpertExperience[]>("/api/experts/experiences", options);
 }
 
+export async function getProfileExperience(id: string, options?: FetcherOptions) {
+    return await fetcher<ExpertExperience>(`/api/experts/experiences/${id}`, options);
+}
+
 export async function getProfileCertification(options?: FetcherOptions) {
     return await fetcher<ExpertCertification>("/api/experts/certification", options);
 }

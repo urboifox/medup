@@ -75,3 +75,61 @@ export async function expertExperienceProfileAction(
     revalidatePath("/profile");
     return { success: true, formData };
 }
+
+export async function expertEditExperienceProfileAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+    const id = formData.get("id") as string;
+
+    try {
+        await fetcher("/api/experts/experiences/" + id, {
+            method: "PUT",
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    revalidatePath("/profile");
+    return { success: true, formData };
+}
+
+export async function expertDeleteExperienceProfileAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+    const id = formData.get("id") as string;
+
+    try {
+        await fetcher("/api/experts/experiences/" + id, {
+            method: "DELETE",
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    revalidatePath("/profile");
+    return { success: true, formData };
+}

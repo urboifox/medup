@@ -19,7 +19,7 @@ export default function ExpertProfileExperience({
                 <h2 className="text-3xl font-medium">{t("labels.experience")}</h2>
                 {editUrl && (
                     <Link
-                        href={"/profile/experience"}
+                        href={"/profile/experience/add"}
                         className="text-dark-300 transition-colors duration-200 hover:text-dark-400"
                     >
                         <MdEdit size={20} />

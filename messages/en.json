@@ -8,6 +8,10 @@
     "common": {
         "retry": "Retry",
         "about": "About",
+        "addExperience": "Add experience",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "editExperience": "Edit experience",
         "fullTime": "Full time",
         "partTime": "Part time",
         "remotely": "Remotely",
@@ -206,6 +210,7 @@
         "noExperience": "No experience",
         "noExperts": "No experts found",
         "hospitalInformation": "Hospital Information",
+        "deleteExperience": "Are you sure you wanna delete this experience?",
         "locationSearchPlaceholder": "City, state",
         "premiumExperts": "Premium Experts",
         "allExperts": "All Experts",

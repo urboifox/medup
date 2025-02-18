@@ -47,3 +47,31 @@ export async function expertBasicProfileAction(
     revalidatePath("/profile");
     return { success: true, formData };
 }
+
+export async function expertExperienceProfileAction(
+    _prevData: RegisterAction,
+    formData: FormData
+): Promise<RegisterAction> {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/api/experts/experiences", {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    revalidatePath("/profile");
+    return { success: true, formData };
+}

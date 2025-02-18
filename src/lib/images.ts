@@ -6,7 +6,8 @@ const images = {
     explore: "/images/explore.webp",
     skill: "/images/skill.png",
     contactSection: "/images/contact-section.webp",
-    logo: "/images/logo.png"
+    logo: "/images/logo.png",
+    addArticle: "/images/add-article.png"
 };
 
 export default images;

@@ -71,6 +71,10 @@
     },
     "labels": {
         "firstName": "First Name",
+        "notes": "Notes",
+        "orcidNumber": "ORCID Number",
+        "contributors": "Contributors",
+        "title": "Title",
         "description": "Description",
         "certificateName": "Certificate Name",
         "workType": "Work type",
@@ -238,7 +242,12 @@
     "articles": {
         "title": "Latest Articles",
         "allArticles": "All Articles",
-        "suggestedArticles": "Suggested Articles"
+        "suggestedArticles": "Suggested Articles",
+        "uploadTitle": "Your window to the scientific world",
+        "uploadDescription": "This is your chance to make a difference in the world. Share your article to reach a wide audience of researchers and enthusiasts, and leave your mark on the scientific world.",
+        "uploadButton": "Upload your research",
+        "addArticleTitle": "Add your research",
+        "articleAdded": "Research submitted successfully"
     },
     "footer": {
         "copyright": "Copyright © 2023 MedUp. All rights reserved.",

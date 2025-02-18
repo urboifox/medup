@@ -70,6 +70,7 @@
         "noUserLoggedIn": "لا يوجد مستخدم سجل الدخول"
     },
     "labels": {
+        "title": "العنوان",
         "certificateName": "اسم الشهادة",
         "firstName": "الاسم الأول",
         "description": "الوصف",
@@ -88,7 +89,10 @@
         "workType": "نوع العمل",
         "file": "الملف",
         "date": "التاريخ",
+        "contributors": "المساهمون",
+        "orcidNumber": "رقم الأوركيد",
         "dateJoined": "تاريخ الانضمام",
+        "notes": "ملاحظات",
         "experience": "الخبرة",
         "email": "البريد الإلكتروني",
         "password": "كلمة المرور",
@@ -238,7 +242,11 @@
     "articles": {
         "title": "المقالات المنشورة حديثًا",
         "allArticles": "جميع المقالات",
-        "suggestedArticles": "المقالات المقترحة"
+        "suggestedArticles": "المقالات المقترحة",
+        "uploadTitle": "نافذتك على العالم العلمي",
+        "uploadDescription": "هذه فرصتك لإحداث تغيير في العالم. شارك مقالتك لتصل إلى جمهور واسع من الباحثين والمتحمسين، واترك بصمتك على العالم العلمي.",
+        "uploadButton": "قم بتحميل بحثك",
+        "articleAdded": "تم تقديم البحث بنجاح"
     },
     "footer": {
         "copyright": "حقوق النشر © 2023 MedUp. جميع الحقوق محفوظة.",

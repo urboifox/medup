@@ -15,7 +15,7 @@ export default function UserInfo({ user }: { user: User }) {
                     alt={user.name}
                     width={40}
                     height={40}
-                    className="rounded-full object-cover"
+                    className="rounded-full object-cover aspect-square"
                 />
             </DropdownButton>
         </div>

@@ -16,7 +16,7 @@ export default function ExpertBaseInfo({ expert }: { expert: Expert }) {
                 alt={expert.user.name}
                 width={260}
                 height={260}
-                className="rounded-3xl object-cover"
+                className="rounded-3xl object-cover aspect-square"
             />
             <div className="flex flex-col gap-6">
                 <h3 className="lg:text-xl font-semibold line-clamp-2" title={expert.user.name}>

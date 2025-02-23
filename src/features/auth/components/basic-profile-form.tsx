@@ -46,7 +46,7 @@ export default function BasicProfileForm({ user }: { user: User }) {
                     alt={user.name}
                     width={200}
                     height={200}
-                    className="rounded-2xl"
+                    className="rounded-2xl aspect-square object-cover"
                 />
                 <div className="flex flex-col gap-4">
                     <p className="text-dark-400 text-xl font-medium max-w-xs">{user.name}</p>

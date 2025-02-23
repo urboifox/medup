@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { ExpertExperience } from "../types";
 import ExpertExperienceItem from "./expert-experience-item";
 import { Link } from "@/i18n/routing";
-import { MdEdit } from "react-icons/md";
+import { FaPlus } from "react-icons/fa6";
 
 export default function ExpertProfileExperience({
     experience = [],
@@ -22,7 +22,7 @@ export default function ExpertProfileExperience({
                         href={"/profile/experience/add"}
                         className="text-dark-300 transition-colors duration-200 hover:text-dark-400"
                     >
-                        <MdEdit size={20} />
+                        <FaPlus size={20} />
                     </Link>
                 )}
             </div>

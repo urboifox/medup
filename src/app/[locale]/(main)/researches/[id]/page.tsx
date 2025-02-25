@@ -79,7 +79,7 @@ export default async function ArticlePage({
             </div>
 
             <div className="flex flex-col gap-10 w-full">
-                <h2 className="text-3xl font-semibold">{t("articles.suggestedArticles")}</h2>
+                <h2 className="text-3xl font-semibold">{t("articles.suggestedResearches")}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {suggestedArticles?.map((article, idx) => {
                         return <ArticleCard article={article} key={idx} />;

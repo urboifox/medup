@@ -16,7 +16,9 @@ export default function Header() {
     const navItems: NavItem[] = [
         { label: t("nav.experts"), href: "/experts" },
         { label: t("nav.library"), href: "/library" },
-        { label: t("nav.articles"), href: "/articles" },
+        { label: t("nav.researches"), href: "/researches" },
+        { label: t("nav.ideas"), href: "/ideas" },
+        { label: t("nav.collaborate"), href: "/collaborate" },
         { label: t("nav.digitalAppointment"), href: "/experts" }
     ];
 

@@ -21,3 +21,6 @@ export type City = BaseEntity & {
     country: Country;
 };
 
+export type CollegeWithSpeciality = BaseEntity & {
+    specialities: Speciality[];
+};

@@ -7,6 +7,10 @@
     },
     "common": {
         "addExperience": "اضافة خبرة",
+        "colleges": "الكليات",
+        "price": "السعر",
+        "paidVolunteer": "تطوع مدفوع",
+        "unpaidVolunteer": "تطوع غير مدفوع",
         "editExperience": "تعديل الخبرة",
         "confirm": "تأكيد",
         "addCertificate": "أضف شهادة",
@@ -125,8 +129,10 @@
     "nav": {
         "experts": "الخبراء",
         "library": "المكتبة",
-        "articles": "المقالات",
-        "digitalAppointment": "التعيين الرقمي"
+        "researches": "الأبحاث",
+        "digitalAppointment": "التعيين الرقمي",
+        "ideas": "الأفكار",
+        "collaborate": "تعاون"
     },
     "auth": {
         "resetPassword": "إعادة تعيين كلمة المرور",
@@ -241,12 +247,18 @@
     },
     "articles": {
         "title": "المقالات المنشورة حديثًا",
-        "allArticles": "جميع المقالات",
-        "suggestedArticles": "المقالات المقترحة",
+        "allResearches": "جميع الأبحات",
+        "suggestedResearches": "الأبحاث المقترحة",
         "uploadTitle": "نافذتك على العالم العلمي",
         "uploadDescription": "هذه فرصتك لإحداث تغيير في العالم. شارك مقالتك لتصل إلى جمهور واسع من الباحثين والمتحمسين، واترك بصمتك على العالم العلمي.",
         "uploadButton": "قم بتحميل بحثك",
-        "articleAdded": "تم تقديم البحث بنجاح"
+        "researchAdded": "تم تقديم البحث بنجاح"
+    },
+    "collaborate": {
+        "addProject": "أضف مشروع"
+    },
+    "ideas": {
+        "addIdea": "أضف فكرة"
     },
     "footer": {
         "copyright": "حقوق النشر © 2023 MedUp. جميع الحقوق محفوظة.",

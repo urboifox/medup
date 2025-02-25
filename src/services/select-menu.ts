@@ -1,4 +1,11 @@
-import { City, College, Country, Skill, Speciality } from "@/features/select-menu/types";
+import {
+    City,
+    College,
+    CollegeWithSpeciality,
+    Country,
+    Skill,
+    Speciality
+} from "@/features/select-menu/types";
 import { fetcher } from "@/utils/fetcher";
 
 export async function getCountries() {
@@ -19,4 +26,8 @@ export async function getColleges() {
 
 export async function getSpecialities() {
     return await fetcher<Speciality[]>("/api/select_menu/specialities");
+}
+
+export async function getCollegesWithSpecialities() {
+    return await fetcher<CollegeWithSpeciality[]>("/api/select_menu/colleges_with_specialities");
 }

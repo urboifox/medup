@@ -27,7 +27,7 @@ export default function AddArticleForm() {
 
     useEffect(() => {
         if (state.success) {
-            toast.success(t("articles.articleAdded"));
+            toast.success(t("articles.researchAdded"));
             router.push("/articles");
         }
         if (state.message) {

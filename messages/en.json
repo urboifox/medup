@@ -7,6 +7,10 @@
     },
     "common": {
         "retry": "Retry",
+        "colleges": "Colleges",
+        "paidVolunteer": "Paid Volunteer",
+        "unpaidVolunteer": "Unpaid Volunteer",
+        "price": "Price",
         "about": "About",
         "addCertificate": "Add certificate",
         "editCertificate": "Edit certificate",
@@ -125,8 +129,10 @@
     "nav": {
         "experts": "Experts",
         "library": "Library",
-        "articles": "Articles",
-        "digitalAppointment": "Digital Appointment"
+        "researches": "Researches",
+        "digitalAppointment": "Digital Appointment",
+        "ideas": "Ideas",
+        "collaborate": "Collaborate"
     },
     "auth": {
         "resetPassword": "Reset Password",
@@ -240,14 +246,20 @@
         }
     },
     "articles": {
-        "title": "Latest Articles",
-        "allArticles": "All Articles",
-        "suggestedArticles": "Suggested Articles",
+        "title": "Latest Researches",
+        "allResearches": "All Researches",
+        "suggestedResearches": "Suggested Researches",
         "uploadTitle": "Your window to the scientific world",
         "uploadDescription": "This is your chance to make a difference in the world. Share your article to reach a wide audience of researchers and enthusiasts, and leave your mark on the scientific world.",
         "uploadButton": "Upload your research",
         "addArticleTitle": "Add your research",
-        "articleAdded": "Research submitted successfully"
+        "researchAdded": "Research submitted successfully"
+    },
+    "collaborate": {
+        "addProject": "Add a Project"
+    },
+    "ideas": {
+        "addIdea": "Add an Idea"
     },
     "footer": {
         "copyright": "Copyright © 2023 MedUp. All rights reserved.",

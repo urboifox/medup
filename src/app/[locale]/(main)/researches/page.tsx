@@ -15,7 +15,7 @@ export default async function ArticlesPage({
         <div className="min-h-screen container py-16 flex flex-col gap-16">
             <ArticlesUploadSection />
             <main className="flex flex-col gap-6">
-                <h2 className="text-3xl font-semibold">{t("articles.allArticles")}</h2>
+                <h2 className="text-3xl font-semibold">{t("articles.allResearches")}</h2>
                 <ArticlesContent searchParams={searchParamsData} />
             </main>
         </div>

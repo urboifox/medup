@@ -25,7 +25,7 @@ export default function ArticlesUploadSection() {
 
             <Image
                 src={images.addArticle}
-                alt="Add article"
+                alt="Add research"
                 width={450}
                 height={300}
                 className="object-cover rounded-2xl max-lg:w-full"

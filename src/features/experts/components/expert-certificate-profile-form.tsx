@@ -27,7 +27,7 @@ export default function ExpertCertificateProfileForm() {
         if (state.message) {
             toast.error(state.message);
         }
-    }, [state, router]);
+    }, [state, router, t]);
 
     return (
         <form

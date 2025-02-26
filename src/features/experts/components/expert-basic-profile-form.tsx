@@ -65,7 +65,7 @@ export default function ExpertBasicProfileForm({ expert }: Props) {
         }
 
         getInitialCities();
-    }, []);
+    }, [expert.city.country.id, locale, setCities]);
 
     useEffect(() => {
         if (state.success) {
@@ -74,7 +74,7 @@ export default function ExpertBasicProfileForm({ expert }: Props) {
         if (state.message) {
             toast.error(state.message);
         }
-    }, [state, router]);
+    }, [state, router, t]);
 
     return (
         <form

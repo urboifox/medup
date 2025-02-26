@@ -40,7 +40,7 @@ export default function ExpertExperienceProfileForm() {
         if (state.message) {
             toast.error(state.message);
         }
-    }, [state, router]);
+    }, [state, router, t]);
 
     const workTypeOptions = [
         { value: 0, label: t("common.fullTime") },

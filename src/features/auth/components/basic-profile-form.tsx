@@ -30,7 +30,7 @@ export default function BasicProfileForm({ user }: { user: User }) {
         if (state.message) {
             toast.error(state.message);
         }
-    }, [state, router]);
+    }, [state, router, t]);
 
     return (
         <form

@@ -33,7 +33,7 @@ export default function ExpertExperienceItem({ experience }: { experience: Exper
         } else if (state.message) {
             toast.error(state.message);
         }
-    }, [state]);
+    }, [state, t]);
 
     return (
         <>

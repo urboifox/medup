@@ -44,7 +44,7 @@ export default function ExpertEditExperienceProfileForm({
         if (state.message) {
             toast.error(state.message);
         }
-    }, [state, router]);
+    }, [state, router, t]);
 
     useEffect(() => {
         async function getInitialCities() {
@@ -55,7 +55,7 @@ export default function ExpertEditExperienceProfileForm({
         }
 
         getInitialCities();
-    }, []);
+    }, [experience.city.country.id, locale, setCities]);
 
     const workTypeOptions = [
         { value: 0, label: t("common.fullTime") },

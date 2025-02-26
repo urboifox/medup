@@ -21,7 +21,7 @@ export default function useQueryString(scroll = false) {
             Object.keys(entry).forEach((key) => params.set(key, entry[key]));
             router.push(pathname + "?" + params.toString(), { scroll });
         },
-        [searchParams, pathname, router]
+        [searchParams, pathname, router, scroll]
     );
 
     const getQueryString = useCallback(
@@ -38,7 +38,7 @@ export default function useQueryString(scroll = false) {
 
             router.push(pathname + "?" + params.toString(), { scroll });
         },
-        [searchParams, pathname, router]
+        [searchParams, pathname, router, scroll]
     );
 
     return {

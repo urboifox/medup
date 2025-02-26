@@ -33,7 +33,7 @@ export default function AddArticleForm() {
         if (state.message) {
             toast.error(state.message);
         }
-    }, [state, router]);
+    }, [state, router, t]);
 
     return (
         <form

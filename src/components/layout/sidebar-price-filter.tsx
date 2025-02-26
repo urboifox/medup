@@ -23,14 +23,14 @@ export default function SidebarPriceFilter() {
                     value="1"
                     name="paid"
                     onChange={handleChange}
-                    defaultChecked={getQueryString("paid") === "1" ? true : true}
+                    defaultChecked={getQueryString("paid") === "1"}
                 />
                 <Radio
                     label={t("common.unpaidVolunteer")}
                     value="0"
                     name="paid"
                     onChange={handleChange}
-                    defaultChecked={getQueryString("paid") === "0"}
+                    defaultChecked={getQueryString("paid") !== "1"}
                 />
             </div>
         </div>

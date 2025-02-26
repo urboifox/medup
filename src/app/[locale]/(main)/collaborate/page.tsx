@@ -38,8 +38,8 @@ export default async function CollaboratePage({
                 <div className="flex flex-col gap-6 w-full">
                     <h2 className="font-semibold text-2xl">{"New"}</h2>
                     <Suspense
-                        fallback={Array.from({ length: 5 }).map(() => (
-                            <CollaborateCardSkeleton />
+                        fallback={Array.from({ length: 5 }).map((_, i) => (
+                            <CollaborateCardSkeleton key={i} />
                         ))}
                         key={(searchParamsData?.specialities as string) || ""}
                     >

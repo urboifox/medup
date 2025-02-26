@@ -1,7 +1,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
-export default function useQueryString() {
+export default function useQueryString(scroll = false) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();
@@ -13,13 +13,13 @@ export default function useQueryString() {
             if (typeof entry === "string") {
                 if (value) {
                     params.set(entry, value);
-                    router.push(pathname + "?" + params.toString(), { scroll: false });
+                    router.push(pathname + "?" + params.toString(), { scroll });
                 }
                 return;
             }
 
             Object.keys(entry).forEach((key) => params.set(key, entry[key]));
-            router.push(pathname + "?" + params.toString(), { scroll: false });
+            router.push(pathname + "?" + params.toString(), { scroll });
         },
         [searchParams, pathname, router]
     );
@@ -36,13 +36,13 @@ export default function useQueryString() {
             const params = new URLSearchParams(searchParams.toString());
             names.forEach((name) => params.delete(name));
 
-            router.push(pathname + "?" + params.toString(), { scroll: false });
+            router.push(pathname + "?" + params.toString(), { scroll });
         },
         [searchParams, pathname, router]
     );
 
     return {
-        createQueryString: createQueryString,
+        createQueryString,
         getQueryString,
         removeQueryString,
         pathname,

@@ -9,14 +9,16 @@ interface Props {
     currentPage: number;
     lastPage: number;
     maxVisible?: number;
+    scroll?: boolean;
 }
 export default function Pagination({
     currentPage = 1,
     lastPage = 1,
-    maxVisible: maxVisibleProp = 3
+    maxVisible: maxVisibleProp = 3,
+    scroll = false
 }: Props) {
     const t = useTranslations();
-    const { createQueryString } = useQueryString();
+    const { createQueryString } = useQueryString(scroll);
 
     function handleNextPage() {
         createQueryString("page", `${currentPage + 1}`);

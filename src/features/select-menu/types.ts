@@ -11,8 +11,9 @@ export type College = BaseEntity & {
 };
 
 export type Speciality = BaseEntity & {
-    college_id: number;
+    college_id?: number;
     experts_count: number;
+    college?: College;
 };
 
 export type Country = BaseEntity;

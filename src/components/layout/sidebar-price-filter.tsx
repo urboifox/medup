@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 export default function SidebarPriceFilter() {
     const t = useTranslations();
-    const { createQueryString } = useQueryString();
+    const { createQueryString, getQueryString } = useQueryString();
     function handleChange(e: React.FormEvent<HTMLInputElement>) {
         createQueryString("paid", e.currentTarget.value);
     }
@@ -20,12 +20,14 @@ export default function SidebarPriceFilter() {
                     value="1"
                     name="paid"
                     onChange={handleChange}
+                    defaultChecked={getQueryString("paid") === "1" ? true : true}
                 />
                 <Radio
                     label={t("common.unpaidVolunteer")}
                     value="0"
                     name="paid"
                     onChange={handleChange}
+                    defaultChecked={getQueryString("paid") === "0"}
                 />
             </div>
         </div>

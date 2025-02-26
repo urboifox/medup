@@ -8,7 +8,7 @@ import { FaCheck, FaChevronRight } from "react-icons/fa6";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function FilterItem({ filter }: { filter: CollegeWithSpeciality }) {
-    const { createQueryString, removeQueryString, getQueryString } = useQueryString();
+    const { createQueryString, getQueryString } = useQueryString();
     const [open, setOpen] = useState(false);
 
     const searchParamsSpecialities = getQueryString("specialities") || "";
@@ -27,16 +27,25 @@ export default function FilterItem({ filter }: { filter: CollegeWithSpeciality }
         const isSelected = selectedSpecialities.includes(speciality.id.toString());
         if (isSelected) {
             if (selectedSpecialities.length <= 1) {
-                removeQueryString("specialities");
+                createQueryString({
+                    specialities: "",
+                    page: "1"
+                });
             } else {
                 const newSpecialities = selectedSpecialities.filter(
                     (id) => id !== speciality.id.toString()
                 );
-                createQueryString("specialities", newSpecialities.join(","));
+                createQueryString({
+                    specialities: newSpecialities.join(","),
+                    page: "1"
+                });
             }
         } else {
             const newSpecialities = [...selectedSpecialities, speciality.id.toString()];
-            createQueryString("specialities", newSpecialities.join(","));
+            createQueryString({
+                specialities: newSpecialities.join(","),
+                page: "1"
+            });
         }
     }
 

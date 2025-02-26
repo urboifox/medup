@@ -8,7 +8,10 @@ export default function SidebarPriceFilter() {
     const t = useTranslations();
     const { createQueryString, getQueryString } = useQueryString();
     function handleChange(e: React.FormEvent<HTMLInputElement>) {
-        createQueryString("paid", e.currentTarget.value);
+        createQueryString({
+            paid: e.currentTarget.value,
+            page: "1"
+        });
     }
 
     return (

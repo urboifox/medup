@@ -2,6 +2,7 @@ import PageSearch from "@/components/layout/page-search";
 import SidebarPriceFilter from "@/components/layout/sidebar-price-filter";
 import SpecialitiesPageFilter from "@/components/layout/specialities-page-filter";
 import Button from "@/components/ui/button";
+import CollaborateCardSkeleton from "@/features/collaborate/components/collaborate-card-skeleton";
 import CollaborateContent from "@/features/collaborate/components/collaborate-content";
 import { Link } from "@/i18n/routing";
 import { getCollegesWithSpecialities } from "@/services/select-menu";
@@ -37,7 +38,9 @@ export default async function CollaboratePage({
                 <div className="flex flex-col gap-6 w-full">
                     <h2 className="font-semibold text-2xl">{"New"}</h2>
                     <Suspense
-                        fallback={<div>Loading...</div>}
+                        fallback={Array.from({ length: 5 }).map(() => (
+                            <CollaborateCardSkeleton />
+                        ))}
                         key={(searchParamsData?.specialities as string) || ""}
                     >
                         <CollaborateContent searchParams={searchParamsData} />

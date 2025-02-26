@@ -3,6 +3,7 @@ import { getCollaborateContent } from "../services";
 import { sanitizeObject } from "@/utils/sanitize-object";
 import CollaborateCard from "./collaborate-card";
 import Pagination from "@/components/ui/pagination";
+import NoResults from "@/components/ui/no-results";
 
 export default async function CollaborateContent({ searchParams }: { searchParams: SearchParams }) {
     const { data: collaborates, meta } = await getCollaborateContent({
@@ -15,6 +16,7 @@ export default async function CollaborateContent({ searchParams }: { searchParam
     return (
         <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4 w-full">
+                {collaborates?.length === 0 && <NoResults />}
                 {collaborates?.map((collaborate) => {
                     return <CollaborateCard key={collaborate.id} collaborate={collaborate} />;
                 })}

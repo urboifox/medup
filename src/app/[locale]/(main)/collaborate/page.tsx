@@ -1,3 +1,4 @@
+import ErrorFallback from "@/components/layout/error-fallback";
 import PageSearch from "@/components/layout/page-search";
 import SidebarPriceFilter from "@/components/layout/sidebar-price-filter";
 import SpecialitiesPageFilter from "@/components/layout/specialities-page-filter";
@@ -9,6 +10,7 @@ import { getCollegesWithSpecialities } from "@/services/select-menu";
 import { getTranslations } from "next-intl/server";
 import { SearchParams } from "next/dist/server/request/search-params";
 import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default async function CollaboratePage({
     searchParams
@@ -37,14 +39,16 @@ export default async function CollaboratePage({
 
                 <div className="flex flex-col gap-6 w-full">
                     <h2 className="font-semibold text-2xl">{"New"}</h2>
-                    <Suspense
-                        fallback={Array.from({ length: 5 }).map((_, i) => (
-                            <CollaborateCardSkeleton key={i} />
-                        ))}
-                        key={(searchParamsData?.specialities as string) || ""}
-                    >
-                        <CollaborateContent searchParams={searchParamsData} />
-                    </Suspense>
+                    <ErrorBoundary FallbackComponent={ErrorFallback}>
+                        <Suspense
+                            fallback={Array.from({ length: 5 }).map((_, i) => (
+                                <CollaborateCardSkeleton key={i} />
+                            ))}
+                            key={(searchParamsData?.specialities as string) || ""}
+                        >
+                            <CollaborateContent searchParams={searchParamsData} />
+                        </Suspense>
+                    </ErrorBoundary>
                 </div>
             </div>
         </div>

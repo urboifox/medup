@@ -5,7 +5,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { UserType } from "@/types/user";
 import { FaUniversity } from "react-icons/fa";
 import { Link } from "@/i18n/routing";
-import { FaDollarSign } from "react-icons/fa6";
 
 const userTypesTranslationKey = {
     [UserType.Expert]: "common.expert",

@@ -37,7 +37,7 @@ export default function IdeaCard({ idea }: { idea: Idea }) {
                         </p>
                     </div>
                 </div>
-                <Link href={`/collaborate/${idea.id}`} className="flex flex-col gap-2">
+                <Link href={`/ideas/${idea.id}`} className="flex flex-col gap-2">
                     <h2 className="font-semibold text-2xl line-clamp-2" title={idea.title}>
                         {idea.title}
                     </h2>

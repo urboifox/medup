@@ -1,9 +1,12 @@
+"use client";
 import { Link } from "@/i18n/routing";
 import NavSideMenu from "./nav-side-menu";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./language-switcher";
 import UserHeaderInfo from "./user-header-info";
 import Logo from "../ui/logo";
+import { usePathname } from "@/i18n/routing";
+import { cn } from "@/utils/cn";
 
 type NavItem = {
     label: string;
@@ -12,13 +15,14 @@ type NavItem = {
 
 export default function Header() {
     const t = useTranslations();
+    const pathname = usePathname();
 
     const navItems: NavItem[] = [
         { label: t("nav.experts"), href: "/experts" },
         { label: t("nav.library"), href: "/library" },
         { label: t("nav.researches"), href: "/researches" },
         { label: t("nav.ideas"), href: "/ideas" },
-        { label: t("nav.collaborate"), href: "/collaborate" },
+        { label: t("nav.collaborate"), href: "/collaborates" },
         { label: t("nav.digitalAppointment"), href: "/experts" }
     ];
 
@@ -35,11 +39,15 @@ export default function Header() {
                     <nav className="hidden lg:block">
                         <ul className="flex gap-6 items-center capitalize text-sm text-dark-300">
                             {navItems.map((item, idx) => {
+                                const isActive = pathname.startsWith(item.href);
                                 return (
                                     <li key={idx}>
                                         <Link
                                             href={item.href}
-                                            className="transition-colors duration-100 hover:text-dark-400 font-medium"
+                                            className={cn(
+                                                "transition-colors duration-100 hover:text-dark-400 font-medium",
+                                                isActive && "text-primary-main hover:text-primary-main"
+                                            )}
                                         >
                                             {item.label}
                                         </Link>

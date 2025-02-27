@@ -1,13 +1,13 @@
-import { getTranslations } from "next-intl/server";
 import FilterItem from "./sidebar-filter-item";
 import { CollegeWithSpeciality } from "@/features/select-menu/types";
+import { useTranslations } from "next-intl";
 
 interface Props {
     filters: CollegeWithSpeciality[];
 }
 
-export default async function SpecialitiesPageFilter({ filters }: Props) {
-    const t = await getTranslations();
+export default function SpecialitiesPageFilter({ filters }: Props) {
+    const t = useTranslations();
 
     return (
         <div className="flex flex-col gap-6 w-full">

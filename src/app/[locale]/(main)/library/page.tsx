@@ -1,6 +1,6 @@
 import ErrorFallback from "@/components/layout/error-fallback";
 import SpecialitiesPageFilter from "@/components/layout/specialities-page-filter";
-import IdeasContent from "@/features/ideas/components/ideas-content";
+import CollaborateCardSkeleton from "@/features/collaborates/components/collaborate-card-skeleton";
 import { getCollegesWithSpecialities } from "@/services/select-menu";
 import { SearchParams } from "next/dist/server/request/search-params";
 import { Suspense } from "react";
@@ -9,9 +9,14 @@ import PageSearch from "@/components/layout/page-search";
 import Button from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
-import IdeaCardSkeleton from "@/features/ideas/components/idea-card-skeleton";
+import LibrarySuggestedContent from "@/features/library/components/library-suggested-content";
+import LibraryLatestContent from "@/features/library/components/library-latest-content";
 
-export default async function IdeasPage({ searchParams }: { searchParams: Promise<SearchParams> }) {
+export default async function LibraryPage({
+    searchParams
+}: {
+    searchParams: Promise<SearchParams>;
+}) {
     const t = await getTranslations();
     const { data: filters } = await getCollegesWithSpecialities();
     const searchParamsData = await searchParams;
@@ -21,8 +26,8 @@ export default async function IdeasPage({ searchParams }: { searchParams: Promis
         <div className="container flex flex-col gap-8 py-14">
             <div className="flex items-center gap-4 flex-col-reverse max-md:items-start md:flex-row">
                 <PageSearch />
-                <Link href="/ideas/add">
-                    <Button className="w-max">+ {t("ideas.addIdea")}</Button>
+                <Link href="/library/add">
+                    <Button className="w-max">+ {t("library.addBook")}</Button>
                 </Link>
             </div>
 
@@ -32,15 +37,27 @@ export default async function IdeasPage({ searchParams }: { searchParams: Promis
                 </div>
 
                 <div className="flex flex-col gap-6 w-full">
-                    <h2 className="font-semibold text-2xl">{"New"}</h2>
+                    <h2 className="font-semibold text-2xl">{t("common.recommended")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
                         <Suspense
                             fallback={Array.from({ length: 5 }).map((_, i) => (
-                                <IdeaCardSkeleton key={i} />
+                                <CollaborateCardSkeleton key={i} />
+                            ))}
+                            // key={contentKey}
+                        >
+                            <LibrarySuggestedContent searchParams={searchParamsData} />
+                        </Suspense>
+                    </ErrorBoundary>
+
+                    <h2 className="font-semibold text-2xl">{t("common.new")}</h2>
+                    <ErrorBoundary FallbackComponent={ErrorFallback}>
+                        <Suspense
+                            fallback={Array.from({ length: 5 }).map((_, i) => (
+                                <CollaborateCardSkeleton key={i} />
                             ))}
                             key={contentKey}
                         >
-                            <IdeasContent searchParams={searchParamsData} />
+                            <LibraryLatestContent searchParams={searchParamsData} />
                         </Suspense>
                     </ErrorBoundary>
                 </div>

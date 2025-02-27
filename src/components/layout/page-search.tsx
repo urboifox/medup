@@ -36,7 +36,7 @@ export default function PageSearch({ children }: { children?: React.ReactNode })
                 <input
                     defaultValue={getQueryString("handle") as string}
                     onInput={handleQuery}
-                    placeholder={t("experts.searchPlaceholder")}
+                    placeholder={t("common.search")}
                     className="focus:outline-none w-full h-full py-5 lg:py-0"
                 />
             </div>

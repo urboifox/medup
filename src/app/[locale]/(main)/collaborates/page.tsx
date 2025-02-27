@@ -20,7 +20,7 @@ export default async function CollaboratePage({
     const t = await getTranslations();
     const { data: filters } = await getCollegesWithSpecialities();
     const searchParamsData = await searchParams;
-    const contentKey = `${searchParamsData?.specialities || ""}-${searchParamsData?.price || ""}-${searchParamsData?.handle || ""}`;
+    const contentKey = `${searchParamsData?.specialities || ""}-${searchParamsData?.price || ""}-${searchParamsData?.handle || ""}-${searchParamsData?.page || ""}`;
 
     return (
         <div className="container flex flex-col gap-8 py-14">

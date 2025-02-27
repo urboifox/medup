@@ -15,6 +15,7 @@ import FileInput from "@/components/ui/file-input";
 import MultiSelect from "@/components/ui/multi-select";
 import { toast } from "sonner";
 import { useRouter } from "@/i18n/routing";
+import Textarea from "@/components/ui/textarea";
 
 export default function ExpertRegisterForm() {
     const t = useTranslations();
@@ -119,6 +120,14 @@ export default function ExpertRegisterForm() {
                     error={state.errors?.education}
                 />
             </div>
+            <Textarea
+                label={t("labels.bio")}
+                name="headline"
+                placeholder={t("placeholders.bio")}
+                error={state.errors?.headline}
+                defaultValue={state.formData?.get("headline") as string}
+                className="min-h-32"
+            />
             <Input
                 label={t("labels.password")}
                 placeholder={t("placeholders.password")}

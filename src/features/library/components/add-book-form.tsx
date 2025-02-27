@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import Button from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import Input from "@/components/ui/input";
@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import { useSelectMenuStore } from "@/features/select-menu/store";
 import Select from "@/components/ui/select";
 import { addLibraryItemAction } from "../actions";
+import FileInput from "@/components/ui/file-input";
+import { FaFilePdf, FaImage } from "react-icons/fa6";
 
 export default function AddLibrarryItemForm() {
     const t = useTranslations();
@@ -19,16 +21,29 @@ export default function AddLibrarryItemForm() {
         formData: new FormData()
     });
 
+    const [cover, setCover] = useState<File>();
+    const [file, setFile] = useState<File>();
+
     const specialities = useSelectMenuStore((state) => state.specialities);
 
     useEffect(() => {
-        if (state.message && !state.success) {
+        if (state.success) {
+            toast.success(t("common.itemAddedForReview"));
+            router.push("/library");
+        } else if (state.message) {
             toast.error(state.message);
         }
     }, [state, router, t]);
 
     return (
-        <form action={action} className="flex flex-col gap-4 w-full">
+        <form
+            action={(formData) => {
+                if (cover) formData.set("cover", cover);
+                if (file) formData.set("file", file);
+                action(formData);
+            }}
+            className="flex flex-col gap-4 w-full"
+        >
             <Input
                 label={t("labels.title")}
                 name="title"
@@ -36,10 +51,10 @@ export default function AddLibrarryItemForm() {
                 error={state.errors?.title}
             />
             <Input
-                label={t("labels.orcidNumber")}
-                name="orcid_number"
-                defaultValue={state.formData?.get("orcid_number") as string}
-                error={state.errors?.orcid_number}
+                label={t("common.price")}
+                name="price"
+                defaultValue={state.formData?.get("price") as string}
+                error={state.errors?.price}
             />
             <Select
                 label={t("labels.speciality")}
@@ -56,6 +71,33 @@ export default function AddLibrarryItemForm() {
                     );
                 })}
             </Select>
+
+            <FileInput
+                accept="image/*"
+                onFilesChange={(files) => setCover(files[0])}
+                error={state.errors?.cover}
+                name="cover"
+                label={t("labels.cover")}
+                placeholderIcon={
+                    <span className="text-primary-main text-xl">
+                        <FaImage />
+                    </span>
+                }
+            />
+
+            <FileInput
+                accept="application/pdf"
+                onFilesChange={(files) => setFile(files[0])}
+                error={state.errors?.file}
+                name="file"
+                label={t("labels.file")}
+                placeholderIcon={
+                    <span className="text-primary-main text-xl">
+                        <FaFilePdf />
+                    </span>
+                }
+            />
+
             <Textarea
                 label={t("labels.description")}
                 name="description"

@@ -22,7 +22,10 @@ export default function AddIdeaForm() {
     const specialities = useSelectMenuStore((state) => state.specialities);
 
     useEffect(() => {
-        if (state.message && !state.success) {
+        if (state.success) {
+            toast.success(t("common.itemAddedForReview"));
+            router.push("/ideas");
+        } else if (state.message) {
             toast.error(state.message);
         }
     }, [state, router, t]);

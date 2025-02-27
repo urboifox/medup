@@ -19,11 +19,15 @@ export async function addLibraryItemAction(
 ): Promise<LibraryAction> {
     const t = await getTranslations();
 
+    if ((formData.get("file") as File)?.size === 0) formData.delete("file");
+    if ((formData.get("cover") as File)?.size === 0) formData.delete("cover");
+
     let libraryItem: LibraryItem | undefined;
     try {
         const res = await fetcher<LibraryItem>("/api/public/library", {
             method: "POST",
-            body: JSON.stringify(Object.fromEntries(formData.entries()))
+            body: formData,
+            skipHeaders: true
         });
         libraryItem = res.data;
     } catch (error) {
@@ -39,5 +43,5 @@ export async function addLibraryItemAction(
         return { success: false, formData, message: t("errors.somethingWentWrong") };
     }
 
-    redirect("/library");
+    return { success: true, formData };
 }

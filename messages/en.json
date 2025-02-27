@@ -7,6 +7,7 @@
     },
     "common": {
         "retry": "Retry",
+        "itemAddedForReview": "Item added for review",
         "colleges": "Colleges",
         "recommended": "Recommended",
         "by": "By",
@@ -112,7 +113,8 @@
         "city": "City",
         "image": "Image",
         "skills": "Skills",
-        "code": "Code"
+        "code": "Code",
+        "cover": "Cover"
     },
     "placeholders": {
         "email": "example@email.com",

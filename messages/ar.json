@@ -8,6 +8,7 @@
     "common": {
         "addExperience": "اضافة خبرة",
         "colleges": "الكليات",
+        "itemAddedForReview": "تمت اضافة العنصر للمراجعة",
         "recommended": "مقترح",
         "new": "جديد",
         "by": "بواسطة",
@@ -112,6 +113,7 @@
         "city": "المدينة",
         "image": "الصورة الشخصية",
         "skills": "المهارات",
+        "cover": "الغلاف",
         "code": "الرمز"
     },
     "placeholders": {

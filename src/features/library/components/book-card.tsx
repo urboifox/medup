@@ -14,7 +14,7 @@ export default function LibraryCard({ libraryItem }: { libraryItem: LibraryItem 
                     alt={libraryItem.title}
                     width={150}
                     height={230}
-                    className="shadow-xl object-cover w-[150px] h-[230px]"
+                    className="shadow-xl object-cover w-[150px] h-[230px] rounded-md"
                 />
                 <div className="flex flex-col gap-4">
                     <h3 className="font-semibold lg:text-lg group-hover:underline">

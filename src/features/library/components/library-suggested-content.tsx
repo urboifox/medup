@@ -12,7 +12,8 @@ export default async function LibrarySuggestedContent({
     const { data: library } = await getLibrary({
         params: sanitizeObject({
             specialities: searchParams?.specialities ? (searchParams?.specialities as string) : "",
-            per_page: "5"
+            per_page: "5",
+            popular: "1"
         }),
         next: {
             revalidate: 60

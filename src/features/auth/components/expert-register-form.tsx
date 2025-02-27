@@ -103,6 +103,22 @@ export default function ExpertRegisterForm() {
                     error={state.errors?.phone}
                 />
             </div>
+            <div className="flex items-center gap-4 flex-col sm:flex-row">
+                <Input
+                    label={t("labels.graduationYear")}
+                    type="number"
+                    name="graduation_year"
+                    defaultValue={state.formData?.get("graduation_year") as string}
+                    error={state.errors?.graduation_year}
+                />
+                <Input
+                    label={t("labels.educationBackground")}
+                    placeholder={t("placeholders.education")}
+                    name="education"
+                    defaultValue={state.formData?.get("education") as string}
+                    error={state.errors?.education}
+                />
+            </div>
             <Input
                 label={t("labels.password")}
                 placeholder={t("placeholders.password")}

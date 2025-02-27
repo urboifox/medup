@@ -13,6 +13,7 @@ export default async function LibraryLatestContent({
     const { data: library, meta } = await getLibrary({
         params: sanitizeObject({
             ...(searchParams as Record<string, string | string>),
+            only_new: "1",
             per_page: "8"
         })
     });

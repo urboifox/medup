@@ -19,13 +19,11 @@ export async function addProjectAction(
 ): Promise<ProjectAction> {
     const t = await getTranslations();
 
-    let collaborate: Collaborate | undefined;
     try {
-        const res = await fetcher<Collaborate>("/api/public/collaborates", {
+        await fetcher<Collaborate>("/api/public/collaborates", {
             method: "POST",
             body: JSON.stringify(Object.fromEntries(formData.entries()))
         });
-        collaborate = res.data;
     } catch (error) {
         if (error instanceof FetcherError) {
             console.error("error:", error.data);

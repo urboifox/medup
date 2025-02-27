@@ -3,7 +3,6 @@
 import { FetcherError } from "@/lib/exceptions";
 import { fetcher } from "@/utils/fetcher";
 import { getTranslations } from "next-intl/server";
-import { redirect } from "next/navigation";
 import { LibraryItem } from "./types";
 
 type LibraryAction = {
@@ -22,14 +21,12 @@ export async function addLibraryItemAction(
     if ((formData.get("file") as File)?.size === 0) formData.delete("file");
     if ((formData.get("cover") as File)?.size === 0) formData.delete("cover");
 
-    let libraryItem: LibraryItem | undefined;
     try {
-        const res = await fetcher<LibraryItem>("/api/public/library", {
+        await fetcher<LibraryItem>("/api/public/library", {
             method: "POST",
             body: formData,
             skipHeaders: true
         });
-        libraryItem = res.data;
     } catch (error) {
         if (error instanceof FetcherError) {
             console.error("error:", error.data);

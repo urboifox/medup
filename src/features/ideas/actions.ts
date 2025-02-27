@@ -19,13 +19,11 @@ export async function addIdeaAction(
 ): Promise<IdeaAction> {
     const t = await getTranslations();
 
-    let idea: Idea | undefined;
     try {
-        const res = await fetcher<Idea>("/api/public/ideas", {
+        await fetcher<Idea>("/api/public/ideas", {
             method: "POST",
             body: JSON.stringify(Object.fromEntries(formData.entries()))
         });
-        idea = res.data;
     } catch (error) {
         if (error instanceof FetcherError) {
             console.error("error:", error.data);

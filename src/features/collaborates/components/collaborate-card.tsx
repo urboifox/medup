@@ -2,19 +2,12 @@ import Image from "next/image";
 import { Collaborate } from "../types";
 import moment from "moment";
 import { useLocale, useTranslations } from "next-intl";
-import { UserType } from "@/types/user";
 import { FaUniversity } from "react-icons/fa";
 import { Link } from "@/i18n/routing";
 import { FaArrowRight } from "react-icons/fa6";
 import Button from "@/components/ui/button";
 import { HiExternalLink } from "react-icons/hi";
-
-const userTypesTranslationKey = {
-    [UserType.Expert]: "common.expert",
-    [UserType.Trainee]: "common.trainee",
-    [UserType.Student]: "common.student",
-    [UserType.Researcher]: "common.researcher"
-} as const;
+import { userTypesTranslationKey } from "@/constants";
 
 export default function CollaborateCard({ collaborate }: { collaborate: Collaborate }) {
     const t = useTranslations();

@@ -85,7 +85,8 @@ export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<Ap
     const data = await res.json();
 
     if (!res.ok) {
-        throw new FetcherError("Error fetching data from:" + url, data);
+        console.error("Error fetching data from:" + url, data);
+        throw new FetcherError("Error getting requested resource", data);
     }
 
     return data;

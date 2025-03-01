@@ -11,7 +11,8 @@ const icons = {
     trainee: "/icons/trainee.svg",
     researcher: "/icons/researcher.svg",
     done: "/icons/done.svg",
-    specializedSection: "/icons/specialized-section.svg"
+    specializedSection: "/icons/specialized-section.svg",
+    sendArrow: "/icons/send-arrow.svg"
 };
 
 export default icons;

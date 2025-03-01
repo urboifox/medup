@@ -10,12 +10,18 @@
         "colleges": "الكليات",
         "free": "مجاني",
         "itemAddedForReview": "تمت اضافة العنصر للمراجعة",
+        "backTo": "العودة الى",
         "clearAll": "مسح الكل",
         "recommended": "مقترح",
         "new": "جديد",
         "by": "بواسطة",
         "price": "السعر",
+        "comments": "تعليقات",
+        "reply": "رد",
         "paidVolunteer": "تطوع مدفوع",
+        "commentAdded": "تم اضافة التعليق",
+        "replyingTo": "الرد على",
+        "send": "إرسال",
         "unpaidVolunteer": "تطوع غير مدفوع",
         "editExperience": "تعديل الخبرة",
         "confirm": "تأكيد",
@@ -77,7 +83,8 @@
     },
     "errors": {
         "somethingWentWrong": "حدث خطأ ما",
-        "noUserLoggedIn": "لا يوجد مستخدم سجل الدخول"
+        "noUserLoggedIn": "لا يوجد مستخدم سجل الدخول",
+        "mustBeLoggedIn": "يجب عليك تسجيل الدخول للقيام بهذا الإجراء"
     },
     "labels": {
         "title": "العنوان",
@@ -119,6 +126,7 @@
         "code": "الرمز"
     },
     "placeholders": {
+        "comment": "اكتب تعليقاً...",
         "email": "example@email.com",
         "education": "الكلية، الجامعة، إلخ.",
         "bio": "اكتب نبذة قصيرة عن نفسك",

@@ -6,5 +6,5 @@ export async function getCollaborateContent(options?: FetcherOptions) {
 }
 
 export async function getCollaborateItem(id: string, options?: FetcherOptions) {
-    return await fetcher<Collaborate[]>("/api/public/collaborates/" + id, options);
+    return await fetcher<Collaborate>("/api/public/collaborates/" + id, options);
 }

@@ -6,5 +6,5 @@ export async function getIdeas(options?: FetcherOptions) {
 }
 
 export async function getIdea(id: string, options?: FetcherOptions) {
-    return await fetcher<Idea[]>("/api/public/ideas/" + id, options);
+    return await fetcher<Idea>("/api/public/ideas/" + id, options);
 }

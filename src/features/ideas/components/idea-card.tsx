@@ -2,19 +2,12 @@ import Image from "next/image";
 import { Idea } from "../types";
 import moment from "moment";
 import { useLocale, useTranslations } from "next-intl";
-import { UserType } from "@/types/user";
 import { FaUniversity } from "react-icons/fa";
 import { Link } from "@/i18n/routing";
 import { HiExternalLink } from "react-icons/hi";
 import Button from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa6";
-
-const userTypesTranslationKey = {
-    [UserType.Expert]: "common.expert",
-    [UserType.Trainee]: "common.trainee",
-    [UserType.Student]: "common.student",
-    [UserType.Researcher]: "common.researcher"
-} as const;
+import { userTypesTranslationKey } from "@/constants";
 
 export default function IdeaCard({ idea }: { idea: Idea }) {
     const t = useTranslations();
@@ -47,7 +40,7 @@ export default function IdeaCard({ idea }: { idea: Idea }) {
                         {t("labels.orcidNumber")}
                     </a>
                 )}
-                <Link className="group flex items-center gap-4" href={`/ideas/${idea.expert.id}`}>
+                <Link className="group flex items-center gap-4" href={`/experts/${idea.expert.id}`}>
                     <Image
                         src={idea.expert.user.avatar}
                         alt={idea.expert.user.name}

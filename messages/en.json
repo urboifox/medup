@@ -10,10 +10,15 @@
         "itemAddedForReview": "Item added for review",
         "free": "Free",
         "clearAll": "Clear All",
+        "backTo": "Back to",
         "colleges": "Colleges",
         "recommended": "Recommended",
         "by": "By",
+        "reply": "Reply",
+        "commentAdded": "Comment added",
+        "replyingTo": "Replying to",
         "new": "New",
+        "send": "Send",
         "paidVolunteer": "Paid Volunteer",
         "unpaidVolunteer": "Unpaid Volunteer",
         "price": "Price",
@@ -23,6 +28,7 @@
         "addExperience": "Add experience",
         "confirm": "Confirm",
         "cancel": "Cancel",
+        "comments": "Comments",
         "editExperience": "Edit experience",
         "fullTime": "Full time",
         "partTime": "Part time",
@@ -77,7 +83,8 @@
     },
     "errors": {
         "somethingWentWrong": "Something went wrong",
-        "noUserLoggedIn": "No user logged in"
+        "noUserLoggedIn": "No user logged in",
+        "mustBeLoggedIn": "You must be logged in to perform this action"
     },
     "labels": {
         "firstName": "First Name",
@@ -119,6 +126,7 @@
         "cover": "Cover"
     },
     "placeholders": {
+        "comment": "Write a comment...",
         "email": "example@email.com",
         "education": "College, University, etc.",
         "bio": "Write a short bio about yourself",

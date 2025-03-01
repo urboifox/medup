@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
     size?: "sm" | "md" | "lg";
-    variant?: "primary" | "secondary";
+    variant?: "primary" | "secondary" | "outline";
 }
 
 export default function Button({ size = "md", variant = "primary", children, ...rest }: Props) {
@@ -14,7 +14,9 @@ export default function Button({ size = "md", variant = "primary", children, ...
         primary:
             "bg-primary-main text-white lg:hover:bg-primary-100 lg:active:bg-primary-200 active:bg-primary-100",
         secondary:
-            "bg-light-200 text-dark-400 lg:hover:bg-light-300 lg:active:bg-light-400 active:bg-light-300"
+            "bg-light-200 text-dark-400 lg:hover:bg-light-300 lg:active:bg-light-400 active:bg-light-300",
+        outline:
+            "border border-primary-main text-primary-main lg:hover:bg-primary-main lg:hover:text-white active:bg-primary-main active:text-white",
     };
 
     const sizeStyles = {

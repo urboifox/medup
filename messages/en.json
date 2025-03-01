@@ -8,6 +8,8 @@
     "common": {
         "retry": "Retry",
         "itemAddedForReview": "Item added for review",
+        "free": "Free",
+        "clearAll": "Clear All",
         "colleges": "Colleges",
         "recommended": "Recommended",
         "by": "By",

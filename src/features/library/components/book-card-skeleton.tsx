@@ -1,5 +1,5 @@
-export default function IdeaCardSkeleton() {
+export default function BookCardSkeleton() {
     return (
-        <div className="py-3 px-6 rounded-2xl border border-light-400 w-full bg-light-300 animate-pulse h-[320px]" />
+        <div className="h-[230px] rounded-md animate-pulse bg-light-300" />
     );
 }

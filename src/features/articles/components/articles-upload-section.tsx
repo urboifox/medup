@@ -15,7 +15,7 @@ export default function ArticlesUploadSection() {
                 <p className="text-dark-300 max-w-2xl font-medium">
                     {t("articles.uploadDescription")}
                 </p>
-                <Link href="/articles/add">
+                <Link href="/researches/add">
                     <Button>
                         <HiOutlineUpload size={20} />
                         {t("articles.uploadButton")}

@@ -8,7 +8,9 @@
     "common": {
         "addExperience": "اضافة خبرة",
         "colleges": "الكليات",
+        "free": "مجاني",
         "itemAddedForReview": "تمت اضافة العنصر للمراجعة",
+        "clearAll": "مسح الكل",
         "recommended": "مقترح",
         "new": "جديد",
         "by": "بواسطة",

@@ -4,6 +4,8 @@ import { getTranslations } from "next-intl/server";
 import ExpertsContentMap from "@/features/experts/components/experts-content-map";
 import { Suspense } from "react";
 import ExpertsContentSkeleton from "@/features/experts/components/experts-content-skeleton";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "../layout/error-fallback";
 
 export default async function ExpertsSection() {
     const t = await getTranslations();
@@ -15,9 +17,11 @@ export default async function ExpertsSection() {
                 <p className="text-dark-300 text-lg lg:text-xl">{t("home.experts.description")}</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
-                <Suspense fallback={<ExpertsContentSkeleton />}>
-                    <ExpertsContentMap />
-                </Suspense>
+                <ErrorBoundary FallbackComponent={ErrorFallback}>
+                    <Suspense fallback={<ExpertsContentSkeleton />}>
+                        <ExpertsContentMap />
+                    </Suspense>
+                </ErrorBoundary>
             </div>
             <Link href="/experts" className="w-max mx-auto">
                 <Button>{t("common.discoverMore")}</Button>

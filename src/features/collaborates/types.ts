@@ -9,4 +9,5 @@ export type Collaborate = {
     expert: Expert;
     speciality: Speciality;
     description: string;
+    orcid_number: string;
 };

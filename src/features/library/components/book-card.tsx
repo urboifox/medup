@@ -7,8 +7,8 @@ export default function LibraryCard({ libraryItem }: { libraryItem: LibraryItem 
     const t = useTranslations();
 
     return (
-        <Link href={"/library/" + libraryItem.id}>
-            <article className="flex gap-4 items-center group">
+        <Link href={"/library/" + libraryItem.id} className="w-full">
+            <article className="flex gap-4 items-center group w-full">
                 <Image
                     src={libraryItem.cover}
                     alt={libraryItem.title}

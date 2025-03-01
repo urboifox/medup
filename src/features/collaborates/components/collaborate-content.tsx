@@ -15,7 +15,7 @@ export default async function CollaborateContent({ searchParams }: { searchParam
 
     return (
         <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4 w-full">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {collaborates?.length === 0 && <NoResults />}
                 {collaborates?.map((collaborate) => {
                     return <CollaborateCard key={collaborate.id} collaborate={collaborate} />;

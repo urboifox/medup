@@ -8,4 +8,5 @@ export type Idea = {
     expert: Expert;
     speciality: Speciality;
     description: string;
+    orcid_number: string;
 };

@@ -15,7 +15,7 @@ export default async function IdeasContent({ searchParams }: { searchParams: Sea
 
     return (
         <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4 w-full">
+            <div className="w-full gap-6 grid grid-cols-1 md:grid-cols-2">
                 {ideas?.length === 0 && <NoResults />}
                 {ideas?.map((idea) => {
                     return <IdeaCard key={idea.id} idea={idea} />;

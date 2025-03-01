@@ -38,19 +38,24 @@ export default async function CollaboratePage({
                 </div>
 
                 <div className="flex flex-col gap-6 w-full">
-                    <h2 className="font-semibold text-2xl">{"New"}</h2>
+                    <h2 className="font-semibold text-2xl">{t("common.recommended")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
-                        <Suspense
-                            fallback={Array.from({ length: 5 }).map((_, i) => (
-                                <CollaborateCardSkeleton key={i} />
-                            ))}
-                            key={contentKey}
-                        >
+                        <Suspense fallback={<CollaboratesContentSkeleton />} key={contentKey}>
                             <CollaborateContent searchParams={searchParamsData} />
                         </Suspense>
                     </ErrorBoundary>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function CollaboratesContentSkeleton() {
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {Array.from({ length: 5 }).map((_, i) => (
+                <CollaborateCardSkeleton key={i} />
+            ))}
         </div>
     );
 }

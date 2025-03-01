@@ -32,19 +32,24 @@ export default async function IdeasPage({ searchParams }: { searchParams: Promis
                 </div>
 
                 <div className="flex flex-col gap-6 w-full">
-                    <h2 className="font-semibold text-2xl">{"New"}</h2>
+                    <h2 className="font-semibold text-2xl">{t("common.recommended")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
-                        <Suspense
-                            fallback={Array.from({ length: 5 }).map((_, i) => (
-                                <IdeaCardSkeleton key={i} />
-                            ))}
-                            key={contentKey}
-                        >
+                        <Suspense fallback={<IdeasContentSkeleton />} key={contentKey}>
                             <IdeasContent searchParams={searchParamsData} />
                         </Suspense>
                     </ErrorBoundary>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function IdeasContentSkeleton() {
+    return (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {Array.from({ length: 5 }).map((_, i) => (
+                <IdeaCardSkeleton key={i} />
+            ))}
         </div>
     );
 }

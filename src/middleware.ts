@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 
 const AUTH_ROUTES = ["/login"];
-const PRIVATE_ROUTES = ["/admin"];
+const PRIVATE_ROUTES = ["/library/add", "/collaborates/add", "/ideas/add", "/researches/add"];
 
 export const intlMiddleware = createMiddleware(routing);
 

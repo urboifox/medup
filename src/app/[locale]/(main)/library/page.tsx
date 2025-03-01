@@ -1,6 +1,6 @@
 import ErrorFallback from "@/components/layout/error-fallback";
 import SpecialitiesPageFilter from "@/components/layout/specialities-page-filter";
-import CollaborateCardSkeleton from "@/features/collaborates/components/collaborate-card-skeleton";
+import BookCardSkeleton from "@/features/library/components/book-card-skeleton";
 import { getCollegesWithSpecialities } from "@/services/select-menu";
 import { SearchParams } from "next/dist/server/request/search-params";
 import { Suspense } from "react";
@@ -20,7 +20,8 @@ export default async function LibraryPage({
     const t = await getTranslations();
     const { data: filters } = await getCollegesWithSpecialities();
     const searchParamsData = await searchParams;
-    const contentKey = `${searchParamsData?.specialities || ""}-${searchParamsData?.handle || ""}-${searchParamsData?.page || ""}`;
+    const newContentKey = `${searchParamsData?.specialities || ""}-${searchParamsData?.handle || ""}-${searchParamsData?.page || ""}`;
+    const recommendedContentKey = `${searchParamsData?.specialities || ""}`;
 
     return (
         <div className="container flex flex-col gap-8 py-14">
@@ -40,10 +41,8 @@ export default async function LibraryPage({
                     <h2 className="font-semibold text-2xl">{t("common.recommended")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
                         <Suspense
-                            fallback={Array.from({ length: 5 }).map((_, i) => (
-                                <CollaborateCardSkeleton key={i} />
-                            ))}
-                            // key={contentKey}
+                            fallback={<LibraryContentSkeleton length={4} />}
+                            key={recommendedContentKey}
                         >
                             <LibrarySuggestedContent searchParams={searchParamsData} />
                         </Suspense>
@@ -51,17 +50,22 @@ export default async function LibraryPage({
 
                     <h2 className="font-semibold text-2xl">{t("common.new")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
-                        <Suspense
-                            fallback={Array.from({ length: 5 }).map((_, i) => (
-                                <CollaborateCardSkeleton key={i} />
-                            ))}
-                            key={contentKey}
-                        >
+                        <Suspense fallback={<LibraryContentSkeleton />} key={newContentKey}>
                             <LibraryLatestContent searchParams={searchParamsData} />
                         </Suspense>
                     </ErrorBoundary>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function LibraryContentSkeleton({ length = 8 }: { length?: number }) {
+    return (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8">
+            {Array.from({ length }).map((_, i) => (
+                <BookCardSkeleton key={i} />
+            ))}
         </div>
     );
 }

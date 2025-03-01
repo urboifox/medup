@@ -1,4 +1,5 @@
 import ErrorFallback from "@/components/layout/error-fallback";
+import MobileFilterButton from "@/components/layout/mobile-filter-button";
 import PageSearch from "@/components/layout/page-search";
 import SidebarPriceFilter from "@/components/layout/sidebar-price-filter";
 import SpecialitiesPageFilter from "@/components/layout/specialities-page-filter";
@@ -26,9 +27,18 @@ export default async function CollaboratePage({
         <div className="container flex flex-col gap-8 py-14">
             <div className="flex items-center gap-4 flex-col-reverse max-md:items-start md:flex-row">
                 <PageSearch />
-                <Link href="/collaborates/add">
-                    <Button className="w-max">+ {t("collaborate.addProject")}</Button>
-                </Link>
+                <div className="flex items-center gap-2">
+                    <MobileFilterButton>
+                        <div className="flex-col gap-6 flex">
+                            <SpecialitiesPageFilter filters={filters || []} />
+                            <div className="h-px w-full bg-light-300" />
+                            <SidebarPriceFilter />
+                        </div>
+                    </MobileFilterButton>
+                    <Link href="/collaborates/add">
+                        <Button className="w-max">+ {t("collaborate.addProject")}</Button>
+                    </Link>
+                </div>
             </div>
             <div className="flex items-start gap-8">
                 <div className="flex-col gap-6 w-1/5 hidden xl:flex">

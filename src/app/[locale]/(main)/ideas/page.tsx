@@ -10,6 +10,7 @@ import Button from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import IdeaCardSkeleton from "@/features/ideas/components/idea-card-skeleton";
+import MobileFilterButton from "@/components/layout/mobile-filter-button";
 
 export default async function IdeasPage({ searchParams }: { searchParams: Promise<SearchParams> }) {
     const t = await getTranslations();
@@ -21,13 +22,20 @@ export default async function IdeasPage({ searchParams }: { searchParams: Promis
         <div className="container flex flex-col gap-8 py-14">
             <div className="flex items-center gap-4 flex-col-reverse max-md:items-start md:flex-row">
                 <PageSearch />
-                <Link href="/ideas/add">
-                    <Button className="w-max">+ {t("ideas.addIdea")}</Button>
-                </Link>
+                <div className="flex items-center gap-2">
+                    <MobileFilterButton>
+                        <div className="flex-col gap-6 flex">
+                            <SpecialitiesPageFilter filters={filters || []} />
+                        </div>
+                    </MobileFilterButton>
+                    <Link href="/ideas/add">
+                        <Button className="w-max">+ {t("ideas.addIdea")}</Button>
+                    </Link>
+                </div>
             </div>
 
-            <div className="flex items-start gap-8">
-                <div className="flex-col gap-6 w-1/5 hidden xl:flex">
+            <div className="flex flex-row items-start gap-8">
+                <div className="hidden xl:block">
                     <SpecialitiesPageFilter filters={filters || []} />
                 </div>
 

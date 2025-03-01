@@ -11,6 +11,7 @@ import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import LibrarySuggestedContent from "@/features/library/components/library-suggested-content";
 import LibraryLatestContent from "@/features/library/components/library-latest-content";
+import MobileFilterButton from "@/components/layout/mobile-filter-button";
 
 export default async function LibraryPage({
     searchParams
@@ -27,9 +28,16 @@ export default async function LibraryPage({
         <div className="container flex flex-col gap-8 py-14">
             <div className="flex items-center gap-4 flex-col-reverse max-md:items-start md:flex-row">
                 <PageSearch />
-                <Link href="/library/add">
-                    <Button className="w-max">+ {t("library.addBook")}</Button>
-                </Link>
+                <div className="flex items-center gap-2">
+                    <MobileFilterButton>
+                        <div className="flex-col gap-6 flex">
+                            <SpecialitiesPageFilter filters={filters || []} />
+                        </div>
+                    </MobileFilterButton>
+                    <Link href="/library/add">
+                        <Button className="w-max">+ {t("library.addBook")}</Button>
+                    </Link>
+                </div>
             </div>
 
             <div className="flex items-start gap-8">

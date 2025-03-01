@@ -38,7 +38,7 @@ export default function CommentsSection({
         } else if (state.message) {
             toast.error(state.message);
         }
-    }, [state, toast, t, router, commentableId]);
+    }, [state, t, router, commentableId]);
 
     const authUser = useAuthStore((state) => state.user);
 

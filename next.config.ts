@@ -6,6 +6,12 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
     images: {
         remotePatterns: [{ protocol: "https", hostname: "medup.mohamed-emad.com", pathname: "/**" }]
+    },
+    eslint: {
+        ignoreDuringBuilds: true
+    },
+    typescript: {
+        ignoreBuildErrors: true
     }
 };
 

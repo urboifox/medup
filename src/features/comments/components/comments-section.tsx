@@ -9,8 +9,6 @@ import { useActionState, useEffect, useState } from "react";
 import { User } from "@/types/user";
 import { useAuthStore } from "@/features/auth/store";
 import { toast } from "sonner";
-import Input from "@/components/ui/input";
-import icons from "@/lib/icons";
 import { addCommentAction } from "../actions";
 import { useRouter } from "next/navigation";
 import Textarea from "@/components/ui/textarea";
@@ -40,7 +38,7 @@ export default function CommentsSection({
         } else if (state.message) {
             toast.error(state.message);
         }
-    }, [state, toast, t]);
+    }, [state, toast, t, router, commentableId]);
 
     const authUser = useAuthStore((state) => state.user);
 
@@ -58,6 +56,9 @@ export default function CommentsSection({
             <h2 className="font-semibold text-2xl">{t("common.comments")}</h2>
 
             <div className="flex flex-col">
+                {comments.length === 0 && (
+                    <p className="text-dark-300">{t("common.noCommentsYet")}</p>
+                )}
                 {comments.map((comment) => {
                     return (
                         <article

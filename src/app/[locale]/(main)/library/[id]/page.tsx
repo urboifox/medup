@@ -27,7 +27,7 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
     return (
         <div className="container flex flex-col gap-8 py-14 xl:flex-row">
             <div className="flex flex-col gap-14 xl:w-2/3">
-                <div className="flex gap-6 items-center">
+                <div className="flex gap-6 items-center flex-col lg:flex-row">
                     <Image
                         src={book.cover}
                         alt={book.title}
@@ -35,7 +35,7 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                         height={455}
                         className="shadow-xl object-cover w-[270px] h-[455px] rounded-md"
                     />
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 w-full">
                         <h3 className="font-semibold lg:text-2xl xl:text-4xl">{book.title}</h3>
                         <p className="text-sm">
                             {t("common.by")}: {book.expert.user.name}

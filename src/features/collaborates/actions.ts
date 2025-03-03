@@ -3,7 +3,6 @@
 import { FetcherError } from "@/lib/exceptions";
 import { fetcher } from "@/utils/fetcher";
 import { getTranslations } from "next-intl/server";
-import { redirect } from "next/navigation";
 import { Collaborate } from "./types";
 
 type ProjectAction = {
@@ -37,5 +36,5 @@ export async function addProjectAction(
         return { success: false, formData, message: t("errors.somethingWentWrong") };
     }
 
-    redirect("/collaborates");
+    return { success: true, formData };
 }

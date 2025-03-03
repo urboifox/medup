@@ -33,8 +33,10 @@ export default function CommentsSection({
 
     useEffect(() => {
         if (state.success) {
+            setReplyTo(null);
             toast.success(t("common.commentAdded"));
-            router.push("/ideas/" + commentableId, { scroll: true });
+            const pushTo = type === "idea" ? "/ideas/" : "/collaborate/";
+            router.push(pushTo + commentableId, { scroll: true });
         } else if (state.message) {
             toast.error(state.message);
         }
@@ -76,7 +78,7 @@ export default function CommentsSection({
                                     />
                                     <div className="flex flex-col">
                                         <h3 className="font-semibold text-sm">
-                                            {comment.user.name}
+                                            {comment.user.name} {"John Doe"}
                                         </h3>
                                         <p className="text-sm text-dark-300">
                                             {t(userTypesTranslationKey[comment.user.type])}
@@ -90,7 +92,8 @@ export default function CommentsSection({
                             <div className="flex flex-col gap-2">
                                 {comment.replied_user && (
                                     <span className="text-xs text-dark-300 font-medium">
-                                        {t("common.replyingTo")} {comment.replied_user?.name}
+                                        {t("common.replyingTo")} {comment.replied_user?.name} John
+                                        Doe
                                     </span>
                                 )}
                                 <p>{comment.content}</p>
@@ -130,7 +133,7 @@ export default function CommentsSection({
                                     <FaX />
                                 </button>
                                 <div className="flex items-center gap-2">
-                                    {t("common.replyingTo")} {replyTo?.name}
+                                    {t("common.replyingTo")} {replyTo?.name} {"John Doe"}
                                 </div>
                             </div>
                         )}

@@ -24,7 +24,6 @@ export default function AddProjectForm() {
     useEffect(() => {
         if (state.success) {
             toast.success(t("common.itemAddedForReview"));
-            router.push("/collaborates");
         } else if (state.message) {
             toast.error(state.message);
         }

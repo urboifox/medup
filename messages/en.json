@@ -7,10 +7,14 @@
     },
     "common": {
         "retry": "Retry",
+        "buyNow": "Buy Now",
         "itemAddedForReview": "Item added for review",
+        "buys": "Buys",
         "free": "Free",
+        "suggested": "Suggested",
         "clearAll": "Clear All",
         "backTo": "Back to",
+        "libraryWarning": "For the safety and security of our members, all buying and selling must take place on the Medup platform. Any transactions outside of the platform are against our terms of service and may lead to account restrictions The platform reserves the right to take legal action against any violators",
         "colleges": "Colleges",
         "recommended": "Recommended",
         "by": "By",
@@ -88,7 +92,10 @@
         "mustBeLoggedIn": "You must be logged in to perform this action"
     },
     "labels": {
+        "author": "Author",
+        "pagesCount": "Pages Count",
         "firstName": "First Name",
+        "datePublished": "Date Published",
         "notes": "Notes",
         "orcidNumber": "ORCID Number",
         "contributors": "Contributors",
@@ -148,7 +155,7 @@
         "researches": "Researches",
         "digitalAppointment": "Digital Appointment",
         "ideas": "Ideas",
-        "collaborate": "Collaborate"
+        "collaborate": "Collaborates"
     },
     "auth": {
         "resetPassword": "Reset Password",

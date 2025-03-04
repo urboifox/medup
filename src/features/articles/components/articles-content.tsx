@@ -4,7 +4,12 @@ import ArticleCard from "@/components/cards/article-card";
 import { SearchParams } from "next/dist/server/request/search-params";
 
 export default async function ArticlesContent({ searchParams }: { searchParams: SearchParams }) {
-    const { data: articles } = await getAllArticles();
+    const { data: articles, meta } = await getAllArticles({
+        params: {
+            page: (searchParams?.page as string) || "1",
+            per_page: "9"
+        }
+    });
 
     return (
         <>
@@ -14,8 +19,8 @@ export default async function ArticlesContent({ searchParams }: { searchParams: 
                 })}
             </div>
             <Pagination
-                currentPage={parseInt((searchParams.page as string) || "1")}
-                lastPage={10}
+                currentPage={parseInt(searchParams?.page as string) || 1}
+                lastPage={(meta?.last_page as number) || 1}
             />
         </>
     );

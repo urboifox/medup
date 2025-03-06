@@ -92,6 +92,8 @@
         "mustBeLoggedIn": "You must be logged in to perform this action"
     },
     "labels": {
+        "link": "Link",
+        "name": "Name",
         "author": "Author",
         "pagesCount": "Pages Count",
         "firstName": "First Name",
@@ -155,7 +157,8 @@
         "researches": "Researches",
         "digitalAppointment": "Digital Appointment",
         "ideas": "Ideas",
-        "collaborate": "Collaborates"
+        "collaborate": "Collaborates",
+        "courses": "Courses"
     },
     "auth": {
         "resetPassword": "Reset Password",
@@ -304,5 +307,8 @@
         "privacyPolicy": "Privacy Policy",
         "termsAndConditions": "Terms & Conditions",
         "address": "6391 Elgin Street, Celina, Delaware 10299, New York, USA"
+    },
+    "courses": {
+        "addCourse": "Add a Course"
     }
 }

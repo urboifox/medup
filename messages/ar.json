@@ -92,6 +92,8 @@
         "mustBeLoggedIn": "يجب عليك تسجيل الدخول للقيام بهذا الإجراء"
     },
     "labels": {
+        "link": "الرابط",
+        "name": "الأسم",
         "author": "المؤلف",
         "pagesCount": "عدد الصفحات",
         "title": "العنوان",
@@ -155,7 +157,8 @@
         "researches": "الأبحاث",
         "digitalAppointment": "التعيين الرقمي",
         "ideas": "الأفكار",
-        "collaborate": "تعاون"
+        "collaborate": "تعاون",
+        "courses": "الكورسات"
     },
     "auth": {
         "resetPassword": "إعادة تعيين كلمة المرور",
@@ -303,5 +306,8 @@
         "privacyPolicy": "سياسة الخصوصية",
         "termsAndConditions": "شروط وأحكام",
         "address": "6391 شارع إلجين، سيلينا، ديلاوير 10299، نيويورك، الولايات المتحدة الأمريكية"
+    },
+    "courses": {
+        "addCourse": "أضف كورس"
     }
 }

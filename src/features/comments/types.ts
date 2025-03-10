@@ -6,4 +6,6 @@ export type AppComment = {
     content: string;
     user: User;
     replied_user?: User;
+    likes_count: number;
+    liked_by_user?: boolean;
 };

@@ -40,3 +40,27 @@ export async function addCommentAction(
     revalidateTag("comments");
     return { success: true };
 }
+
+export async function likeCommentAction(commentId: number) {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/api/favorites/toggle", {
+            method: "PATCH",
+            body: JSON.stringify({ model_id: commentId, model_type: "comment" })
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, message: t("errors.somethingWentWrong") };
+    }
+
+    revalidateTag("comments");
+    return { success: true };
+}

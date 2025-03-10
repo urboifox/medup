@@ -32,7 +32,8 @@ export default async function IdeaPage({
         params: {
             commentable_id: id,
             type: "idea",
-            page: (searchParamsData?.page as string) || "1"
+            page: (searchParamsData?.page as string) || "1",
+            with_favorites: "yes"
         }
     });
 

@@ -35,8 +35,7 @@ export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<Ap
     const requestInit: FetcherOptions = init || {};
 
     if (!init?.skipLocale) {
-        const intlLocale = await getLocale();
-        const locale = intlLocale;
+        const locale = await getLocale();
         requestInit.headers = {
             ...requestInit.headers,
             Locale: locale
@@ -53,10 +52,12 @@ export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<Ap
 
     if (!init?.skipAuth) {
         const token = await getAuthToken();
-        requestInit.headers = {
-            ...requestInit.headers,
-            Authorization: `Bearer ${token}`
-        };
+        if (token) {
+            requestInit.headers = {
+                ...requestInit.headers,
+                Authorization: `Bearer ${token}`
+            };
+        }
     }
 
     if (requestInit?.params) {

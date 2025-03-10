@@ -1,19 +1,17 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { AppComment } from "../types";
-import Image from "next/image";
-import { userTypesTranslationKey } from "@/constants";
-import moment from "moment";
-import { FaRegComment, FaX } from "react-icons/fa6";
+import { FaX } from "react-icons/fa6";
 import { useActionState, useEffect, useState } from "react";
 import { User } from "@/types/user";
 import { useAuthStore } from "@/features/auth/store";
 import { toast } from "sonner";
-import { addCommentAction } from "../actions";
+import { addCommentAction, likeCommentAction } from "../actions";
 import { useRouter } from "next/navigation";
 import Textarea from "@/components/ui/textarea";
 import Button from "@/components/ui/button";
 import { LuSend } from "react-icons/lu";
+import CommentCard from "./comment-card";
 
 export default function CommentsSection({
     comments,
@@ -26,7 +24,6 @@ export default function CommentsSection({
 }) {
     const t = useTranslations();
     const router = useRouter();
-    const locale = useLocale();
     const [replyTo, setReplyTo] = useState<User | null>(null);
 
     const [state, action, pending] = useActionState(addCommentAction, { success: false });
@@ -53,6 +50,18 @@ export default function CommentsSection({
         document.getElementById("comment-form")?.scrollIntoView({ behavior: "smooth" });
     }
 
+    async function handleLike(id: number) {
+        if (!authUser) {
+            toast.error(t("errors.mustBeLoggedIn"));
+            return;
+        }
+
+        const { success } = await likeCommentAction(id);
+        if (!success) {
+            toast.error(t("errors.somethingWentWrong"));
+        }
+    }
+
     return (
         <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-2xl">{t("common.comments")}</h2>
@@ -61,53 +70,7 @@ export default function CommentsSection({
                 {comments.length === 0 && (
                     <p className="text-dark-300">{t("common.noCommentsYet")}</p>
                 )}
-                {comments.map((comment) => {
-                    return (
-                        <article
-                            className="[&:not(:last-child)]:border-b border-b-light-400 flex flex-col gap-4 p-4"
-                            key={comment.id}
-                        >
-                            <div className="flex items-center gap-2 justify-between">
-                                <div className="flex items-center gap-2">
-                                    <Image
-                                        src={comment.user.avatar}
-                                        alt={comment.user.name}
-                                        width={36}
-                                        height={36}
-                                        className="rounded-full object-cover aspect-square w-9"
-                                    />
-                                    <div className="flex flex-col">
-                                        <h3 className="font-semibold text-sm">
-                                            {comment.user.name} {"John Doe"}
-                                        </h3>
-                                        <p className="text-sm text-dark-300">
-                                            {t(userTypesTranslationKey[comment.user.type])}
-                                        </p>
-                                    </div>
-                                </div>
-                                <span className="text-xs font-medium">
-                                    {moment(comment.created_at).locale(locale).fromNow()}
-                                </span>
-                            </div>
-                            <div className="flex flex-col gap-2">
-                                {comment.replied_user && (
-                                    <span className="text-xs text-dark-300 font-medium">
-                                        {t("common.replyingTo")} {comment.replied_user?.name} John
-                                        Doe
-                                    </span>
-                                )}
-                                <p>{comment.content}</p>
-                            </div>
-                            <button
-                                onClick={() => handleReply(comment.user)}
-                                className="flex items-center gap-2 text-dark-300 transition-colors duration-200 hover:text-dark-400 w-fit"
-                            >
-                                <FaRegComment />
-                                {t("common.reply")}
-                            </button>
-                        </article>
-                    );
-                })}
+                {comments.map((comment) => <CommentCard comment={comment} key={comment.id} onReply={handleReply} onLike={handleLike} />)}
             </div>
 
             {authUser && (
@@ -133,7 +96,7 @@ export default function CommentsSection({
                                     <FaX />
                                 </button>
                                 <div className="flex items-center gap-2">
-                                    {t("common.replyingTo")} {replyTo?.name} {"John Doe"}
+                                    {t("common.replyingTo")} {replyTo?.name}
                                 </div>
                             </div>
                         )}

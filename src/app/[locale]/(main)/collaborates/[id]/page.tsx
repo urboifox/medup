@@ -32,7 +32,8 @@ export default async function CollaboratePage({
         params: {
             commentable_id: id,
             type: "collaborate",
-            page: (searchParamsData?.page as string) || "1"
+            page: (searchParamsData?.page as string) || "1",
+            with_favorites: "yes"
         }
     });
 

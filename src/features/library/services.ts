@@ -5,6 +5,6 @@ export async function getLibrary(options?: FetcherOptions) {
     return await fetcher<LibraryItem[]>("/api/public/library", options);
 }
 
-export async function getCourse(id: string, options?: FetcherOptions) {
+export async function getLibraryItem(id: string, options?: FetcherOptions) {
     return await fetcher<LibraryItem>("/api/public/library/" + id, options);
 }

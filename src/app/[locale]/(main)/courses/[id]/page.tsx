@@ -69,7 +69,9 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                         <div className="flex flex-col gap-2">
                             <p className="text-dark-400 font-medium">{t("labels.datePublished")}</p>
                             <p className="text-dark-300">
-                                {moment(course.created_at || Date.now()).locale(locale).format("LL")}
+                                {moment(course.created_at || Date.now())
+                                    .locale(locale)
+                                    .format("LL")}
                             </p>
                         </div>
                         <div className="flex flex-col gap-2">

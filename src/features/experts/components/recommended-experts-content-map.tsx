@@ -9,15 +9,12 @@ export default async function RecommendedExpertsContentMap() {
     });
     const experts = res.data;
 
-
     return (
         <>
             {experts?.map((expert) => {
                 return <ExpertCard key={expert.id} expert={expert} />;
             })}
-            {experts?.length === 0 && (
-                <p className="text-dark-300">{t("experts.noExperts")}</p>
-            )}
+            {experts?.length === 0 && <p className="text-dark-300">{t("experts.noExperts")}</p>}
         </>
     );
 }

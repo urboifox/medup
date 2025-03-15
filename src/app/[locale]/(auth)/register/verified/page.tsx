@@ -15,7 +15,9 @@ export default function VerifiedPage() {
             <p className="max-w-sm text-center">{t("auth.accountVerifiedDescription")}</p>
 
             <Link href="/login">
-                <Button>{t("auth.login")} {t("common.now")}</Button>
+                <Button>
+                    {t("auth.login")} {t("common.now")}
+                </Button>
             </Link>
         </FormContainer>
     );

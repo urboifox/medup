@@ -6,7 +6,11 @@ import Image from "next/image";
 import { FaRegComment, FaRegThumbsUp, FaThumbsUp } from "react-icons/fa6";
 import { AppComment } from "../types";
 
-interface Props { comment: AppComment, onReply: (user: User) => void, onLike: (id: number) => void }
+interface Props {
+    comment: AppComment;
+    onReply: (user: User) => void;
+    onLike: (id: number) => void;
+}
 
 export default function CommentCard({ comment, onLike, onReply }: Props) {
     const t = useTranslations();
@@ -27,11 +31,13 @@ export default function CommentCard({ comment, onLike, onReply }: Props) {
                         className="rounded-full object-cover aspect-square w-9"
                     />
                     <div className="flex flex-col">
-                        <h3 className="font-semibold text-sm">
-                            {comment.user.name}
-                        </h3>
+                        <h3 className="font-semibold text-sm">{comment.user.name}</h3>
                         <p className="text-sm text-dark-300">
-                            {t(userTypesTranslationKey[comment.user.type as keyof typeof userTypesTranslationKey])}
+                            {t(
+                                userTypesTranslationKey[
+                                    comment.user.type as keyof typeof userTypesTranslationKey
+                                ]
+                            )}
                         </p>
                     </div>
                 </div>
@@ -52,14 +58,13 @@ export default function CommentCard({ comment, onLike, onReply }: Props) {
                     onClick={() => onLike(comment.id)}
                     className="flex items-center gap-1 text-dark-300 transition-colors duration-200 hover:text-dark-400 w-fit"
                 >
-                    {
-                        comment.liked_by_user ? (
-                            <span className="text-primary-main">
-                                <FaThumbsUp />
-                            </span>
-
-                        ) : <FaRegThumbsUp />
-                    }
+                    {comment.liked_by_user ? (
+                        <span className="text-primary-main">
+                            <FaThumbsUp />
+                        </span>
+                    ) : (
+                        <FaRegThumbsUp />
+                    )}
                     {comment.likes_count}
                 </button>
                 <button
@@ -71,5 +76,5 @@ export default function CommentCard({ comment, onLike, onReply }: Props) {
                 </button>
             </div>
         </article>
-    )
+    );
 }

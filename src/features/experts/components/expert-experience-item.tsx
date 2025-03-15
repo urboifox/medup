@@ -49,10 +49,12 @@ export default function ExpertExperienceItem({ experience }: { experience: Exper
                         >
                             {t("common.cancel")}
                         </Button>
-                        <form action={(fd) => {
-                            fd.append("id", experience.id.toString());
-                            action(fd);
-                        }}>
+                        <form
+                            action={(fd) => {
+                                fd.append("id", experience.id.toString());
+                                action(fd);
+                            }}
+                        >
                             <Button type="submit" disabled={pending}>
                                 {t("common.confirm")}
                             </Button>

@@ -70,7 +70,14 @@ export default function CommentsSection({
                 {comments.length === 0 && (
                     <p className="text-dark-300">{t("common.noCommentsYet")}</p>
                 )}
-                {comments.map((comment) => <CommentCard comment={comment} key={comment.id} onReply={handleReply} onLike={handleLike} />)}
+                {comments.map((comment) => (
+                    <CommentCard
+                        comment={comment}
+                        key={comment.id}
+                        onReply={handleReply}
+                        onLike={handleLike}
+                    />
+                ))}
             </div>
 
             {authUser && (

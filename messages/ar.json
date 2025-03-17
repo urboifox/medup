@@ -317,6 +317,21 @@
         "termsAndConditions": "شروط وأحكام",
         "address": "6391 شارع إلجين، سيلينا، ديلاوير 10299، نيويورك، الولايات المتحدة الأمريكية"
     },
+    "wallet": {
+        "amount": "المبلغ المستحق",
+        "cardNumber": "رقم البطاقة",
+        "nameOnCard": "الأسم على البطاقة",
+        "expirationDate": "تاريخ الانتهاء",
+        "cvv": "CVV",
+        "confirmWithdrawal": "تأكيد السحب",
+        "withdrawalSuccess": "تم السحب بنجاح",
+        "walletNumber": "رقم المحفظة",
+        "recipientName": "اسم المستلم",
+        "confirmTransfer": "تأكيد التحويل",
+        "confirmDeposit": "تأكيد الإيداع",
+        "transferSuccess": "تم التحويل بنجاح",
+        "depositSuccess": "تم الإيداع بنجاح"
+    },
     "courses": {
         "addCourse": "أضف كورس"
     }

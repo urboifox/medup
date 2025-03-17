@@ -318,6 +318,21 @@
         "termsAndConditions": "Terms & Conditions",
         "address": "6391 Elgin Street, Celina, Delaware 10299, New York, USA"
     },
+    "wallet": {
+        "amount": "Amount",
+        "cardNumber": "Card Number",
+        "nameOnCard": "Name on Card",
+        "expirationDate": "Expiration Date",
+        "cvv": "CVV",
+        "confirmWithdrawal": "Confirm Withdrawal",
+        "withdrawalSuccess": "Withdrawal Success",
+        "walletNumber": "Wallet Number",
+        "recipientName": "Recipient Name",
+        "confirmTransfer": "Confirm Transfer",
+        "confirmDeposit": "Confirm Deposit",
+        "transferSuccess": "Transfer Success",
+        "depositSuccess": "Deposit Success"
+    },
     "courses": {
         "addCourse": "Add a Course"
     }

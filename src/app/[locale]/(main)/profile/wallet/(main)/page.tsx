@@ -1,4 +1,5 @@
 import NoResults from "@/components/ui/no-results";
+import Pagination from "@/components/ui/pagination";
 import { getTransactions } from "@/features/wallet/services";
 import { Link } from "@/i18n/routing";
 import { cn } from "@/utils/cn";
@@ -14,11 +15,12 @@ export default async function WalletPage({
 }) {
     const t = await getTranslations();
     const locale = await getLocale();
-    const { type } = await searchParams;
+    const { type, page } = await searchParams;
     const validTypes = ["0", "1", "2"];
-    const { data: transactions } = await getTransactions({
+    const { data: transactions, meta } = await getTransactions({
         params: {
-            type: validTypes.includes(type as string) ? (type as string) : ""
+            type: validTypes.includes(type as string) ? (type as string) : "",
+            page: (page as string) || "1"
         }
     });
 
@@ -110,6 +112,10 @@ export default async function WalletPage({
                         );
                     })}
                 </div>
+                <Pagination
+                    currentPage={parseInt((page as string) || "1")}
+                    lastPage={(meta?.last_page as number) || 1}
+                />
             </div>
         </div>
     );

@@ -26,6 +26,18 @@ export default async function TransactionsLayout({ children }: { children: React
                         {t("common.withdraw")}
                     </Button>
                 </Link>
+                <Link href="/profile/wallet/deposit">
+                    <Button variant="outline">
+                        <AiOutlineBank size={20} />
+                        {t("common.deposit")}
+                    </Button>
+                </Link>
+                <Link href="/profile/wallet/transfer">
+                    <Button variant="outline">
+                        <AiOutlineBank size={20} />
+                        {t("common.transfer")}
+                    </Button>
+                </Link>
             </div>
             {children}
         </div>

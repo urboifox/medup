@@ -1,6 +1,8 @@
 import Button from "@/components/ui/button";
 import CourseCard from "@/features/courses/components/course-card";
 import { getCourse, getCourses } from "@/features/courses/services";
+import BuyButton from "@/features/orders/components/buy-button";
+import { Link } from "@/i18n/routing";
 import moment from "moment";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -42,7 +44,17 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                         </p>
                         <p className="text-primary-main font-semibold">${course.price}</p>
 
-                        <Button className="w-fit">{t("common.buyNow")}</Button>
+                        {course.purchased ? (
+                            <a href={course?.public_link} target="_blank" rel="noreferrer">
+                                <Button>{t("common.view")}</Button>
+                            </a>
+                        ) : (
+                            <BuyButton
+                                price={course.price}
+                                id={course.id.toString()}
+                                type="course"
+                            />
+                        )}
                     </div>
                 </div>
 

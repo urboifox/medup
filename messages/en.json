@@ -9,6 +9,7 @@
         "all": "All",
         "retry": "Retry",
         "buyNow": "Buy Now",
+        "operationSuccessful": "Operation completed successfully",
         "transfer": "Transfer",
         "withdrawal": "Withdrawal",
         "today": "Today",
@@ -335,5 +336,9 @@
     },
     "courses": {
         "addCourse": "Add a Course"
+    },
+    "orders": {
+        "areYouSure": "Are you sure you want to buy this item?",
+        "areYouSureDescription": "This action will charge ${amount} from your wallet. Please confirm your purchase."
     }
 }

@@ -11,4 +11,6 @@ export type Course = {
     expert: Expert;
     speciality: Speciality;
     created_at: string;
+    purchased: boolean;
+    public_link?: string;
 };

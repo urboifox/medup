@@ -24,7 +24,7 @@ export default function Header() {
         { label: t("nav.researches"), href: "/researches" },
         { label: t("nav.ideas"), href: "/ideas" },
         { label: t("nav.collaborate"), href: "/collaborates" },
-        { label: t("nav.digitalAppointment"), href: "/experts" }
+        // { label: t("nav.digitalAppointment"), href: "/experts" }
     ];
 
     return (

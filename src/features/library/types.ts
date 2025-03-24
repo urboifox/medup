@@ -11,4 +11,6 @@ export type LibraryItem = {
     description: string;
     expert: Expert;
     speciality: Speciality;
+    purchased: boolean;
+    rating_average: number;
 };

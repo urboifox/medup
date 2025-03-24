@@ -1,6 +1,7 @@
-import Button from "@/components/ui/button";
 import LibraryCard from "@/features/library/components/book-card";
 import { getLibrary, getLibraryItem } from "@/features/library/services";
+import BookDownloadButton from "@/features/orders/components/book-download-button";
+import BuyButton from "@/features/orders/components/buy-button";
 import moment from "moment";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -42,7 +43,11 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                         </p>
                         <p className="text-primary-main font-semibold">${book.price}</p>
 
-                        <Button className="w-fit">{t("common.buyNow")}</Button>
+                        {book.purchased ? (
+                            <BookDownloadButton book={book} />
+                        ) : (
+                            <BuyButton price={book.price} id={book.id.toString()} type="library" />
+                        )}
                     </div>
                 </div>
 

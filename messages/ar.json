@@ -8,6 +8,7 @@
     "common": {
         "all": "الكل",
         "addExperience": "اضافة خبرة",
+        "operationSuccessful": "تم إكمال العملية بنجاح",
         "colleges": "الكليات",
         "free": "مجاني",
         "transfer": "تحويل",
@@ -334,5 +335,9 @@
     },
     "courses": {
         "addCourse": "أضف كورس"
+    },
+    "orders": {
+        "areYouSure": "هل أنت متأكد من أنك تريد شراء هذا العنصر؟",
+        "areYouSureDescription": "سيؤدي هذا الإجراء إلى خصم ${amount} من محفظتك. يُرجى تأكيد عملية الشراء."
     }
 }

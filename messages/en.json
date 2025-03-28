@@ -8,10 +8,16 @@
     "common": {
         "all": "All",
         "retry": "Retry",
+        "upgradeToPremium": "Upgrade to Premium",
+        "close": "Close",
         "buyNow": "Buy Now",
         "operationSuccessful": "Operation completed successfully",
+        "month": "month",
         "transfer": "Transfer",
+        "payNow": "Pay Now",
         "withdrawal": "Withdrawal",
+        "payConfirmDescription": "By paying now, we will withdraw ${amount} from your wallet. Make sure you have enough funds in your wallet to cover the transaction.",
+        "cancelAnytime": "Cancel anytime, no hidden fees",
         "today": "Today",
         "yesterday": "Yesterday",
         "deposit": "Deposit",
@@ -53,7 +59,7 @@
         "changeImage": "Change Image",
         "yourExperience": "Your experience",
         "editYourProfile": "Edit Your Profile",
-        "aboutYout": "About You",
+        "aboutYou": "About You",
         "changesSaved": "Changes saved",
         "userProfile": "User Profile",
         "expertProfile": "Expert Profile",
@@ -340,5 +346,40 @@
     "orders": {
         "areYouSure": "Are you sure you want to buy this item?",
         "areYouSureDescription": "This action will charge ${amount} from your wallet. Please confirm your purchase."
+    },
+    "premium": {
+        "features": {
+            "1": {
+                "title": "Top Search Ranking",
+                "description": "Your profile will be ranked #1 in search results for patients and trainees"
+            },
+            "2": {
+                "title": "24/7 Visibility Priority",
+                "description": "Your profile appears in search results hourly, every day, for trainees, patients and online consultants"
+            },
+            "3": {
+                "title": "Online medical consultation",
+                "description": "priority in appearing on the home page daily, displaying, providing easy online consultations with patients and students."
+            },
+            "4": {
+                "title": "Enhanced Rating System",
+                "description": "your profile will start by 4 golden stars as a mark of distinction and credibility"
+            },
+            "5": {
+                "title": "Reduced Platform Fee",
+                "description": "Only 7.5% platform fee instead of standard 10%"
+            },
+            "6": {
+                "title": "Priority Support",
+                "description": "Get faster response times and dedicated support channel"
+            },
+            "7": {
+                "title": "Annual Conference Access",
+                "description": "The top 100 doctors on the platform will receive free conference attendance and exclusive job opportunities."
+            }
+        },
+        "congratulations": "Congratulations!",
+        "congratulationsDescription": "You have successfully upgraded to premium. You can now enjoy all the features of the platform.",
+        "isPremium": "You are currently on the premium plan!"
     }
 }

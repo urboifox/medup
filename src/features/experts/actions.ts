@@ -162,3 +162,23 @@ export async function expertAddCertificateProfileAction(
     revalidatePath("/profile");
     return { success: true, formData };
 }
+
+export async function upgradeToPremiumAction(_prevData: unknown) {
+    const t = await getTranslations();
+
+    try {
+        await fetcher("/api/experts/me/subscription/renew", { method: "POST" });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                message: error.data?.message
+            };
+        }
+        return { success: false, message: t("errors.somethingWentWrong") };
+    }
+
+    revalidatePath("/profile");
+    return { success: true };
+}

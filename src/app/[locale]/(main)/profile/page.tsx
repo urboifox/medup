@@ -7,7 +7,8 @@ import InfoCardWrapper from "@/features/experts/components/info-card-wrapper";
 import {
     getExpertProfile,
     getProfileCertification,
-    getProfileExperiences
+    getProfileExperiences,
+    getProfileSubscription
 } from "@/features/experts/services";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
@@ -17,12 +18,14 @@ import { CiBank } from "react-icons/ci";
 import ExpertProfileCertification from "@/features/experts/components/expert-profile-certification";
 import { MdEdit } from "react-icons/md";
 import UpgradeToPremiumButton from "@/features/experts/components/upgrade-to-premium-button";
+import moment from "moment";
 
 export default async function ProfilePage() {
     const t = await getTranslations();
     const { data: expert } = await getExpertProfile();
     const { data: experiences } = await getProfileExperiences();
     const { data: certification } = await getProfileCertification();
+    const { data: subscription } = await getProfileSubscription();
 
     if (!expert) {
         return redirect("/logout");
@@ -76,6 +79,12 @@ export default async function ProfilePage() {
                                 <div className="flex flex-col gap-2">
                                     <p className="text-sm text-primary-main">
                                         {t("premium.isPremium")}
+                                    </p>
+                                    <p className="text-sm">
+                                        {t("premium.subscriptionEndsAt")}{" "}
+                                        <span className="font-semibold">
+                                        {moment(subscription?.ends_at).format("MMMM Do YYYY")}
+                                        </span>
                                     </p>
                                 </div>
                             ) : (

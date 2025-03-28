@@ -12,6 +12,13 @@ export enum ExprtWorkType {
     Remotely
 }
 
+export type Subscription = {
+    id: number;
+    starts_at: string;
+    ends_at: string;
+    paid: boolean;
+};
+
 export type ExpertExperience = {
     id: number;
     hospital_name: string;

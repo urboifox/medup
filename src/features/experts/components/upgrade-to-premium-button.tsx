@@ -118,12 +118,12 @@ export default function UpgradeToPremiumButton({ price = 0.0 }: { price: number 
                                 <p>/{t("common.month")}</p>
                             </div>
                             <div className="flex flex-col gap-2">
-                                <p className="text-sm text-dark-300 text-center">
+                                <p className="text-sm text-dark-300 text-center font-semibold">
                                     {t("common.payConfirmDescription", {
                                         amount: price.toFixed(2)
                                     })}
                                 </p>
-                                <p className="text-sm text-dark-300 text-center">
+                                <p className="text-sm text-dark-300 text-center font-medium">
                                     {t("common.cancelAnytime")}
                                 </p>
                             </div>

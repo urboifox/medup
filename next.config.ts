@@ -5,7 +5,11 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
     images: {
-        remotePatterns: [{ protocol: "https", hostname: "medup.mohamed-emad.com", pathname: "/**" }]
+        remotePatterns: [{ protocol: "https", hostname: "medup.mohamed-emad.com", pathname: "/**" }, {
+            protocol: "https",
+            hostname: "images.unsplash.com",
+            pathname: "/**"
+        }],
     },
     eslint: {
         ignoreDuringBuilds: true

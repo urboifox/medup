@@ -25,7 +25,7 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h3 className="text-dark-100 font-medium text-xl">{t("quickLinks")}</h3>
                         <div className="flex flex-col gap-1">
-                            <FooterLink href="/" label={t("aboutUs")} />
+                            <FooterLink href="/about-us" label={t("aboutUs")} />
                             <FooterLink href="/" label={t("services")} />
                             <FooterLink href="/" label={t("contactUs")} />
                         </div>
@@ -42,8 +42,8 @@ export default function Footer() {
                         <h3 className="text-dark-100 font-medium text-xl">{t("support")}</h3>
                         <div className="flex flex-col gap-1">
                             <FooterLink href="/" label={t("faq")} />
-                            <FooterLink href="/" label={t("privacyPolicy")} />
-                            <FooterLink href="/" label={t("termsAndConditions")} />
+                            <FooterLink href="/terms-and-conditions" label={t("privacyPolicy")} />
+                            <FooterLink href="/terms-and-conditions" label={t("termsAndConditions")} />
                         </div>
                     </div>
                 </div>

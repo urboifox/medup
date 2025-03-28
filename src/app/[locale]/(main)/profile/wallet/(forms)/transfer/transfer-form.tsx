@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
 import { transferAction } from "./action";
+import Textarea from "@/components/ui/textarea";
 
 export default function TransferForm() {
     const t = useTranslations();
@@ -29,9 +30,21 @@ export default function TransferForm() {
                 name="amount"
                 placeholder="0.00"
                 placeholderIcon={<span>$</span>}
+                min="0"
             />
-            <Input label={t("wallet.walletNumber")} name="wallet_number" placeholder="123456" />
-            <Input label={t("wallet.recipientName")} name="recipient_name" placeholder="John Doe" />
+            <Input
+                label={t("labels.email")}
+                name="email"
+                placeholder="example@mail.com"
+                defaultValue={state?.formData?.get("email") as string}
+                error={state?.errors?.email}
+            />
+            <Textarea
+                name="description"
+                label={t("labels.description")}
+                error={state?.errors?.description}
+                defaultValue={state?.formData?.get("description") as string}
+            ></Textarea>
             <Button type="submit" disabled={pending}>
                 {t("wallet.confirmTransfer")}
             </Button>

@@ -1,5 +1,5 @@
 import { fetcher, FetcherOptions } from "@/utils/fetcher";
-import { Expert, ExpertCertification, ExpertExperience } from "./types";
+import { Expert, ExpertCertification, ExpertExperience, Subscription } from "./types";
 
 export async function getAllExperts(options?: FetcherOptions) {
     return await fetcher<Expert[]>("/api/public/experts", options);
@@ -23,4 +23,8 @@ export async function getProfileExperience(id: string, options?: FetcherOptions)
 
 export async function getProfileCertification(options?: FetcherOptions) {
     return await fetcher<ExpertCertification>("/api/experts/certification", options);
+}
+
+export async function getProfileSubscription(options?: FetcherOptions) {
+    return await fetcher<Subscription>("/api/experts/me/subscription", options);
 }

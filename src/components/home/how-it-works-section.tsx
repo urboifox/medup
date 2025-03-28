@@ -83,17 +83,19 @@ export default function HowItWorksSection() {
             <div className="container flex flex-col gap-20 items-center">
                 <h2 className="text-4xl font-semibold foreground-200">{t("home.how.title")}</h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 2xl:grid-cols-4 gap-4">
                     {cards.map((card, i) => {
                         return (
                             <div
                                 key={i}
-                                className="flex flex-col gap-10 items-center bg-white rounded-lg rounded-t-full px-10 pt-40 pb-20 shadow-lg"
+                                className="flex flex-col gap-8 items-center bg-white rounded-lg rounded-t-full px-2 lg:px-10 pt-10 lg:pt-20 pb-10 shadow-lg"
                             >
                                 {card.icon}
                                 <div className="flex flex-col gap-4 items-center text-center">
-                                    <h3 className="text-2xl font-medium">{card.title}</h3>
-                                    <p className="text-foreground-100">{card.description}</p>
+                                    <h3 className="lg:text-2xl font-medium">{card.title}</h3>
+                                    <p className="text-sm lg:text-base text-foreground-100">
+                                        {card.description}
+                                    </p>
                                 </div>
                             </div>
                         );

@@ -34,6 +34,11 @@ export default function ExpertsSearchFilters() {
     const filteredSpecialities = selectedColleges
         ? specialities.filter((item) => selectedColleges.includes(item.college_id ?? 0))
         : specialities;
+    const filteredSkills = selectedSpecialities
+        ? skills.filter((item) =>
+              item.specialities?.some((speciality) => selectedSpecialities?.includes(speciality))
+          )
+        : skills;
 
     const filters: FilterConfig[] = [
         {
@@ -50,7 +55,7 @@ export default function ExpertsSearchFilters() {
         },
         {
             queryName: "skills",
-            options: skills,
+            options: filteredSkills,
             selected: selectedSkills,
             defaultText: t("experts.skill")
         }

@@ -12,7 +12,9 @@ export default function UserHeaderInfo() {
     return (
         <>
             {user ? (
-                <UserInfo user={user} />
+                <>
+                    <UserInfo user={user} />
+                </>
             ) : (
                 <>
                     <Link

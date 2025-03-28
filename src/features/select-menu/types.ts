@@ -2,6 +2,8 @@ import { BaseEntity } from "@/types";
 
 export type Skill = BaseEntity & {
     experts_count: number;
+    posts_count: number;
+    specialities?: number[];
 };
 
 export type College = BaseEntity & {

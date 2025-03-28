@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function ExpertsFiltersMenu({
     options,
-    queryName
+    queryName,
 }: {
     options: (BaseEntity & { experts_count: number })[];
     queryName: string;

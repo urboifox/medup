@@ -8,6 +8,7 @@
     "common": {
         "all": "الكل",
         "addExperience": "اضافة خبرة",
+        "reviewAdded": "تم ارسال التقييم",
         "upgradeToPremium": "الترقية إلى حساب مميز",
         "operationSuccessful": "تم إكمال العملية بنجاح",
         "month": "شهر",
@@ -109,7 +110,11 @@
         "mustBeLoggedIn": "يجب عليك تسجيل الدخول للقيام بهذا الإجراء"
     },
     "labels": {
+        "leaveAReview": "اترك تقييم",
+        "submitRate": "تقديم التقييم",
+        "rating": "التقييم",
         "link": "الرابط",
+        "rateYourOrder": "قيم طلبك",
         "name": "الأسم",
         "author": "المؤلف",
         "pagesCount": "عدد الصفحات",
@@ -153,7 +158,9 @@
         "code": "الرمز"
     },
     "placeholders": {
+        "writeSomething": "اكتب شيئًا...",
         "comment": "اكتب تعليقاً...",
+        "rating": "تقييمك (1-5)",
         "email": "example@email.com",
         "education": "الكلية، الجامعة، إلخ.",
         "bio": "اكتب نبذة قصيرة عن نفسك",
@@ -447,5 +454,8 @@
         "title": "تمكين المهنيين الطبيين من تطوير مهاراتهم",
         "description": "“على هذه المنصة، يتبادل الأطباء والطلاب والخبراء المقالات والأفكار ويقدمون الدورات والكتب لتعزيز المهارات الطبية.“",
         "ourStory": "قصتنا"
+    },
+    "reviews": {
+        "basedOnCount": "استنادًا إلى {count} تقييمات"
     }
 }

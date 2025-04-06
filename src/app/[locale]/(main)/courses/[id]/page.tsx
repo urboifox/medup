@@ -1,8 +1,9 @@
 import Button from "@/components/ui/button";
+import StarsRating from "@/components/ui/stars-rating";
 import CourseCard from "@/features/courses/components/course-card";
 import { getCourse, getCourses } from "@/features/courses/services";
 import BuyButton from "@/features/orders/components/buy-button";
-import { Link } from "@/i18n/routing";
+import OrderRating from "@/features/orders/components/order-rating";
 import moment from "moment";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -44,6 +45,11 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                         </p>
                         <p className="text-primary-main font-semibold">${course.price}</p>
 
+                        <div className="flex gap-2 items-center">
+                            <p className="font-semibold">{course.rating_average}</p>
+                            <StarsRating value={course.rating_average} />
+                        </div>
+
                         {course.purchased ? (
                             <a href={course?.public_link} target="_blank" rel="noreferrer">
                                 <Button>{t("common.view")}</Button>
@@ -57,6 +63,15 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                         )}
                     </div>
                 </div>
+
+                {course.reviewed === false && course.purchased && (
+                    <div className="flex flex-col gap-4">
+                        <h2 className="text-2xl font-semibold xl:text-3xl">
+                            {t("labels.rateYourOrder")}
+                        </h2>
+                        <OrderRating orderId={course?.order_id?.toString()} />
+                    </div>
+                )}
 
                 <div className="flex flex-col gap-4">
                     <h2 className="text-2xl font-semibold xl:text-3xl">

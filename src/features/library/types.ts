@@ -13,4 +13,6 @@ export type LibraryItem = {
     speciality: Speciality;
     purchased: boolean;
     rating_average: number;
+    order_id: number;
+    reviewed: boolean;
 };

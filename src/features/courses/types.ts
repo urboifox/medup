@@ -13,4 +13,6 @@ export type Course = {
     created_at: string;
     purchased: boolean;
     public_link?: string;
+    order_id: number;
+    reviewed: boolean;
 };

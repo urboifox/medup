@@ -7,6 +7,7 @@
     },
     "common": {
         "all": "All",
+        "reviewAdded": "Review Added",
         "retry": "Retry",
         "upgradeToPremium": "Upgrade to Premium",
         "close": "Close",
@@ -109,10 +110,14 @@
         "mustBeLoggedIn": "You must be logged in to perform this action"
     },
     "labels": {
+        "leaveAReview": "Leave a review",
+        "submitRate": "Submit your rate",
+        "rating": "Rating",
         "link": "Link",
         "name": "Name",
         "author": "Author",
         "pagesCount": "Pages Count",
+        "rateYourOrder": "Rate your order",
         "firstName": "First Name",
         "datePublished": "Date Published",
         "notes": "Notes",
@@ -153,7 +158,9 @@
         "cover": "Cover"
     },
     "placeholders": {
+        "writeSomething": "Write something...",
         "comment": "Write a comment...",
+        "rating": "Your rating (1-5)",
         "email": "example@email.com",
         "education": "College, University, etc.",
         "bio": "Write a short bio about yourself",
@@ -448,5 +455,8 @@
         "title": "Empowering medical professionals to develop their skills",
         "description": "“On this platform, doctors, students and experts share articles, exchange ideas, and provide courses and books to enhance medical skills.”",
         "ourStory": "Our Story"
+    },
+    "reviews": {
+        "basedOnCount": "Based on {count} reviews"
     }
 }

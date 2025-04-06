@@ -2,6 +2,7 @@ import LibraryCard from "@/features/library/components/book-card";
 import { getLibrary, getLibraryItem } from "@/features/library/services";
 import BookDownloadButton from "@/features/orders/components/book-download-button";
 import BuyButton from "@/features/orders/components/buy-button";
+import OrderRating from "@/features/orders/components/order-rating";
 import moment from "moment";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -18,8 +19,11 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
 
     const { data: suggestedBooks } = await getLibrary({
         params: {
-            // suggested_based_id: id,
+            suggested_based_id: id,
             per_page: "4"
+        },
+        next: {
+            tags: ["orders"]
         }
     });
 
@@ -50,6 +54,15 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                         )}
                     </div>
                 </div>
+
+                {book.reviewed === false && book.purchased && (
+                    <div className="flex flex-col gap-4">
+                        <h2 className="text-2xl font-semibold xl:text-3xl">
+                            {t("labels.rateYourOrder")}
+                        </h2>
+                        <OrderRating orderId={book?.order_id?.toString()} />
+                    </div>
+                )}
 
                 <div className="flex flex-col gap-4">
                     <h2 className="text-2xl font-semibold xl:text-3xl">

@@ -182,3 +182,34 @@ export async function upgradeToPremiumAction(_prevData: unknown) {
     revalidatePath("/profile");
     return { success: true };
 }
+
+export async function reviewExpertAction(_prevData: unknown, formData: FormData) {
+    const t = await getTranslations();
+
+    const expertId = formData.get("expertId");
+
+    const payload = {
+        rating: formData.get("rating"),
+        description: formData.get("description")
+    };
+
+    try {
+        await fetcher("/api/public/experts/" + expertId + "/review", {
+            method: "POST",
+            body: JSON.stringify(payload)
+        });
+    } catch (error) {
+        if (error instanceof FetcherError) {
+            console.error("error:", error.data);
+            return {
+                success: false,
+                formData,
+                errors: error.data?.data,
+                message: error.data?.message
+            };
+        }
+        return { success: false, formData, message: t("errors.somethingWentWrong") };
+    }
+
+    return { success: true, formData };
+}

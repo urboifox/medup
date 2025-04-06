@@ -38,7 +38,22 @@ export type ExpertCertification = {
     file: string;
 };
 
+export type Review = {
+    id: number;
+    rating: number;
+    description: string;
+    created_at: string;
+    user: {
+        id: number;
+        avatar: string;
+        first_name: string;
+        middle_name: string;
+        name: string;
+    };
+};
+
 export type Expert = {
+    reviewed?: boolean;
     id: number;
     rating_average: number;
     is_premium: boolean;
@@ -60,4 +75,5 @@ export type Expert = {
     degree: string;
     education: string;
     graduation_year: number;
+    reviews: Review[];
 };

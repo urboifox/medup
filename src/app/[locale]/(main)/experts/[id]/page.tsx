@@ -5,6 +5,7 @@ import ExpertProfileCertification from "@/features/experts/components/expert-pro
 import ExpertProfileExperience from "@/features/experts/components/expert-profile-experience";
 import ExpertProfileInformation from "@/features/experts/components/expert-profile-information";
 import ExpertProfileSocialMedia from "@/features/experts/components/expert-profile-social-media";
+import ExpertReviews from "@/features/experts/components/expert-reviews";
 import ExpertsContentSkeleton from "@/features/experts/components/experts-content-skeleton";
 import InfoCardWrapper from "@/features/experts/components/info-card-wrapper";
 import RecommendedExpertsContentMap from "@/features/experts/components/recommended-experts-content-map";
@@ -66,6 +67,8 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                     </div>
                 </div>
             </div>
+
+            <ExpertReviews expert={expert} />
 
             <div className="flex flex-col gap-8">
                 <h2 className="text-xl lg:text-3xl font-semibold">

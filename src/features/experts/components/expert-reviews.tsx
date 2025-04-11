@@ -19,7 +19,7 @@ export default function ExpertReviews({ expert }: { expert: Expert }) {
     const [page, setPage] = useState(1);
     const filteredReviews = useMemo(() => {
         return expert.reviews.slice((page - 1) * reviewsLimit, page * reviewsLimit);
-    }, [page]);
+    }, [page, expert.reviews]);
 
     return (
         <div className="flex flex-col gap-6">

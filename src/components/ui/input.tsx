@@ -52,11 +52,13 @@ export default function Input({
                     </button>
                 )}
             </div>
-            <div className="text-sm text-red-500">
-                {typeof error === "string"
-                    ? error
-                    : error?.map((e, index) => <p key={index}>{e}</p>)}
-            </div>
+            {error && (
+                <div className="text-sm text-red-500">
+                    {typeof error === "string"
+                        ? error
+                        : error?.map((e, index) => <p key={index}>{e}</p>)}
+                </div>
+            )}
         </label>
     );
 }

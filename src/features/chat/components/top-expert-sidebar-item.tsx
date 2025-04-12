@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function TopExpertSidebarItem({ expert }: { expert?: Expert }) {
     return (
         <Link
-            href="/messages/1"
+            href="/experts/1"
             className="flex flex-start gap-2 p-4 rounded-md w-full transition-colors duration-100 hover:bg-light-200"
         >
             <Image

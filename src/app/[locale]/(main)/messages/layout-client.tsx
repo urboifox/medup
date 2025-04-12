@@ -5,7 +5,6 @@ import ChatSidebarItem from "@/features/chat/components/chat-sidebar-item";
 import TopExpertSidebarItem from "@/features/chat/components/top-expert-sidebar-item";
 import { Expert } from "@/features/experts/types";
 import { Link } from "@/i18n/routing";
-import icons from "@/lib/icons";
 import { useParams } from "next/navigation";
 import { AiOutlineWarning } from "react-icons/ai";
 
@@ -49,7 +48,7 @@ export function MessagesSidebar({ messages }: { messages: any[] }) {
                 <div className="pe-4">
                     <Input placeholder="Search messages or experts" />
                 </div>
-                <ul className="flex flex-col pe-2 overflow-y-auto h-[calc(100vh-200px)]">
+                <ul className="flex flex-col pe-2 overflow-y-auto h-[calc(100vh-260px)]">
                     {messages.map((expert, index) => {
                         const isActive = index === 1;
                         return (

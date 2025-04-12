@@ -2,6 +2,7 @@
 import Button from "@/components/ui/button";
 import Input from "@/components/ui/input";
 import { Link } from "@/i18n/routing";
+import { cn } from "@/utils/cn";
 import moment from "moment";
 import { useLocale } from "next-intl";
 import Image from "next/image";
@@ -15,16 +16,19 @@ export default function ChatPage() {
             content: "Hello, Fox!"
         },
         {
-            content: "Well, hey there! I'm great"
+            content: "Well, hey there! I'm great",
+            userId: 1
         },
         {
             content: "I'm doing great too! How about you?"
         },
         {
-            content: "Me too! I'm doing great too!"
+            content: "Me too! I'm doing great too!",
+            userId: 1
         },
         {
-            content: "Hey, Fox! How are you doing?"
+            content: "Hey, Fox! How are you doing?",
+            userId: 1
         }
     ];
     const messages = Array(10).fill(temp).flat();
@@ -76,14 +80,19 @@ export default function ChatPage() {
                     ref={messagesContainerRef}
                 >
                     <div className="grow"></div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 w-full">
                         {messages.map((message, index) => {
+                            const isCurrentUser = message.userId === 1;
+
                             return (
                                 <div
                                     key={index}
-                                    className="flex flex-col gap-2 p-4 rounded-md bg-light-200 w-max max-w-lg"
+                                    className={cn(
+                                        "flex flex-col gap-2 p-4 rounded-xl text-dark-400 bg-light-200 w-max max-w-lg",
+                                        isCurrentUser && "bg-primary-main text-white self-end"
+                                    )}
                                 >
-                                    <p className="text-sm text-dark-300">{message.content}</p>
+                                    <p className="text-sm">{message.content}</p>
                                     <span className="text-xs text-dark-200 font-medium shrink-0 self-end">
                                         {moment(Date.now()).locale(locale).format("hh:mm A")}
                                     </span>

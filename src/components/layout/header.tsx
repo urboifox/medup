@@ -7,6 +7,8 @@ import UserHeaderInfo from "./user-header-info";
 import Logo from "../ui/logo";
 import { usePathname } from "@/i18n/routing";
 import { cn } from "@/utils/cn";
+import UpgradeToPremiumButton from "@/features/experts/components/upgrade-to-premium-button";
+import { useAuthStore } from "@/features/auth/store";
 
 type NavItem = {
     label: string;
@@ -14,6 +16,7 @@ type NavItem = {
 };
 
 export default function Header() {
+    const user = useAuthStore((state) => state.user);
     const t = useTranslations();
     const pathname = usePathname();
 
@@ -23,7 +26,7 @@ export default function Header() {
         { label: t("nav.courses"), href: "/courses" },
         { label: t("nav.researches"), href: "/researches" },
         { label: t("nav.ideas"), href: "/ideas" },
-        { label: t("nav.collaborate"), href: "/collaborates" },
+        { label: t("nav.collaborate"), href: "/collaborates" }
         // { label: t("nav.digitalAppointment"), href: "/experts" }
     ];
 
@@ -61,6 +64,7 @@ export default function Header() {
                 </div>
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-2 sm:gap-4">
+                        {/* {user && <UpgradeToPremiumButton price={200} />} */}
                         <LanguageSwitcher />
                         <UserHeaderInfo />
                     </div>

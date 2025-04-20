@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends React.ButtonHTMLAttributes<HTMLElement> {
     children: React.ReactNode;
     menu: React.ReactNode;
     closeOnMenuClick?: boolean;
@@ -37,8 +37,8 @@ export default function DropdownButton({
 
     return (
         <div className={cn("relative", containerClassName)} ref={containerRef}>
-            <button
-                type="button"
+            <div
+                role="button"
                 {...rest}
                 className={cn(
                     "transition-colors duration-100",
@@ -51,7 +51,7 @@ export default function DropdownButton({
                 }}
             >
                 {children}
-            </button>
+            </div>
             <AnimatePresence>
                 {visible && (
                     <motion.div

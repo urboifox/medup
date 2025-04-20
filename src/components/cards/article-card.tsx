@@ -31,7 +31,7 @@ export default function ArticleCard({
                             {moment(article.created_at).locale(locale).format("YYYY/MM/DD")}
                         </time>
                     </div>
-                    <Link href="/articles/1" className="hover:underline">
+                    <Link href={`/researches/${article.id}`} className="hover:underline">
                         <h3 className="font-semibold text-lg lg:text-2xl text-dark-400 flex items-start gap-1 w-full justify-between line-clamp-2">
                             {article.title}
                             <Image

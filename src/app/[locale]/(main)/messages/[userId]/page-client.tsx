@@ -8,6 +8,7 @@ import { cn } from "@/utils/cn";
 import moment from "moment";
 import { useLocale } from "next-intl";
 import { useEffect, useRef } from "react";
+import { FaDownload, FaFile } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { PiTimer } from "react-icons/pi";
 
@@ -77,10 +78,22 @@ export default function ChatPageClient({
                                         isCurrentUser && "self-end"
                                     )}
                                 >
+                                    {message.media && (
+                                        <a
+                                            href={message.media}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            download
+                                            className="bg-primary-50 text-primary-main rounded-xl p-4 border border-light-300 flex items-center justify-between gap-2 w-full max-w-sm"
+                                        >
+                                            <FaDownload size={24} />
+                                            <p className="line-clamp-1">{message.media}</p>
+                                        </a>
+                                    )}
                                     <div
                                         className={cn(
                                             "flex gap-2 py-3 px-4 rounded-xl text-dark-400 bg-light-200 w-max max-w-lg",
-                                            isCurrentUser && "bg-primary-main text-white"
+                                            isCurrentUser && "bg-primary-main text-white self-end"
                                         )}
                                     >
                                         <p>{message.content}</p>

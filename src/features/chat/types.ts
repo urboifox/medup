@@ -13,6 +13,12 @@ export enum ChatMessageType {
 export type ChatMessage = {
     id: string;
     temp_id?: string;
+    media?: string;
+    media_object?: {
+        name: string;
+        type: string;
+        size: number;
+    };
     seen: boolean;
     created_at: string;
     content: string;

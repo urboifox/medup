@@ -31,7 +31,10 @@ export default function ChatPageClient({
     useEffect(() => {
         const channel = client?.subscribe(`conversations.${conversation.id}`);
         channel?.bind("new-message", (data: any) => {
-            updateOrAddMessage(data.message);
+            const newMessage = data.message;
+            if (newMessage.user.id !== user?.id) {
+                updateOrAddMessage(newMessage);
+            }
         });
         channel?.bind("message-deleted", (data: any) => {
             deleteMessage(data.messageId);

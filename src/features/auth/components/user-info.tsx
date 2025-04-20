@@ -4,7 +4,7 @@ import { Link } from "@/i18n/routing";
 import { User } from "@/types/user";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { CiLogout } from "react-icons/ci";
+import { CiChat1, CiLogout } from "react-icons/ci";
 
 export default function UserInfo({ user }: { user: User }) {
     return (
@@ -32,8 +32,14 @@ export function UserInfoMenu() {
                     {t("common.myProfile")}
                 </Button>
             </Link>
-            <Link href="/logout">
-                <Button color="danger">
+            <Link href="/messages" className="w-full">
+                <Button variant="secondary" className="w-full">
+                    <CiChat1 />
+                    {t("common.messages")}
+                </Button>
+            </Link>
+            <Link href="/logout" className="w-full">
+                <Button color="danger" className="w-full">
                     <CiLogout />
                     {t("auth.logout")}
                 </Button>

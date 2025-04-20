@@ -12,6 +12,7 @@ export enum ChatMessageType {
 
 export type ChatMessage = {
     id: string;
+    temp_id?: string;
     seen: boolean;
     created_at: string;
     content: string;

@@ -7,6 +7,7 @@ interface ChatStore {
     setInitialMessages: (messages: ChatMessage[]) => void;
     addMessagesPage: (messages: ChatMessage[]) => void;
     addMessage: (message: ChatMessage) => void;
+    updateOrAddMessage: (message: ChatMessage) => void;
     deleteMessage: (id: string) => void;
     replaceMessage: (id: string, message: ChatMessage) => void;
     setChats: (chats: Chat[]) => void;
@@ -42,6 +43,15 @@ export const useChatStore = create<ChatStore>((set, get) => {
                 set({ chats: currentChats.map((c) => (c.id === chat.id ? chat : c)) });
             } else {
                 set({ chats: [...currentChats, chat] });
+            }
+        },
+        updateOrAddMessage: (message: ChatMessage) => {
+            const { messages: currentMessages } = get();
+            const existingMessage = currentMessages.find((m) => m.id === message.id);
+            if (existingMessage) {
+                set({ messages: currentMessages.map((m) => (m.id === message.id ? message : m)) });
+            } else {
+                set({ messages: [...currentMessages, message] });
             }
         }
     };

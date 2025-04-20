@@ -25,17 +25,22 @@ export default function ChatPageClient({
 
     const setInitialMessages = useChatStore((state) => state.setInitialMessages);
     const messages = useChatStore((state) => state.messages);
-    const addMessage = useChatStore((state) => state.addMessage);
+    const updateOrAddMessage = useChatStore((state) => state.updateOrAddMessage);
     const deleteMessage = useChatStore((state) => state.deleteMessage);
 
     useEffect(() => {
         const channel = client?.subscribe(`conversations.${conversation.id}`);
         channel?.bind("new-message", (data: any) => {
-            addMessage(data.message);
+            updateOrAddMessage(data.message);
         });
         channel?.bind("message-deleted", (data: any) => {
             deleteMessage(data.messageId);
         });
+
+        return () => {
+            channel?.unbind("message-deleted");
+            channel?.unbind("new-message");
+        };
     }, [client, user]);
 
     useEffect(() => {

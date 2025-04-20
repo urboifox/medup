@@ -7,7 +7,7 @@ export default function RealtimeProvider({ children }: { children: React.ReactNo
     const setClient = useRealtimeStore((state) => state.setClient);
 
     useEffect(() => {
-        Pusher.logToConsole = true;
+        // Pusher.logToConsole = true;
         const client = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
             cluster: "eu",
             authEndpoint: "/api/broadcast"

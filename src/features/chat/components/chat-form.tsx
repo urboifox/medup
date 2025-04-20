@@ -29,7 +29,7 @@ export default function ChatForm({
         if (state.success) {
             replaceMessage(state.formData.get("temp_id") as string, state.newMessage);
         }
-    }, [state, addMessage]);
+    }, [state, replaceMessage]);
 
     return (
         <form

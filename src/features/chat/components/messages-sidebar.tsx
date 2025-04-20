@@ -17,6 +17,10 @@ export default function MessagesSidebar() {
         channel?.bind("conversation-updated", (data: any) => {
             updateOrAddConversation(data.conversation);
         });
+
+        return () => {
+            channel?.unbind("conversation-updated");
+        };
     }, [client, userId]);
 
     return (

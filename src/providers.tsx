@@ -1,24 +1,22 @@
 import AuthProvider from "@/features/auth/provider";
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { Toaster } from "sonner";
-import SelectMenuProvider from "@/features/select-menu/select-menu-provider";
-import { Suspense } from "react";
+import RealtimeProvider from "./realtime-provider";
 
 export default function Providers({
     children,
-    messages
+    messages,
+    locale
 }: {
     children: React.ReactNode;
     messages: AbstractIntlMessages;
+    locale: string;
 }) {
     return (
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
             <AuthProvider>
-                <Suspense>
-                    <SelectMenuProvider />
-                </Suspense>
                 <Toaster />
-                {children}
+                <RealtimeProvider>{children}</RealtimeProvider>
             </AuthProvider>
         </NextIntlClientProvider>
     );

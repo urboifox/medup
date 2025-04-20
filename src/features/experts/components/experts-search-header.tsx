@@ -14,7 +14,7 @@ import icons from "@/lib/icons";
 export default function ExpertsSearchHeader() {
     const t = useTranslations();
     const { createQueryString, removeQueryString, getQueryString } = useQueryString();
-    const [filtersVisible, setFiltersVisible] = useState(true);
+    const [filtersVisible, setFiltersVisible] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
 
     const timeoutRef = useRef<NodeJS.Timeout>();

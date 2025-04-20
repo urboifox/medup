@@ -6,6 +6,8 @@ import { routing } from "@/i18n/routing";
 import Providers from "@/providers";
 import "./globals.css";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import SelectMenuProvider from "@/features/select-menu/select-menu-provider";
 
 const tajawal = Tajawal({
     weight: ["300", "500", "700"],
@@ -44,7 +46,12 @@ export default async function RootLayout({
     return (
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
             <body className={`${tajawal.variable} ${poppins.variable} antialiased`}>
-                <Providers messages={messages}>{children}</Providers>
+                <Suspense>
+                    <SelectMenuProvider />
+                </Suspense>
+                <Providers locale={locale} messages={messages}>
+                    {children}
+                </Providers>
             </body>
         </html>
     );

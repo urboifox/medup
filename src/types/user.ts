@@ -15,4 +15,5 @@ export type User = {
     avatar: string;
     type: UserType;
     created_at: string;
+    is_premium: boolean;
 };

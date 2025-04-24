@@ -9,6 +9,7 @@ import { usePathname } from "@/i18n/routing";
 import { cn } from "@/utils/cn";
 import UpgradeToPremiumButton from "@/features/experts/components/upgrade-to-premium-button";
 import { useAuthStore } from "@/features/auth/store";
+import NavNotifications from "./nav-notifications";
 
 type NavItem = {
     label: string;
@@ -64,8 +65,9 @@ export default function Header() {
                 </div>
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-2 sm:gap-4">
-                        {/* {user && <UpgradeToPremiumButton price={200} />} */}
+                        {user && !user.is_premium && <UpgradeToPremiumButton price={200} />}
                         <LanguageSwitcher />
+                        {user && <NavNotifications />}
                         <UserHeaderInfo />
                     </div>
                 </div>

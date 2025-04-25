@@ -3,6 +3,7 @@ import Pagination from "@/components/ui/pagination";
 import { userTypesTranslationKey } from "@/constants";
 import CommentsSection from "@/features/comments/components/comments-section";
 import { getComments } from "@/features/comments/services";
+import ExpertProfileActionButton from "@/features/experts/components/expert-profile-action-button";
 import { getIdea } from "@/features/ideas/services";
 import { Link } from "@/i18n/routing";
 import moment from "moment";
@@ -66,9 +67,7 @@ export default async function IdeaPage({
                         </p>
                     </div>
                 </Link>
-                <Button variant="outline" className="flex items-center gap-2">
-                    {t("experts.chatNow")} <FaArrowRight className="rtl:rotate-180" />
-                </Button>
+                <ExpertProfileActionButton expert={idea.expert} />
             </div>
             <span className="text-xs font-medium">
                 {moment(idea.created_at).locale(locale).format("LL")}

@@ -4,6 +4,7 @@ import { userTypesTranslationKey } from "@/constants";
 import { getCollaborateItem } from "@/features/collaborates/services";
 import CommentsSection from "@/features/comments/components/comments-section";
 import { getComments } from "@/features/comments/services";
+import ExpertProfileActionButton from "@/features/experts/components/expert-profile-action-button";
 import { Link } from "@/i18n/routing";
 import moment from "moment";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -69,9 +70,7 @@ export default async function CollaboratePage({
                         </p>
                     </div>
                 </Link>
-                <Button variant="outline" className="flex items-center gap-2">
-                    {t("experts.chatNow")} <FaArrowRight className="rtl:rotate-180" />
-                </Button>
+                <ExpertProfileActionButton expert={collaborate.expert} />
             </div>
             <span className="text-xs font-medium">
                 {moment(collaborate.created_at).locale(locale).format("LL")}

@@ -8,6 +8,7 @@ import { HiExternalLink } from "react-icons/hi";
 import Button from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa6";
 import { userTypesTranslationKey } from "@/constants";
+import ExpertProfileActionButton from "@/features/experts/components/expert-profile-action-button";
 
 export default function IdeaCard({ idea }: { idea: Idea }) {
     const t = useTranslations();
@@ -59,9 +60,7 @@ export default function IdeaCard({ idea }: { idea: Idea }) {
                 </Link>
             </div>
             <div className="flex items-end gap-2 justify-between">
-                <Button variant="outline" className="flex items-center gap-2">
-                    {t("experts.chatNow")} <FaArrowRight className="rtl:rotate-180" />
-                </Button>
+                <ExpertProfileActionButton expert={idea.expert} />
                 <span className="text-xs font-medium">
                     {moment(idea.created_at).locale(locale).format("LL")}
                 </span>

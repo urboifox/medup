@@ -8,6 +8,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import Button from "@/components/ui/button";
 import { HiExternalLink } from "react-icons/hi";
 import { userTypesTranslationKey } from "@/constants";
+import ExpertProfileActionButton from "@/features/experts/components/expert-profile-action-button";
 
 export default function CollaborateCard({ collaborate }: { collaborate: Collaborate }) {
     const t = useTranslations();
@@ -73,9 +74,7 @@ export default function CollaborateCard({ collaborate }: { collaborate: Collabor
                 </Link>
             </div>
             <div className="flex items-end gap-2 justify-between">
-                <Button variant="outline" className="flex items-center gap-2">
-                    {t("experts.chatNow")} <FaArrowRight className="rtl:rotate-180" />
-                </Button>
+                <ExpertProfileActionButton expert={collaborate.expert} />
                 <span className="text-xs font-medium">
                     {moment(collaborate.created_at).locale(locale).format("LL")}
                 </span>

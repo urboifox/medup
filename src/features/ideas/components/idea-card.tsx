@@ -22,7 +22,7 @@ export default function IdeaCard({ idea }: { idea: Idea }) {
     return (
         <article className="w-full flex flex-col gap-6 p-4 border border-light-300 rounded-xl">
             <Modal visible={isOpen} onClose={() => setIsOpen(false)}>
-                <div className="bg-white rounded-xl shadow-lg w-full max-w-xl p-4 py-10 lg:p-6 flex flex-col items-end">
+                <div className="bg-white rounded-xl shadow-lg w-full max-w-3xl p-4 py-10 lg:p-6 flex flex-col items-end">
                     <button onClick={() => setIsOpen(false)}>
                         <FaX />
                     </button>

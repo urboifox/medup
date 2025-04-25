@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import { addProjectAction } from "../actions";
 import { useSelectMenuStore } from "@/features/select-menu/store";
 import Select from "@/components/ui/select";
+import Checkbox from "@/components/ui/checkbox";
+import Radio from "@/components/ui/radio";
 
 export default function AddProjectForm() {
     const t = useTranslations();
@@ -65,6 +67,13 @@ export default function AddProjectForm() {
                     );
                 })}
             </Select>
+            <div className="flex flex-col gap-4">
+                <p>{t("common.price")}</p>
+                <div className="flex gap-4">
+                    <Radio name="paid" label={t("common.paidVolunteer")} defaultChecked />
+                    <Radio name="paid" label={t("common.unpaidVolunteer")} />
+                </div>
+            </div>
             <Textarea
                 label={t("labels.description")}
                 name="description"

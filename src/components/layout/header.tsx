@@ -44,7 +44,7 @@ export default function Header() {
                         </Link>
                     </div>
                     <nav className="hidden lg:block">
-                        <ul className="flex gap-6 items-center capitalize text-sm text-dark-300">
+                        <ul className="flex gap-6 items-center capitalize text-sm text-dark-300 flex-wrap">
                             {navItems.map((item, idx) => {
                                 const isActive = pathname.startsWith(item.href);
                                 return (

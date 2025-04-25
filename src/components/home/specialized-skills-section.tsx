@@ -142,7 +142,7 @@ export default function SpecializedSkillsSection() {
                         10000+ {t("home.specialized.specializedSkills")}
                     </h3>
                     <p className="text-foreground-100">{t("home.specialized.description")}</p>
-                    <Link href="/experts">
+                    <Link href="/skills">
                         <Button>{t("common.exploreNow")}</Button>
                     </Link>
                 </div>

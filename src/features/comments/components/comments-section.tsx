@@ -32,8 +32,6 @@ export default function CommentsSection({
         if (state.success) {
             setReplyTo(null);
             toast.success(t("common.commentAdded"));
-            const pushTo = type === "idea" ? "/ideas/" : "/collaborate/";
-            router.push(pushTo + commentableId, { scroll: true });
         } else if (state.message) {
             toast.error(state.message);
         }
@@ -67,10 +65,10 @@ export default function CommentsSection({
             <h2 className="font-semibold text-2xl">{t("common.comments")}</h2>
 
             <div className="flex flex-col">
-                {comments.length === 0 && (
+                {comments?.length === 0 && (
                     <p className="text-dark-300">{t("common.noCommentsYet")}</p>
                 )}
-                {comments.map((comment) => (
+                {comments?.map((comment) => (
                     <CommentCard
                         comment={comment}
                         key={comment.id}

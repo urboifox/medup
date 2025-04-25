@@ -1,3 +1,4 @@
+import { AppComment } from "../comments/types";
 import { Expert } from "../experts/types";
 import { Speciality } from "../select-menu/types";
 
@@ -10,4 +11,6 @@ export type Collaborate = {
     speciality: Speciality;
     description: string;
     orcid_number: string;
+    comments_count: number;
+    comments: AppComment[];
 };

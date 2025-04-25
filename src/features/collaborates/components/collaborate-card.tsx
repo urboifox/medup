@@ -1,21 +1,40 @@
+"use client";
 import Image from "next/image";
 import { Collaborate } from "../types";
 import moment from "moment";
 import { useLocale, useTranslations } from "next-intl";
 import { FaUniversity } from "react-icons/fa";
 import { Link } from "@/i18n/routing";
-import { FaArrowRight } from "react-icons/fa6";
-import Button from "@/components/ui/button";
 import { HiExternalLink } from "react-icons/hi";
 import { userTypesTranslationKey } from "@/constants";
 import ExpertProfileActionButton from "@/features/experts/components/expert-profile-action-button";
+import Modal from "@/components/ui/modal";
+import { useState } from "react";
+import { FaX } from "react-icons/fa6";
+import CommentsSection from "@/features/comments/components/comments-section";
+import { BiComment } from "react-icons/bi";
 
 export default function CollaborateCard({ collaborate }: { collaborate: Collaborate }) {
     const t = useTranslations();
     const locale = useLocale();
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <article className="w-full flex flex-col gap-6 p-4 border border-light-300 rounded-xl">
+            <Modal visible={isOpen} onClose={() => setIsOpen(false)}>
+                <div className="bg-white rounded-xl shadow-lg w-full max-w-xl p-4 py-10 lg:p-6 flex flex-col items-end">
+                    <button onClick={() => setIsOpen(false)}>
+                        <FaX />
+                    </button>
+                    <div className="w-full">
+                        <CommentsSection
+                            comments={collaborate.comments}
+                            commentableId={collaborate.id.toString()}
+                            type="collaborate"
+                        />
+                    </div>
+                </div>
+            </Modal>
             <div className="flex flex-col gap-4">
                 <Link
                     href={`/collaborates/${collaborate.id}`}
@@ -75,9 +94,18 @@ export default function CollaborateCard({ collaborate }: { collaborate: Collabor
             </div>
             <div className="flex items-end gap-2 justify-between">
                 <ExpertProfileActionButton expert={collaborate.expert} />
-                <span className="text-xs font-medium">
-                    {moment(collaborate.created_at).locale(locale).format("LL")}
-                </span>
+                <div className="flex items-center gap-4">
+                    <span className="text-xs font-medium">
+                        {moment(collaborate.created_at).locale(locale).format("LL")}
+                    </span>
+                    <button
+                        className="flex items-center gap-1 hover:text-primary-main"
+                        onClick={() => setIsOpen(true)}
+                    >
+                        {collaborate.comments_count}
+                        <BiComment />
+                    </button>
+                </div>
             </div>
         </article>
     );

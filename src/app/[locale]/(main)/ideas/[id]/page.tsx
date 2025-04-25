@@ -1,4 +1,3 @@
-import Button from "@/components/ui/button";
 import Pagination from "@/components/ui/pagination";
 import { userTypesTranslationKey } from "@/constants";
 import CommentsSection from "@/features/comments/components/comments-section";
@@ -13,7 +12,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BsArrowLeft } from "react-icons/bs";
 import { FaUniversity } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa6";
 import { HiExternalLink } from "react-icons/hi";
 
 export default async function IdeaPage({

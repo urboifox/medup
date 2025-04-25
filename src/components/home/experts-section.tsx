@@ -8,7 +8,11 @@ import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "../layout/error-fallback";
 import ExpertsSearchFilters from "@/features/experts/components/experts-search-filters";
 
-export default async function ExpertsSection() {
+export default async function ExpertsSection({
+    searchParams
+}: {
+    searchParams: Record<string, string | undefined>;
+}) {
     const t = await getTranslations();
 
     return (
@@ -16,12 +20,14 @@ export default async function ExpertsSection() {
             <div className="flex flex-col gap-6 text-center items-center mx-auto">
                 <ExpertsSearchFilters />
                 {/* <h2 className="text-3xl lg:text-5xl font-semibold">{t("home.experts.title")}</h2> */}
-                <p className="max-w-4xl text-dark-300 text-lg lg:text-xl">{t("home.experts.description")}</p>
+                <p className="max-w-4xl text-dark-300 text-lg lg:text-xl">
+                    {t("home.experts.description")}
+                </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
                 <ErrorBoundary FallbackComponent={ErrorFallback}>
                     <Suspense fallback={<ExpertsContentSkeleton />}>
-                        <ExpertsContentMap />
+                        <ExpertsContentMap searchParams={searchParams} />
                     </Suspense>
                 </ErrorBoundary>
             </div>

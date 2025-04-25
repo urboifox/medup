@@ -4,5 +4,5 @@ export type AppNotification = {
     created_at: string;
     seen: boolean;
     body: string;
-    data: { type: string; model_id: number };
+    data: { type: string; id: number };
 };

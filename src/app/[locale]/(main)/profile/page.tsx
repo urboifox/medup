@@ -32,7 +32,7 @@ export default async function ProfilePage() {
     }
 
     return (
-        <div className="container py-20">
+        <div className="container py-10">
             <div className="flex flex-col lg:flex-row gap-10 justify-between">
                 <div className="flex flex-col gap-10 max-w-3xl">
                     <ExpertBaseInfo expert={expert} />

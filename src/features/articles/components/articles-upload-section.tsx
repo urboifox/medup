@@ -9,7 +9,7 @@ export default function ArticlesUploadSection() {
     const t = useTranslations();
 
     return (
-        <div className="flex items-center gap-10 justify-between flex-col-reverse lg:flex-row py-20">
+        <div className="flex items-center gap-10 justify-between flex-col-reverse lg:flex-row py-10">
             <div className="flex flex-col gap-6">
                 <h2 className="text-5xl font-bold text-dark-400">{t("articles.uploadTitle")}</h2>
                 <p className="text-dark-300 max-w-2xl font-medium">

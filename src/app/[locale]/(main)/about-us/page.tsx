@@ -12,8 +12,8 @@ export default function AboutUsPage() {
     ];
 
     return (
-        <div className="py-20 flex flex-col gap-10">
-            <section className="flex flex-col gap-8 container py-20">
+        <div className="py-10 flex flex-col gap-10">
+            <section className="flex flex-col gap-8 container py-10">
                 <div className="flex flex-col gap-4 items-center">
                     <h1 className="text-center text-4xl max-w-2xl font-semibold">{t("title")}</h1>
                     <p className="text-dark-300 text-center max-w-3xl">{t("description")}</p>
@@ -27,7 +27,7 @@ export default function AboutUsPage() {
                 </div>
             </section>
 
-            <section className="py-20 lg:py-32 bg-light-200">
+            <section className="py-10 lg:py-32 bg-light-200">
                 <div className="container flex flex-col gap-8">
                     <h2 className="text-4xl font-semibold">{t("ourStory")}</h2>
                     <div className="relative flex justify-end">
@@ -59,7 +59,7 @@ export default function AboutUsPage() {
                 </div>
             </section>
 
-            <section className="container py-20 lg:py-32 flex-col flex gap-8">
+            <section className="container py-10 lg:py-32 flex-col flex gap-8">
                 <div className="flex items-center flex-col lg:flex-row gap-4 justify-between">
                     <div className="flex flex-col gap-4 flex-1">
                         <h3 className="text-3xl font-semibold">Work Team</h3>
@@ -102,7 +102,7 @@ export default function AboutUsPage() {
                 </div>
             </section>
 
-            <div className="flex flex-col gap-20 container py-20 lg:py-32">
+            <div className="flex flex-col gap-20 container py-10 lg:py-32">
                 <h2 className="text-center max-w-2xl mx-auto text-4xl font-semibold">
                     Experience our proven success in medical education.
                 </h2>

@@ -7,6 +7,7 @@
     },
     "common": {
         "noNotifications": "No notifications",
+        "skillCanTeach": "Skill can teach",
         "notifications": "Notifications",
         "markAllAsRead": "Mark all as read",
         "openDigitalContract": "Open Digital Contract",
@@ -184,12 +185,12 @@
     },
     "nav": {
         "experts": "Experts",
-        "library": "Library",
-        "researches": "Researches",
-        "digitalAppointment": "Digital Appointment",
-        "ideas": "Ideas",
-        "collaborate": "Collaborates",
-        "courses": "Courses"
+        "library": "Medical Liberary",
+        "researches": "Medical Reserche",
+        "digitalAppointment": "Digital Reqruitment",
+        "ideas": "Research Ideas",
+        "collaborate": "Research Collaborte",
+        "courses": "Medical Courses"
     },
     "auth": {
         "resetPassword": "Reset Password",
@@ -214,8 +215,8 @@
     },
     "home": {
         "hero": {
-            "title": "Forget the old rules. Learn skills from the best experts. Now. Here.",
-            "description": "Find opportunities for every stage of your career, control when, where and how you work, and explore additional income opportunities.",
+            "title": "From the best experts",
+            "description": "Exploring additional income opportunities",
             "searchPlaceholder": "Expert, Skill, keyword..."
         },
         "experts": {
@@ -264,8 +265,8 @@
             "agenciesHiringDescriptionFour": "The expert arrives at your location to provide the required consultation or training."
         },
         "explore": {
-            "title": "World-class training of trainees through expert guidance",
-            "description": "We connect trainees with a diverse network of experienced professionals across a variety of disciplines. Benefit from personalized mentoring and insights to enhance your skills and confidence in the medical field. Join us to unleash your potential today!"
+            "title": "Digital Recruitment: Connect with Top Healthcare Employers",
+            "description": "We connect trainees with a diverse network of experienced professionals across various specialties. Benefit from personalized mentorship and insights to enhance your skills and confidence in the medical field. Join us to unlock your potential today!"
         },
         "testimonials": {
             "title": "What our students say!",

@@ -10,6 +10,7 @@ import { cn } from "@/utils/cn";
 import UpgradeToPremiumButton from "@/features/experts/components/upgrade-to-premium-button";
 import { useAuthStore } from "@/features/auth/store";
 import NavNotifications from "./nav-notifications";
+import { BsChatLeftText } from "react-icons/bs";
 
 type NavItem = {
     label: string;
@@ -27,7 +28,8 @@ export default function Header() {
         { label: t("nav.courses"), href: "/courses" },
         { label: t("nav.researches"), href: "/researches" },
         { label: t("nav.ideas"), href: "/ideas" },
-        { label: t("nav.collaborate"), href: "/collaborates" }
+        { label: t("nav.collaborate"), href: "/collaborates" },
+        { label: t("footer.aboutUs"), href: "/about-us" },
         // { label: t("nav.digitalAppointment"), href: "/experts" }
     ];
 
@@ -68,6 +70,11 @@ export default function Header() {
                         {user && !user.is_premium && <UpgradeToPremiumButton price={200} />}
                         <LanguageSwitcher />
                         {user && <NavNotifications />}
+                        {user && (
+                            <Link href="/messages">
+                                <BsChatLeftText size={24} />
+                            </Link>
+                        )}
                         <UserHeaderInfo />
                     </div>
                 </div>

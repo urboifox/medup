@@ -6,7 +6,7 @@ export default function CollegesSection() {
     const t = useTranslations();
 
     return (
-        <section className="py-20">
+        <section className="py-10">
             <div className="flex flex-col gap-20 container items-center">
                 <div className="flex flex-col gap-8 max-w-3xl flex-1 text-center">
                     <h2 className="text-4xl font-semibold foreground-200">

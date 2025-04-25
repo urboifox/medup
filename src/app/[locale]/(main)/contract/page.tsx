@@ -7,7 +7,7 @@ export default function ContractPage() {
     const t = useTranslations();
 
     return (
-        <div className="flex gap-4 py-20 container">
+        <div className="flex gap-4 py-10 container">
             <div className="flex-1 flex flex-col gap-8">
                 {/* embed the pdf viewer here */}
                 <embed

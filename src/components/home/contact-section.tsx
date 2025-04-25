@@ -8,7 +8,7 @@ export default function ContactSection() {
     const t = useTranslations();
 
     return (
-        <section className="py-20">
+        <section className="py-10">
             <div className="flex flex-col gap-10 container items-center">
                 <div className="flex flex-col gap-8 max-w-3xl flex-1 text-center">
                     <h2 className="text-4xl font-semibold foreground-200">
@@ -19,7 +19,7 @@ export default function ContactSection() {
                     </p>
                 </div>
 
-                <div className="relative py-20 rounded-lg overflow-hidden w-full">
+                <div className="relative py-10 rounded-lg overflow-hidden w-full">
                     <Image
                         src={images.contactSection}
                         fill
@@ -27,7 +27,7 @@ export default function ContactSection() {
                         className="object-cover z-10"
                         quality={100}
                     />
-                    <div className="absolute inset-0 w-full h-full bg-black/50 z-10" />
+                    <div className="absolute inset-0 w-full h-full bg-black/70 z-10" />
 
                     <div className="flex gap-20 flex-col items-center justify-center z-20 relative h-full">
                         <div className="flex items-center gap-10 justify-around flex-wrap text-white text-2xl text-center font-semibold w-full">

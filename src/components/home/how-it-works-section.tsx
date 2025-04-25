@@ -79,7 +79,7 @@ export default function HowItWorksSection() {
     ];
 
     return (
-        <section className="bg-light-200 py-20 lg:py-32 my-10 lg:my-20">
+        <section className="bg-light-200 py-10 lg:py-32 my-10 lg:my-20">
             <div className="container flex flex-col gap-20 items-center">
                 <h2 className="text-4xl font-semibold foreground-200">{t("home.how.title")}</h2>
 

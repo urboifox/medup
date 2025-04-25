@@ -30,7 +30,7 @@ export default function TestimonialsSectionContent({
     }
 
     return (
-        <section className="py-20 lg:py-40 bg-light-200">
+        <section className="py-10 lg:py-40 bg-light-200">
             <div className="container flex flex-col gap-10 lg:gap-20">
                 <div className="flex items-center gap-10 lg:gap-4 flex-col lg:flex-row justify-between">
                     <div className="flex flex-col gap-5">

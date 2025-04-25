@@ -135,7 +135,7 @@ export default function SpecializedSkillsSection() {
     ];
 
     return (
-        <section className="container flex flex-col gap-20 py-20">
+        <section className="container flex flex-col gap-20 py-10">
             <div className="flex items-center gap-10 flex-col-reverse lg:flex-row w-full justify-between">
                 <div className="flex flex-col gap-10 max-w-3xl">
                     <h3 className="font-semibold text-3xl md:text-5xl">
@@ -157,17 +157,17 @@ export default function SpecializedSkillsSection() {
                 />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 2xl:grid-cols-4 gap-4">
                 {cards.map((card, i) => {
                     return (
                         <div
                             key={i}
-                            className="flex flex-col gap-10 items-center bg-white rounded-lg p-10 shadow-lg"
+                            className="flex flex-col gap-4 md:gap-10 items-center bg-white rounded-lg py-4 px-2 md:p-10 shadow-lg"
                         >
                             {card.icon}
                             <div className="flex flex-col gap-4 items-center text-center">
-                                <h3 className="text-2xl font-medium">{card.title}</h3>
-                                <p className="text-foreground-100">{card.description}</p>
+                                <h3 className="md:text-2xl font-medium">{card.title}</h3>
+                                <p className="text-xs md:text-base text-foreground-100">{card.description}</p>
                             </div>
                         </div>
                     );

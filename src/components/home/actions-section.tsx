@@ -9,7 +9,7 @@ export default function ActionsSection() {
     const t = useTranslations();
 
     return (
-        <section className="py-20">
+        <section className="py-10">
             <div className="flex items-stretch gap-10 container flex-col lg:flex-row">
                 <article className="flex-1 p-12 rounded-lg overflow-hidden w-full relative flex flex-col gap-8 justify-center">
                     <Image

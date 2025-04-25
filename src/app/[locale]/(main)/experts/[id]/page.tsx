@@ -25,7 +25,7 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
     }
 
     return (
-        <div className="container py-20 flex flex-col gap-20">
+        <div className="container py-10 flex flex-col gap-20">
             <div className="flex flex-col lg:flex-row gap-10 justify-between">
                 <div className="flex flex-col gap-10">
                     <ExpertBaseInfo expert={expert} />

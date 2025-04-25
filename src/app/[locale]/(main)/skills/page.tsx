@@ -6,6 +6,8 @@ import { SearchParams } from "next/dist/server/request/search-params";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import PageSearch from "@/components/layout/page-search";
+import Button from "@/components/ui/button";
+import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import MobileFilterButton from "@/components/layout/mobile-filter-button";
 import PopularSkillsSection from "@/components/home/popular-skills-section";
@@ -30,6 +32,9 @@ export default async function LibraryPage({
                             <SpecialitiesPageFilter filters={filters || []} />
                         </div>
                     </MobileFilterButton>
+                    <Link href="/skills/add">
+                        <Button className="w-max">+ {t("common.postSkill")}</Button>
+                    </Link>
                 </div>
             </div>
 

@@ -1,14 +1,9 @@
-import FormContainer from "@/features/auth/components/form-container";
-import AddLibrarryItemForm from "@/features/library/components/add-book-form";
-import { useTranslations } from "next-intl";
+import DoubleCards from "@/components/cards/double-cards";
 
 export default function AddProjectPage() {
-    const t = useTranslations();
-
     return (
-        <FormContainer>
-            <h1 className="text-3xl font-semibold capitalize">{t("library.addBook")}</h1>
-            <AddLibrarryItemForm />
-        </FormContainer>
+        <div className="w-full max-w-3xl py-20 container">
+            <DoubleCards />
+        </div>
     );
 }

@@ -11,6 +11,7 @@ import { getTranslations } from "next-intl/server";
 import MobileFilterButton from "@/components/layout/mobile-filter-button";
 import CoursesContent from "@/features/courses/components/courses-content";
 import CourseCardSkeleton from "@/features/courses/components/course-card-skeleton";
+import DoubleCards from "@/components/cards/double-cards";
 
 export default async function CoursesPage({
     searchParams
@@ -44,6 +45,7 @@ export default async function CoursesPage({
                 </div>
 
                 <div className="flex flex-col gap-6 w-full">
+                    <DoubleCards />
                     <h2 className="font-semibold text-2xl">{t("common.recommended")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
                         <Suspense fallback={<CoursesContentSkeleton length={4} />} key={contentKey}>

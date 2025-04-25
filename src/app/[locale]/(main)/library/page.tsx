@@ -12,6 +12,7 @@ import { getTranslations } from "next-intl/server";
 import LibrarySuggestedContent from "@/features/library/components/library-suggested-content";
 import LibraryLatestContent from "@/features/library/components/library-latest-content";
 import MobileFilterButton from "@/components/layout/mobile-filter-button";
+import DoubleCards from "@/components/cards/double-cards";
 
 export default async function LibraryPage({
     searchParams
@@ -46,6 +47,7 @@ export default async function LibraryPage({
                 </div>
 
                 <div className="flex flex-col gap-6 w-full">
+                    <DoubleCards />
                     <h2 className="font-semibold text-2xl">{t("common.recommended")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
                         <Suspense

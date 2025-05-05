@@ -35,7 +35,7 @@ export default function ExpertBaseInfo({ expert }: { expert: Expert }) {
                         </p>
                         <p className="line-clamp-1 text-sm text-foreground-100 font-medium flex items-center gap-2">
                             <FaMapPin />
-                            {expert?.city.name}
+                            {expert?.city.country.name}, {expert?.city.name}
                         </p>
                         <span className="text-sm font-medium text-primary-main capitalize flex items-center gap-1">
                             <LuBadgeCheck size={18} />

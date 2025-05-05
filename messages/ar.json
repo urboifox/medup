@@ -283,6 +283,7 @@
         }
     },
     "experts": {
+        "youCantChatWithYourself": "لا يمكنك الدردش مع نفسك",
         "searchPlaceholder": "أبحث عن مسمى وظيفي أو مهارة أو كلمة مفتاحية...",
         "yourBalance": "ميزانيتك",
         "checkYourWallet": "تفقد محفظتك",

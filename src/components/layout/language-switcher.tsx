@@ -7,7 +7,9 @@ import { CiGlobe } from "react-icons/ci";
 export default function LanguageSwitcher() {
     return (
         <DropdownButton menu={<LanguageDropdownMenu />}>
-            <CiGlobe size={24} />
+            <span className="max-sm:text-sm">
+                <CiGlobe />
+            </span>
         </DropdownButton>
     );
 }

@@ -37,7 +37,7 @@ export default function Header() {
         <header className="w-full h-24 shadow-[11px_4px_15px_0_#0000001A] max-lg:sticky top-0 bg-white z-20">
             <div className="container flex items-center justify-between h-full gap-2">
                 <div className="gap-10 flex items-center">
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
                         <NavSideMenu navItems={navItems} />
                         <Link href={"/"} className="flex items-center gap-2">
                             <Logo />

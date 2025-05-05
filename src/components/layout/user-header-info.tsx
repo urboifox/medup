@@ -19,12 +19,12 @@ export default function UserHeaderInfo() {
                 <>
                     <Link
                         href={"/login"}
-                        className="text-primary-main font-semibold hidden sm:block"
+                        className="text-primary-main font-semibold max-sm:text-sm"
                     >
                         {t("auth.login")}
                     </Link>
                     <Link href="/register">
-                        <Button className="text-sm sm:text-base max-sm:px-4">
+                        <Button className="text-xs sm:text-base max-sm:px-4 w-max">
                             {t("common.getStarted")}
                         </Button>
                     </Link>

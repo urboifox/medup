@@ -2,8 +2,14 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 
-const AUTH_ROUTES = ["/login"];
-const PRIVATE_ROUTES = ["/library/add", "/collaborates/add", "/ideas/add", "/researches/add", "/messages"];
+const AUTH_ROUTES = ["/login", "/register", "/verify", "/forgot-password", "/reset-password"];
+const PRIVATE_ROUTES = [
+    "/library/add",
+    "/collaborates/add",
+    "/ideas/add",
+    "/researches/add",
+    "/messages"
+];
 
 export const intlMiddleware = createMiddleware(routing);
 

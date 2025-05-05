@@ -284,6 +284,7 @@
     },
     "experts": {
         "searchPlaceholder": "Search for a job title, skill, or a keyword...",
+        "youCantChatWithYourself": "You can't chat with yourself",
         "yourBalance": "Your balance",
         "checkYourWallet": "Check your wallet",
         "transactions": "Transactions",

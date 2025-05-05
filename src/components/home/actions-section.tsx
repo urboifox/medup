@@ -32,7 +32,7 @@ export default function ActionsSection() {
                             </ul>
                         </div>
                     </div>
-                    <Link href="/" className="w-max">
+                    <Link href="/agencies" className="w-max">
                         <Button>
                             {t("common.exploreNow")}
                             <FiArrowLeft className="ltr:rotate-180" />
@@ -49,7 +49,7 @@ export default function ActionsSection() {
                                 {t("home.actions.digitalOnlineCoursesDescription")}
                             </p>
                         </div>
-                        <Link href="/experts" className="w-max">
+                        <Link href="/library" className="w-max">
                             <Button variant="secondary">
                                 {t("common.exploreNow")}
                                 <FiArrowLeft className="ltr:rotate-180" />

@@ -23,22 +23,32 @@ export default function ExpertProfileActionButton({ expert }: { expert: Expert }
         }
     }, [state]);
 
+    function handleClick(e: React.FormEvent<HTMLButtonElement>) {
+        if (user?.id === expert.user.id) {
+            e.preventDefault();
+            toast.error(t("experts.youCantChatWithYourself"));
+        }
+    }
+
     return (
-        user?.id !== expert.user.id && (
-            <form
-                action={(formData) => {
-                    formData.set("expert_id", expert.user.id.toString());
-                    action(formData);
-                }}
-                className="self-end"
+        <form
+            action={(formData) => {
+                formData.set("expert_id", expert.user.id.toString());
+                action(formData);
+            }}
+            className="self-end"
+        >
+            <Button
+                className="w-fit self-end"
+                type="submit"
+                disabled={pending}
+                onClick={handleClick}
             >
-                <Button className="w-fit self-end" type="submit" disabled={pending}>
-                    {t("experts.chatNow")}
-                    <span className="rtl:rotate-180">
-                        <HiOutlineArrowSmallRight size={20} />
-                    </span>
-                </Button>
-            </form>
-        )
+                {t("experts.chatNow")}
+                <span className="rtl:rotate-180">
+                    <HiOutlineArrowSmallRight size={20} />
+                </span>
+            </Button>
+        </form>
     );
 }

@@ -20,8 +20,6 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
     const res = await getExpert(id);
     const expert = res?.data;
 
-    console.log(expert);
-
     if (!expert) {
         return notFound();
     }

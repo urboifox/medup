@@ -180,7 +180,7 @@ export default function StudentRegisterForm() {
                 ) : (
                     <>
                         {t("auth.register")} {t("common.as")}{" "}
-                        {t(pathname.includes("student") ? "common.researcher" : "common.expert")}
+                        {t(pathname.includes("student") ? "common.student" : "common.trainee")}
                     </>
                 )}
             </Button>

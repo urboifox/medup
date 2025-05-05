@@ -253,7 +253,7 @@ export default function ExpertRegisterForm() {
                 ) : (
                     <>
                         {t("auth.register")} {t("common.as")}{" "}
-                        {t(pathname.includes("student") ? "common.researcher" : "common.expert")}
+                        {t(pathname.includes("expert") ? "common.expert" : "common.researcher")}
                     </>
                 )}
             </Button>

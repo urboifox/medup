@@ -7,7 +7,7 @@ export default async function ExpertsContentMap({
 }: {
     searchParams: Record<string, string | undefined>;
 }) {
-    const { handle, page, city, skills, colleges, specialities } = searchParams;
+    const { handle, countries, page, city, skills, colleges, specialities } = searchParams;
 
     const { data: experts } = await getAllExperts({
         params: sanitizeObject({
@@ -17,7 +17,8 @@ export default async function ExpertsContentMap({
             city,
             skills,
             colleges,
-            specialities
+            specialities,
+            countries
         })
     });
 

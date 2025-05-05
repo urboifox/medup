@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 
 export default function ExpertsFiltersMenu({
     options,
-    queryName,
+    queryName
 }: {
-    options: (BaseEntity & { experts_count: number })[];
+    options: (BaseEntity & { experts_count?: number })[];
     queryName: string;
 }) {
     const t = useTranslations();
@@ -62,9 +62,11 @@ export default function ExpertsFiltersMenu({
                             />
                             <span>
                                 {option?.name}{" "}
-                                <span className="text-sm text-gray-500">
-                                    ({option.experts_count})
-                                </span>
+                                {typeof option.experts_count === "number" && (
+                                    <span className="text-sm text-gray-500">
+                                        ({option.experts_count})
+                                    </span>
+                                )}
                             </span>
                         </label>
                     );

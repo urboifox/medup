@@ -10,17 +10,22 @@ import useQueryString from "@/hooks/useQueryString";
 
 interface FilterConfig {
     queryName: string;
-    options: (BaseEntity & { experts_count: number })[];
+    options: (BaseEntity & { experts_count?: number })[];
     selected: number[] | null;
     defaultText: string;
 }
 
-export default function ExpertsSearchFilters() {
+export default function ExpertsSearchFilters({
+    showCountries = false
+}: {
+    showCountries?: boolean;
+}) {
     const t = useTranslations();
     const { removeQueryString } = useQueryString();
     const colleges = useSelectMenuStore((state) => state.colleges);
     const skills = useSelectMenuStore((state) => state.skills);
     const specialities = useSelectMenuStore((state) => state.specialities);
+    const countries = useSelectMenuStore((state) => state.countries);
 
     const searchParams = useSearchParams();
 
@@ -30,6 +35,7 @@ export default function ExpertsSearchFilters() {
     const selectedColleges = getSelectedIds(searchParams.get("colleges"));
     const selectedSpecialities = getSelectedIds(searchParams.get("specialities"));
     const selectedSkills = getSelectedIds(searchParams.get("skills"));
+    const selectedCountries = getSelectedIds(searchParams.get("countries"));
 
     const filteredSpecialities = selectedColleges
         ? specialities.filter((item) => selectedColleges.includes(item.college_id ?? 0))
@@ -58,6 +64,12 @@ export default function ExpertsSearchFilters() {
             options: filteredSkills,
             selected: selectedSkills,
             defaultText: t("experts.skill")
+        },
+        {
+            queryName: "countries",
+            options: countries,
+            selected: selectedCountries,
+            defaultText: t("labels.country")
         }
     ];
 
@@ -99,7 +111,7 @@ export default function ExpertsSearchFilters() {
 
     return (
         <div className="flex items-center gap-4 w-full flex-wrap">
-            {filters.map(renderDropdown)}
+            {filters.slice(0, showCountries ? 4 : 3).map((filter) => renderDropdown(filter))}
         </div>
     );
 }

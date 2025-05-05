@@ -22,7 +22,7 @@ export default function ExploreSection() {
                 <div className="flex-1 flex flex-col gap-6">
                     <h3 className="text-4xl font-semibold">{t("home.explore.title")}</h3>
                     <p className="text-dark-300">{t("home.explore.description")}</p>
-                    <Link href="/experts" className="w-max">
+                    <Link href="/agencies" className="w-max">
                         <Button>{t("common.discoverMore")}</Button>
                     </Link>
                 </div>

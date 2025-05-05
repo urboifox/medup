@@ -44,7 +44,7 @@ export default function ExpertReviews({ expert }: { expert: Expert }) {
                                     width="56"
                                     src={review.user.avatar}
                                     alt={review.user.name}
-                                    className="rounded-full"
+                                    className="rounded-full aspect-square"
                                 />
                                 <div className="flex flex-col gap-1 w-full">
                                     <div className="justify-between items-center gap-4 flex w-full">

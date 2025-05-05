@@ -14,8 +14,8 @@ export default function ExpertBaseInfo({ expert }: { expert: Expert }) {
             <Image
                 src={expert.user.avatar}
                 alt={expert.user.name}
-                width={260}
-                height={260}
+                width={460}
+                height={460}
                 className="rounded-3xl object-cover aspect-square"
             />
             <div className="flex flex-col gap-6">

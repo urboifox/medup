@@ -19,6 +19,8 @@ export default function CollaborateCard({ collaborate }: { collaborate: Collabor
     const locale = useLocale();
     const [isOpen, setIsOpen] = useState(false);
 
+    console.log(collaborate.expert);
+
     return (
         <article className="w-full flex flex-col gap-6 p-4 border border-light-300 rounded-xl">
             <Modal visible={isOpen} onClose={() => setIsOpen(false)}>
@@ -88,6 +90,9 @@ export default function CollaborateCard({ collaborate }: { collaborate: Collabor
                         </h3>
                         <p className="text-sm text-dark-300">
                             {t(userTypesTranslationKey[collaborate.expert.user.type])}
+                        </p>
+                        <p className="text-dark-300 text-sm">
+                            {t("common.skillCanTeach")}: {collaborate.expert.skills?.join(", ")}
                         </p>
                     </div>
                 </Link>

@@ -19,6 +19,7 @@ import ExpertProfileCertification from "@/features/experts/components/expert-pro
 import { MdEdit } from "react-icons/md";
 import UpgradeToPremiumButton from "@/features/experts/components/upgrade-to-premium-button";
 import moment from "moment";
+import ExpertReviews from "@/features/experts/components/expert-reviews";
 
 export default async function ProfilePage() {
     const t = await getTranslations();
@@ -54,6 +55,8 @@ export default async function ProfilePage() {
                         experience={experiences || []}
                         editUrl="/profile/experience"
                     />
+
+                    {expert.reviews && <ExpertReviews expert={expert} />}
                 </div>
 
                 <div className="flex flex-col gap-10">
@@ -83,7 +86,7 @@ export default async function ProfilePage() {
                                     <p className="text-sm">
                                         {t("premium.subscriptionEndsAt")}{" "}
                                         <span className="font-semibold">
-                                        {moment(subscription?.ends_at).format("MMMM Do YYYY")}
+                                            {moment(subscription?.ends_at).format("MMMM Do YYYY")}
                                         </span>
                                     </p>
                                 </div>

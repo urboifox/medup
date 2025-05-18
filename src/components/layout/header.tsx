@@ -11,6 +11,7 @@ import UpgradeToPremiumButton from "@/features/experts/components/upgrade-to-pre
 import { useAuthStore } from "@/features/auth/store";
 import NavNotifications from "./nav-notifications";
 import { BsChatLeftText } from "react-icons/bs";
+import { UserType } from "@/types/user";
 
 type NavItem = {
     label: string;
@@ -29,7 +30,7 @@ export default function Header() {
         { label: t("nav.researches"), href: "/researches" },
         { label: t("nav.ideas"), href: "/ideas" },
         { label: t("nav.collaborate"), href: "/collaborates" },
-        { label: t("footer.aboutUs"), href: "/about-us" },
+        { label: t("footer.aboutUs"), href: "/about-us" }
         // { label: t("nav.digitalAppointment"), href: "/experts" }
     ];
 
@@ -67,7 +68,11 @@ export default function Header() {
                 </div>
                 <div className="gap-10 flex items-center">
                     <div className="flex items-center gap-2 sm:gap-4">
-                        {user && !user.is_premium && <UpgradeToPremiumButton price={200} />}
+                        {user &&
+                            !user.is_premium &&
+                            [UserType.Expert, UserType.Researcher].includes(user.type) && (
+                                <UpgradeToPremiumButton price={200} />
+                            )}
                         <LanguageSwitcher />
                         {user && <NavNotifications />}
                         {user && (

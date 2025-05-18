@@ -1,10 +1,11 @@
 import Button from "@/components/ui/button";
 import DropdownButton from "@/components/ui/dropdown-button";
 import { Link } from "@/i18n/routing";
-import { User } from "@/types/user";
+import { User, UserType } from "@/types/user";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { CiLogout } from "react-icons/ci";
+import { useAuthStore } from "../store";
 
 export default function UserInfo({ user }: { user: User }) {
     return (
@@ -24,10 +25,18 @@ export default function UserInfo({ user }: { user: User }) {
 
 export function UserInfoMenu() {
     const t = useTranslations();
+    const user = useAuthStore((state) => state.user);
 
     return (
         <div className="p-4 rounded-lg shadow-lg bg-white flex flex-col gap-2">
-            <Link href="/profile" className="w-full">
+            <Link
+                href={
+                    [UserType.Expert, UserType.Researcher].includes(user?.type as any)
+                        ? "/profile"
+                        : "/profile/student"
+                }
+                className="w-full"
+            >
                 <Button variant="secondary" className="w-full">
                     {t("common.myProfile")}
                 </Button>

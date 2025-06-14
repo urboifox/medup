@@ -28,6 +28,9 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
         <div className="container py-10 flex flex-col gap-20">
             <div className="flex flex-col lg:flex-row gap-10 justify-between">
                 <div className="flex flex-col gap-10">
+                    <div className="self-start lg:hidden">
+                        <ExpertProfileActionButton expert={expert} />
+                    </div>
                     <ExpertBaseInfo expert={expert} />
 
                     <div className="flex flex-col gap-4">
@@ -41,8 +44,10 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                 </div>
 
                 <div className="flex flex-col gap-10">
-                    <ExpertProfileActionButton expert={expert} />
-                    <div className="flex flex-col gap-5 max-w-lg">
+                    <div className="max-lg:hidden">
+                        <ExpertProfileActionButton expert={expert} />
+                    </div>
+                    <div className="flex flex-col gap-5 lg:max-w-lg">
                         <InfoCardWrapper label={t("experts.onlineMedicalConsultation")}>
                             <div className="flex flex-col gap-2">
                                 <p className="text-dark-300">
@@ -54,15 +59,15 @@ export default async function ExpertPage({ params }: { params: Promise<{ id: str
                         <InfoCardWrapper label={t("common.information")}>
                             <ExpertProfileInformation expert={expert} />
                         </InfoCardWrapper>
-                        <InfoCardWrapper label={t("common.socialMedia")}>
-                            <ExpertProfileSocialMedia social_contacts={expert.social_contacts} />
-                        </InfoCardWrapper>
                         <InfoCardWrapper label={t("common.certification")}>
                             {expert?.certification ? (
                                 <ExpertProfileCertification certification={expert.certification} />
                             ) : (
                                 <p className="text-dark-300">{t("experts.noCertification")}</p>
                             )}
+                        </InfoCardWrapper>
+                        <InfoCardWrapper label={t("common.socialMedia")}>
+                            <ExpertProfileSocialMedia social_contacts={expert.social_contacts} />
                         </InfoCardWrapper>
                     </div>
                 </div>

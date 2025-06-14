@@ -83,7 +83,13 @@ export async function fetcher<T>(url: string, init?: FetcherOptions): Promise<Ap
         }
     }
 
-    const data = await res.json();
+    let data: ApiResponse<T>;
+    try {
+        data = await res.json();
+    } catch (error) {
+        console.error("Error fetching data from:" + url, error);
+        throw new FetcherError("Error getting requested resource", error);
+    }
 
     if (!res.ok) {
         console.error("Error fetching data from:" + url, data);

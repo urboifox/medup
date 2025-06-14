@@ -4,6 +4,7 @@ export type Skill = BaseEntity & {
     experts_count: number;
     posts_count: number;
     specialities?: number[];
+    icon: string;
 };
 
 export type College = BaseEntity & {

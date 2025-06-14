@@ -16,12 +16,15 @@ import MultiSelect from "@/components/ui/multi-select";
 import { toast } from "sonner";
 import { useRouter } from "@/i18n/routing";
 import Textarea from "@/components/ui/textarea";
+import Checkbox from "@/components/ui/checkbox";
 
 export default function ExpertRegisterForm() {
     const t = useTranslations();
     const pathname = usePathname();
     const locale = useLocale();
     const router = useRouter();
+
+    const [acceptTerms, setAcceptTerms] = useState(false);
 
     const [state, action, pending] = useActionState(expertRegisterAction, {
         success: false,
@@ -66,6 +69,10 @@ export default function ExpertRegisterForm() {
         <form
             className="w-full flex flex-col gap-4"
             action={(formData) => {
+                if (!acceptTerms) {
+                    toast.error(t("errors.acceptTerms"));
+                    return;
+                }
                 if (cvFile) formData.set("cv", cvFile);
                 if (avatarFile) formData.set("avatar", avatarFile);
                 action(formData);
@@ -74,6 +81,7 @@ export default function ExpertRegisterForm() {
             <input type="hidden" name="type" value={pathname.includes("researcher") ? "4" : "1"} />
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Input
+                    required
                     label={t("labels.firstName")}
                     placeholder={t("placeholders.firstName")}
                     name="first_name"
@@ -81,6 +89,7 @@ export default function ExpertRegisterForm() {
                     error={state.errors?.first_name}
                 />
                 <Input
+                    required
                     label={t("labels.middleName")}
                     placeholder={t("placeholders.middleName")}
                     name="middle_name"
@@ -90,6 +99,7 @@ export default function ExpertRegisterForm() {
             </div>
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Input
+                    required
                     label={t("labels.email")}
                     placeholder={t("placeholders.email")}
                     name="email"
@@ -97,6 +107,7 @@ export default function ExpertRegisterForm() {
                     error={state.errors?.email}
                 />
                 <Input
+                    required
                     label={t("labels.phone")}
                     placeholder={t("placeholders.phone")}
                     name="phone"
@@ -106,6 +117,7 @@ export default function ExpertRegisterForm() {
             </div>
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Input
+                    required
                     label={t("labels.graduationYear")}
                     type="number"
                     name="graduation_year"
@@ -113,6 +125,7 @@ export default function ExpertRegisterForm() {
                     error={state.errors?.graduation_year}
                 />
                 <Input
+                    required
                     label={t("labels.educationBackground")}
                     placeholder={t("placeholders.education")}
                     name="education"
@@ -121,6 +134,7 @@ export default function ExpertRegisterForm() {
                 />
             </div>
             <Textarea
+                required
                 label={t("labels.bio")}
                 name="headline"
                 placeholder={t("placeholders.bio")}
@@ -129,6 +143,7 @@ export default function ExpertRegisterForm() {
                 className="min-h-32"
             />
             <Input
+                required
                 label={t("labels.password")}
                 placeholder={t("placeholders.password")}
                 name="password"
@@ -137,6 +152,7 @@ export default function ExpertRegisterForm() {
                 error={state.errors?.password}
             />
             <Input
+                required
                 label={t("labels.confirmPassword")}
                 placeholder={t("placeholders.password")}
                 name="password_confirmation"
@@ -145,6 +161,7 @@ export default function ExpertRegisterForm() {
                 error={state.errors?.password_confirmation}
             />
             <FileInput
+                required
                 accept="image/*"
                 onFilesChange={(files) => setAvatarFile(files[0])}
                 error={state.errors?.avatar}
@@ -159,6 +176,7 @@ export default function ExpertRegisterForm() {
 
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select
+                    required
                     label={t("labels.degree")}
                     error={state.errors?.degree}
                     name="degree"
@@ -174,6 +192,7 @@ export default function ExpertRegisterForm() {
                     })}
                 </Select>
                 <Select
+                    required
                     label={t("labels.speciality")}
                     error={state.errors?.speciality_id}
                     name="speciality_id"
@@ -194,10 +213,11 @@ export default function ExpertRegisterForm() {
                 defaultValue={state.formData?.getAll("skills") as string[]}
                 name="skills"
                 options={skills.map((skill) => ({ label: skill.name, value: skill.id.toString() }))}
-                label={t("labels.skills")}
+                label={t("labels.skills") + " " + t("labels.skillsAddition")}
             />
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select
+                    required
                     label={t("labels.country")}
                     error={state.errors?.country_id}
                     name="country_id"
@@ -215,6 +235,7 @@ export default function ExpertRegisterForm() {
                 </Select>
                 <Select
                     label={t("labels.city")}
+                    required
                     error={state.errors?.city_id}
                     name="city_id"
                     disabled={cities.length === 0}
@@ -235,6 +256,7 @@ export default function ExpertRegisterForm() {
             </div>
 
             <FileInput
+                required
                 error={state.errors?.cv}
                 accept="application/pdf"
                 onFilesChange={(files) => setCvFile(files[0])}
@@ -246,6 +268,15 @@ export default function ExpertRegisterForm() {
                     </span>
                 }
             />
+
+            <div className="my-4">
+                <Checkbox
+                    label={t("common.acceptTerms")}
+                    name="terms"
+                    onChange={() => setAcceptTerms(!acceptTerms)}
+                    checked={acceptTerms}
+                />
+            </div>
 
             <Button type="submit" disabled={pending}>
                 {pending ? (

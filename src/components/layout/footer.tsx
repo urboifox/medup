@@ -13,12 +13,6 @@ export default function Footer() {
                     <Link href="/">
                         <h3 className="text-dark-100 font-bold text-xl">MedUp</h3>
                     </Link>
-                    <p className="text-dark-300">
-                        {t("callNow")}:{" "}
-                        <Link href={`tel:${9661234}`} className="font-semibold text-dark-100">
-                            +966 123456789
-                        </Link>
-                    </p>
                     <p className="text-dark-300 max-w-sm">{t("address")}</p>
                 </div>
                 <div className="flex flex-wrap gap-10">
@@ -41,7 +35,7 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h3 className="text-dark-100 font-medium text-xl">{t("support")}</h3>
                         <div className="flex flex-col gap-1">
-                            <FooterLink href="/" label={t("faq")} />
+                            <FooterLink href="mailto:support@medup.com" label={t("support")} />
                             <FooterLink href="/terms-and-conditions" label={t("privacyPolicy")} />
                             <FooterLink href="/terms-and-conditions" label={t("termsAndConditions")} />
                         </div>

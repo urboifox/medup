@@ -9,6 +9,7 @@ import HowItWorksSection from "@/components/home/how-it-works-section";
 import PopularSkillsSection from "@/components/home/popular-skills-section";
 import SpecializedSkillsSection from "@/components/home/specialized-skills-section";
 import TestimonialsSection from "@/components/home/testimonials-section";
+import { getAds } from "@/services/select-menu";
 
 export default async function HomePage({
     searchParams
@@ -16,10 +17,11 @@ export default async function HomePage({
     searchParams: Promise<Record<string, string | undefined>>;
 }) {
     const searchParamsData = await searchParams;
+    const { data: ads } = await getAds();
     return (
         <main>
             <HeroSection />
-            <AdSection />
+            <AdSection ads={ads as any} />
             <ExpertsSection searchParams={searchParamsData} />
             <HowItWorksSection />
             <ContactSection />

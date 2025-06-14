@@ -5,6 +5,7 @@ import ChatPageClient from "./page-client";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
+import { AiOutlineWarning } from "react-icons/ai";
 
 export default async function ChatPage({ params }: { params: Promise<{ userId: string }> }) {
     const t = await getTranslations();
@@ -35,11 +36,28 @@ export default async function ChatPage({ params }: { params: Promise<{ userId: s
                     </div>
                 </div>
                 <Link href="/contract">
-                    <Button size="sm">{t("common.openDigitalContract")}</Button>
+                    <Button size="sm" variant="outline">{t("common.openDigitalContract")}</Button>
                 </Link>
             </header>
 
             <ChatPageClient messages={messages || []} conversation={conversation} />
+
+            <div className="flex flex-col gap-2 ps-4 [&_a]:text-primary-main [&_a]:font-semibold text-dark-300 text-sm lg:hidden">
+                <AiOutlineWarning className="text-warning-main h-fit" size={20} />
+                <p>
+                    For the safety and security of our" members, all buying and selling must take
+                    place on the <Link href="/">Medupskills.com</Link> platform. Any transactions
+                    outside of the platform are against our terms of service and may lead to account
+                    restrictions The platform reserves the right to take legal action against any
+                    violators
+                </p>
+                <p>
+                    لحماية جميع الأعضاء، يقتصر التعامل التجاري على منصة{" "}
+                    <Link href="/">Medupskills.com</Link> فقط. أي تعامل خارج المنصة بعد مخالفة
+                    الشروط الاستخدام ويعرض الحساب للحجب تحتفظ المنصة بحق اتخاذ الإجراءات القانونية
+                    ضد أي مخالفين
+                </p>
+            </div>
         </div>
     );
 }

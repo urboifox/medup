@@ -8,7 +8,7 @@ import { cn } from "@/utils/cn";
 import moment from "moment";
 import { useLocale } from "next-intl";
 import { useEffect, useRef } from "react";
-import { FaDownload, FaFile } from "react-icons/fa6";
+import { FaDownload } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { PiTimer } from "react-icons/pi";
 

@@ -13,12 +13,15 @@ import { studentRegisterAction } from "../actions";
 import FileInput from "@/components/ui/file-input";
 import { toast } from "sonner";
 import { useRouter } from "@/i18n/routing";
+import Checkbox from "@/components/ui/checkbox";
 
 export default function StudentRegisterForm() {
     const t = useTranslations();
     const pathname = usePathname();
     const locale = useLocale();
     const router = useRouter();
+
+    const [acceptTerms, setAcceptTerms] = useState(false);
 
     const [state, action, pending] = useActionState(studentRegisterAction, {
         success: false,
@@ -55,6 +58,10 @@ export default function StudentRegisterForm() {
         <form
             className="w-full flex flex-col gap-4"
             action={(formData) => {
+                if (!acceptTerms) {
+                    toast.error(t("errors.acceptTerms"));
+                    return;
+                }
                 if (avatarFile) formData.set("avatar", avatarFile);
                 action(formData);
             }}
@@ -63,6 +70,7 @@ export default function StudentRegisterForm() {
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Input
                     label={t("labels.firstName")}
+                    required
                     placeholder={t("placeholders.firstName")}
                     name="first_name"
                     defaultValue={state.formData?.get("first_name") as string}
@@ -72,6 +80,7 @@ export default function StudentRegisterForm() {
                     label={t("labels.middleName")}
                     placeholder={t("placeholders.middleName")}
                     name="middle_name"
+                    required
                     defaultValue={state.formData?.get("middle_name") as string}
                     error={state.errors?.middle_name}
                 />
@@ -79,6 +88,7 @@ export default function StudentRegisterForm() {
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Input
                     label={t("labels.email")}
+                    required
                     placeholder={t("placeholders.email")}
                     name="email"
                     defaultValue={state.formData?.get("email") as string}
@@ -87,6 +97,7 @@ export default function StudentRegisterForm() {
                 <Input
                     label={t("labels.phone")}
                     placeholder={t("placeholders.phone")}
+                    required
                     name="phone"
                     defaultValue={state.formData?.get("phone") as string}
                     error={state.errors?.phone}
@@ -95,12 +106,14 @@ export default function StudentRegisterForm() {
             <Input
                 label={t("labels.password")}
                 placeholder={t("placeholders.password")}
+                required
                 name="password"
                 type="password"
                 defaultValue={state.formData?.get("password") as string}
                 error={state.errors?.password}
             />
             <Input
+                required
                 label={t("labels.confirmPassword")}
                 placeholder={t("placeholders.password")}
                 name="password_confirmation"
@@ -110,6 +123,7 @@ export default function StudentRegisterForm() {
             />
             <FileInput
                 accept="image/*"
+                required
                 onFilesChange={(files) => setAvatarFile(files[0])}
                 name="avatar"
                 label={t("labels.image")}
@@ -123,6 +137,7 @@ export default function StudentRegisterForm() {
 
             <Select
                 label={t("labels.speciality")}
+                required
                 name="speciality_id"
                 error={state.errors?.speciality_id}
                 defaultValue={state.formData?.get("speciality_id") as string}
@@ -138,6 +153,7 @@ export default function StudentRegisterForm() {
             </Select>
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select
+                    required
                     label={t("labels.country")}
                     error={state.errors?.country_id}
                     name="country_id"
@@ -154,6 +170,7 @@ export default function StudentRegisterForm() {
                     })}
                 </Select>
                 <Select
+                    required
                     label={t("labels.city")}
                     error={state.errors?.city_id}
                     name="city_id"
@@ -172,6 +189,15 @@ export default function StudentRegisterForm() {
                         );
                     })}
                 </Select>
+            </div>
+
+            <div className="my-4">
+                <Checkbox
+                    label={t("common.acceptTerms")}
+                    name="terms"
+                    checked={acceptTerms}
+                    onChange={() => setAcceptTerms(!acceptTerms)}
+                />
             </div>
 
             <Button type="submit" disabled={pending}>

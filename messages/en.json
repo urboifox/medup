@@ -6,7 +6,9 @@
         "articleDescription": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellen"
     },
     "common": {
-        "postSkill": "Post Skill",
+        "postSkill": "Post Skill Not Included",
+        "acceptTerms": "I accept the terms and rules.",
+        "noDataFound": "No data found",
         "d1t": "Medical Service Providers Are You a Medical Service Provider?",
         "d1d": "Contact Us! If you provide medical services and want to expand or reach a wider audience, we are here to help! Send us information about your services, and we will help you get noticed in the market. Contact us at [Email Address] or [Phone Number] to start working together.",
         "d2t": "Do You Need a Medical Service?",
@@ -33,6 +35,7 @@
         "month": "month",
         "transfer": "Transfer",
         "payNow": "Pay Now",
+        "bookTerms": "Do you possess all the necessary legal rights to publish and sell this book on our platform, including copyright, licensing, and distribution rights, and do you guarantee that the content does not violate any laws or the rights of others",
         "withdrawal": "Withdrawal",
         "payConfirmDescription": "By paying now, we will withdraw ${amount} from your wallet. Make sure you have enough funds in your wallet to cover the transaction.",
         "cancelAnytime": "Cancel anytime, no hidden fees",
@@ -111,7 +114,7 @@
         "expert": "Expert",
         "submit": "Submit",
         "now": "now",
-        "researcher": "Researcher",
+        "researcher": "Expert + want to learn skill",
         "studentDescription": "I'm here to learn and grow my knowledge, and experience in the medical field.",
         "traineeDescription": "I'm gaining hands-on experience and building practical skills in medicine.",
         "expertDescription": "I'm looking to teach, mentor, and share my expertise with others in the medical community.",
@@ -124,10 +127,11 @@
     "errors": {
         "somethingWentWrong": "Something went wrong",
         "noUserLoggedIn": "No user logged in",
-        "mustBeLoggedIn": "You must be logged in to perform this action"
+        "mustBeLoggedIn": "You must be logged in to perform this action",
+        "acceptTerms": "You must accept the terms and conditions to register"
     },
     "labels": {
-        "leaveAReview": "Leave a review",
+        "leaveAReview": "Leave a review and comment",
         "submitRate": "Submit your rate",
         "rating": "Rating",
         "link": "Link",
@@ -171,6 +175,7 @@
         "city": "City",
         "image": "Image",
         "skills": "Skills",
+        "skillsAddition": "(What practical skills or areas of expertise would you like to train in or teach online?)",
         "code": "Code",
         "cover": "Cover"
     },
@@ -204,7 +209,7 @@
     "auth": {
         "resetPassword": "Reset Password",
         "passwordResetSuccess": "Password reset successfully",
-        "preRegisterTitle": "Join MedUp",
+        "preRegisterTitle": "Join MedUp Skills",
         "preRegisterDescription": "Join the biggest community of experts and learners, share your knowledge and learn from others all over the world.",
         "joinAs": "Join as",
         "login": "Login",
@@ -224,8 +229,8 @@
     },
     "home": {
         "hero": {
-            "title": "From the best experts",
-            "description": "Exploring additional income opportunities",
+            "title": "Forget the old rules. You can learn skills form the best experts.",
+            "description": "Find opportunities for every stage of your career Control when, where, and how you work and, Explore different ways to earn, and exploring additional income opportunities",
             "searchPlaceholder": "Expert, Skill, keyword..."
         },
         "experts": {
@@ -288,7 +293,7 @@
         "yourBalance": "Your balance",
         "checkYourWallet": "Check your wallet",
         "transactions": "Transactions",
-        "checkYourTransactions": "Check your transactions",
+        "checkYourTransactions": "Check your transactions (wallet)",
         "noCertification": "No certification",
         "noExperience": "No experience",
         "noExperts": "No experts found",
@@ -472,7 +477,10 @@
     "about": {
         "title": "Empowering medical professionals to develop their skills",
         "description": "“On this platform, doctors, students and experts share articles, exchange ideas, and provide courses and books to enhance medical skills.”",
-        "ourStory": "Our Story"
+        "ourStory": "Our Story",
+        "doctors": "Doctors all over the world",
+        "students": "Students all over the world",
+        "trainees": "Trainees all over the world"
     },
     "reviews": {
         "basedOnCount": "Based on {count} reviews"

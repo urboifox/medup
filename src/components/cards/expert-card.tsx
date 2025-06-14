@@ -6,9 +6,17 @@ import { FaUniversity } from "react-icons/fa";
 import { LuBadgeCheck } from "react-icons/lu";
 import StarsRating from "../ui/stars-rating";
 import { Expert } from "@/features/experts/types";
+import { UserType } from "@/types/user";
 
 export default function ExpertCard({ expert }: { expert: Expert }) {
     const t = useTranslations();
+
+    const typesMap: Record<UserType, string> = {
+        "1": t("common.expert"),
+        "2": t("common.trainee"),
+        "3": t("common.student"),
+        "4": t("common.researcher")
+    };
 
     return (
         <article className="flex flex-col gap-3">
@@ -19,12 +27,19 @@ export default function ExpertCard({ expert }: { expert: Expert }) {
                     fill
                     className="object-cover"
                 />
-                {expert.is_premium && (
-                    <div className="absolute start-4 flex items-center gap-2 bottom-4 text-sm text-yellow-600 bg-white px-2 py-1 rounded-md">
-                        <FaCrown />
-                        <span>{t("common.premium")}</span>
-                    </div>
-                )}
+                <div className="flex items-center gap-2 absolute start-4 bottom-4">
+                    {expert.is_premium && (
+                        <div className="flex items-center gap-2 text-sm text-yellow-600 bg-white px-2 py-1 rounded-md">
+                            <FaCrown />
+                            <span>{t("common.premium")}</span>
+                        </div>
+                    )}
+                    {expert.user?.type && (
+                        <div className="flex items-center gap-2 text-sm text-primary-main bg-white px-2 py-1 rounded-md">
+                            <span>{typesMap[expert.user?.type]}</span>
+                        </div>
+                    )}
+                </div>
             </div>
             <StarsRating value={expert?.rating_average} showNumber />
             <Link className="flex flex-col gap-2" href={`/experts/${expert.id}`}>

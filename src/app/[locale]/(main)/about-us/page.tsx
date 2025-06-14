@@ -108,18 +108,18 @@ export default function AboutUsPage() {
                 </h2>
                 <section className="flex items-stretch justify-around container gap-2 text-primary-main">
                     <div className="flex flex-col items-center gap-2 py-10">
-                        <h2 className="text-5xl font-semibold">40K+</h2>
-                        <p>Doctors</p>
+                        <h2 className="text-5xl font-semibold">1M+</h2>
+                        <p>{t("doctors" as any)}</p>
                     </div>
                     <span className="w-[2px] bg-gradient-to-b from-transparent via-primary-100"></span>
                     <div className="flex flex-col items-center gap-2 py-10">
-                        <h2 className="text-5xl font-semibold">40K+</h2>
-                        <p>Doctors</p>
+                        <h2 className="text-5xl font-semibold">1M+</h2>
+                        <p>{t("students" as any)}</p>
                     </div>
                     <span className="w-[2px] bg-gradient-to-b from-transparent via-primary-100"></span>
                     <div className="flex flex-col items-center gap-2 py-10">
-                        <h2 className="text-5xl font-semibold">40K+</h2>
-                        <p>Doctors</p>
+                        <h2 className="text-5xl font-semibold">1M+</h2>
+                        <p>{t("trainees" as any)}</p>
                     </div>
                 </section>
             </div>

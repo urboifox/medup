@@ -99,25 +99,21 @@ export default function AgenciesPage() {
                         </h3>
                     </div>
                     <div className="flex flex-col gap-2" dir="rtl">
-                        <h3 className="font-medium">
-                            هل تبحث عن الكفاءات الطبية التي ستحدث فارقا في مؤسستك؟
-                        </h3>
+                        <h3 className="font-medium">اذا كنت فرد تبحث عن وظيفه؟</h3>
                         <p className="text-dark-300">
-                            نحن نمتلك اكثر من 10000 سيرة ذاتية نحن نوفر لك أفضل المواهب في جميع
-                            التخصصات الطبية، من الأطباء والممرضين والصيادلة وطب الاسنان إلى
-                            الكيميائين و الفنيين في الاشاعة والمعامل والعلاج الطبيعي
+                            نحن نوفر لك أفضل القرص في جميع التخصصات الطبية، سواء كنت الأطباء
+                            والممرضين والصيادلة وطب الاسنان إلى الكيميائين والفنيين في الاشاعة
+                            والمعامل والعلاج الطبيعي .
                         </p>
                     </div>
                     <div className="flex flex-col gap-2">
                         <h3 className="font-medium">
-                            Are you seeking highly skilled medical professionals to enhance your
-                            organization?
+                            Are you looking for a unique career opportunity in the medical field?
                         </h3>
                         <p className="text-dark-300">
-                            We offer a vast pool of over 10,000 CVs, featuring top talents in
-                            diverse medical fields such as doctors, nurses, chemists, and
-                            technicians in radiology, laboratories, and physical therapy. Our
-                            expertise ensures you'll find the perfect candidates for your needs..
+                            we provide you with the best tablets in all medical specialties, whether
+                            you are doctors, nurses, pharmacists, and dentists, to chemists and
+                            technicians in radiology, laboratories, and physical therapy.
                         </p>
                     </div>
                     <p className="font-semibold">Just contact us</p>

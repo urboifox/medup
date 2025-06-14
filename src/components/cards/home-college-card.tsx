@@ -7,7 +7,7 @@ export default function HomeCollegeCard({ college }: { college: College }) {
     const t = useTranslations();
 
     return (
-        <article className="transition-colors duration-200 hover:bg-primary-main px-8 py-10 flex-1 flex flex-col gap-6 group">
+        <article className="transition-colors duration-200 hover:bg-primary-main px-2 py-4 sm:px-8 sm:py-10 flex-1 flex flex-col gap-6 group">
             <div>
                 {/*
                     INFO: Brwoser will block the background image SVG with mask using external image
@@ -26,10 +26,10 @@ export default function HomeCollegeCard({ college }: { college: College }) {
                 />
             </div>
 
-            <h3 className="font-semibold text-xl text-foreground-100 group-hover:text-white transition-colors duration-200">
+            <h3 className="font-semibold text-sm sm:text-xl text-foreground-100 group-hover:text-white transition-colors duration-200">
                 {college.name}
             </h3>
-            <p className="text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md">
+            <p className="text-[10px] sm:text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md">
                 {college.description}
             </p>
             {/* <p className="text-sm font-medium text-foreground-50 group-hover:text-light-400 transition-colors duration-200 max-w-md"> */}
@@ -38,10 +38,10 @@ export default function HomeCollegeCard({ college }: { college: College }) {
 
             <Link
                 href={`/experts?colleges=${college.id}`}
-                className="text-primary-main group-hover:text-white transition-colors duration-200 font-semibold flex items-center justify-center w-fit gap-2 group/link"
+                className="text-xs sm:text-base text-primary-main group-hover:text-white transition-colors duration-200 w-max sm:font-semibold flex items-center justify-center w-fit gap-2 group/link"
             >
                 {t("home.colleges.cta")}
-                <FiArrowLeft className="ltr:rotate-180 ltr:group-hover/link:translate-x-1 group-hover/link:-translate-x-1 transition-transform duration-200" />
+                <FiArrowLeft className="ltr:rotate-180 ltr:group-hover/link:translate-x-1 group-hover/link:-translate-x-1 transition-transform duration-200 shrink-0" />
             </Link>
         </article>
     );

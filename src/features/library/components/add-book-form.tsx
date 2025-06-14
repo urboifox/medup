@@ -1,5 +1,4 @@
 "use client";
-
 import { useActionState, useEffect, useState } from "react";
 import Button from "@/components/ui/button";
 import { useTranslations } from "next-intl";
@@ -12,6 +11,7 @@ import Select from "@/components/ui/select";
 import { addLibraryItemAction } from "../actions";
 import FileInput from "@/components/ui/file-input";
 import { FaFilePdf, FaImage } from "react-icons/fa6";
+import Checkbox from "@/components/ui/checkbox";
 
 export default function AddLibrarryItemForm() {
     const t = useTranslations();
@@ -20,6 +20,8 @@ export default function AddLibrarryItemForm() {
         success: false,
         formData: new FormData()
     });
+
+    const [acceptTerms, setAcceptTerms] = useState(false);
 
     const [cover, setCover] = useState<File>();
     const [file, setFile] = useState<File>();
@@ -38,6 +40,10 @@ export default function AddLibrarryItemForm() {
     return (
         <form
             action={(formData) => {
+                if (!acceptTerms) {
+                    toast.error(t("errors.acceptTerms"));
+                    return;
+                }
                 if (cover) formData.set("cover", cover);
                 if (file) formData.set("file", file);
                 action(formData);
@@ -105,6 +111,15 @@ export default function AddLibrarryItemForm() {
                 error={state.errors?.description}
                 className="min-h-32"
             />
+
+            <div className="my-4">
+                <Checkbox
+                    label={t("common.bookTerms")}
+                    name="terms"
+                    onChange={() => setAcceptTerms(!acceptTerms)}
+                    checked={acceptTerms}
+                />
+            </div>
 
             <Button type="submit" disabled={pending}>
                 {pending ? t("common.loading") : t("common.submit")}

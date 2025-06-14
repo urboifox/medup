@@ -9,14 +9,14 @@ import { useAuthStore } from "../store";
 
 export default function UserInfo({ user }: { user: User }) {
     return (
-        <div>
+        <div className="shrink-0">
             <DropdownButton menu={<UserInfoMenu />}>
                 <Image
                     src={user.avatar}
                     alt={user.name}
                     width={40}
                     height={40}
-                    className="rounded-full object-cover aspect-square"
+                    className="rounded-full object-cover aspect-square shrink-0"
                 />
             </DropdownButton>
         </div>
@@ -31,7 +31,7 @@ export function UserInfoMenu() {
         <div className="p-4 rounded-lg shadow-lg bg-white flex flex-col gap-2">
             <Link
                 href={
-                    [UserType.Expert, UserType.Researcher].includes(user?.type as any)
+                    [UserType.Expert.toString(), UserType.Researcher.toString()].includes(String(user?.type) as any)
                         ? "/profile"
                         : "/profile/student"
                 }

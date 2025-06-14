@@ -28,12 +28,6 @@ export default function DoubleCards() {
                                 iuhtrn@gmail.com
                             </a>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <FaWhatsapp />
-                            <a href="https://wa.me/628125758754" className="text-primary-main">
-                                +020100758754
-                            </a>
-                        </div>
                     </div>
                     <a href="mailto:iuhtrn@gmail.com">
                         <Button>{t("partnerWithUs")}</Button>
@@ -60,12 +54,6 @@ export default function DoubleCards() {
                             <FaEnvelope />
                             <a href="mailto:iuhtrn@gmail.com" className="text-primary-main">
                                 iuhtrn@gmail.com
-                            </a>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <FaWhatsapp />
-                            <a href="https://wa.me/628125758754" className="text-primary-main">
-                                +020100758754
                             </a>
                         </div>
                     </div>

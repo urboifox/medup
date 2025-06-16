@@ -41,6 +41,8 @@ export default function ExpertRegisterForm() {
     const cities = useSelectMenuStore((state) => state.cities);
     const setCities = useSelectMenuStore((state) => state.setCities);
 
+    const [selectedCollege, setSelectedCollege] = useState<number>(colleges[0].id);
+
     const degreeOptions = [
         { value: "bachelor", label: "Bachelor" },
         { value: "master", label: "Master" },
@@ -182,6 +184,7 @@ export default function ExpertRegisterForm() {
                 name="college"
                 defaultValue={state.formData?.get("college") as string}
                 key={state.formData?.get("college") as string}
+                onChange={(e) => setSelectedCollege(+e.target.value)}
             >
                 {colleges.map((option) => {
                     return (
@@ -217,13 +220,15 @@ export default function ExpertRegisterForm() {
                     defaultValue={state.formData?.get("speciality_id") as string}
                     key={`${state.formData?.get("speciality_id") as string}-speciality`}
                 >
-                    {specialities.map((speciality) => {
-                        return (
-                            <option key={speciality.id} value={speciality.id}>
-                                {speciality.name}
-                            </option>
-                        );
-                    })}
+                    {specialities
+                        .filter((s) => s.college_id === selectedCollege)
+                        .map((speciality) => {
+                            return (
+                                <option key={speciality.id} value={speciality.id}>
+                                    {speciality.name}
+                                </option>
+                            );
+                        })}
                 </Select>
             </div>
             <MultiSelect

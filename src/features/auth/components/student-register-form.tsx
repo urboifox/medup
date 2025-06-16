@@ -36,6 +36,8 @@ export default function StudentRegisterForm() {
     const cities = useSelectMenuStore((state) => state.cities);
     const setCities = useSelectMenuStore((state) => state.setCities);
 
+    const [selectedCollege, setSelectedCollege] = useState<number>(colleges[0].id);
+
     async function handleCountryChange(e: React.ChangeEvent<HTMLSelectElement>) {
         const countryId = e.target.value;
         const cities = await getCitiesByCountry(countryId, { headers: { Locale: locale } });
@@ -143,6 +145,7 @@ export default function StudentRegisterForm() {
                 name="college"
                 defaultValue={state.formData?.get("college") as string}
                 key={state.formData?.get("college") as string}
+                onChange={(e) => setSelectedCollege(+e.target.value)}
             >
                 {colleges.map((option) => {
                     return (
@@ -161,13 +164,15 @@ export default function StudentRegisterForm() {
                 defaultValue={state.formData?.get("speciality_id") as string}
                 key={`${state.formData?.get("speciality_id") as string}-speciality`}
             >
-                {specialities.map((speciality) => {
-                    return (
-                        <option key={speciality.id} value={speciality.id}>
-                            {speciality.name}
-                        </option>
-                    );
-                })}
+                {specialities
+                    .filter((s) => s.college_id === selectedCollege)
+                    .map((speciality) => {
+                        return (
+                            <option key={speciality.id} value={speciality.id}>
+                                {speciality.name}
+                            </option>
+                        );
+                    })}
             </Select>
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select

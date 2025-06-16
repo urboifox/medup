@@ -18,6 +18,7 @@ export default async function HomePage({
 }) {
     const searchParamsData = await searchParams;
     const { data: ads } = await getAds();
+
     return (
         <main>
             <HeroSection />

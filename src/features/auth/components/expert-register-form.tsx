@@ -34,6 +34,7 @@ export default function ExpertRegisterForm() {
     const [cvFile, setCvFile] = useState<File>();
     const [avatarFile, setAvatarFile] = useState<File>();
 
+    const colleges = useSelectMenuStore((state) => state.colleges);
     const skills = useSelectMenuStore((state) => state.skills);
     const specialities = useSelectMenuStore((state) => state.specialities);
     const countries = useSelectMenuStore((state) => state.countries);
@@ -173,6 +174,23 @@ export default function ExpertRegisterForm() {
                     </span>
                 }
             />
+
+            <Select
+                required
+                label={t("experts.college")}
+                error={state.errors?.college}
+                name="college"
+                defaultValue={state.formData?.get("college") as string}
+                key={state.formData?.get("college") as string}
+            >
+                {colleges.map((option) => {
+                    return (
+                        <option key={option.id} value={option.id}>
+                            {option.name}
+                        </option>
+                    );
+                })}
+            </Select>
 
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select

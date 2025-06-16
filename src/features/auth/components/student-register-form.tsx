@@ -30,6 +30,7 @@ export default function StudentRegisterForm() {
 
     const [avatarFile, setAvatarFile] = useState<File>();
 
+    const colleges = useSelectMenuStore((state) => state.colleges);
     const specialities = useSelectMenuStore((state) => state.specialities);
     const countries = useSelectMenuStore((state) => state.countries);
     const cities = useSelectMenuStore((state) => state.cities);
@@ -134,6 +135,23 @@ export default function StudentRegisterForm() {
                     </span>
                 }
             />
+
+            <Select
+                required
+                label={t("experts.college")}
+                error={state.errors?.college}
+                name="college"
+                defaultValue={state.formData?.get("college") as string}
+                key={state.formData?.get("college") as string}
+            >
+                {colleges.map((option) => {
+                    return (
+                        <option key={option.id} value={option.id}>
+                            {option.name}
+                        </option>
+                    );
+                })}
+            </Select>
 
             <Select
                 label={t("labels.speciality")}

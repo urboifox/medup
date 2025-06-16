@@ -62,7 +62,6 @@ export default function LoginForm() {
                 label="Email"
                 name="email"
                 error={errors?.email}
-                defaultValue="expert@admin.com"
             />
             <div className="flex flex-col gap-1 items-end w-full">
                 <Input
@@ -70,7 +69,6 @@ export default function LoginForm() {
                     name="password"
                     type="password"
                     error={errors?.password}
-                    defaultValue="expert"
                 />
                 <Link
                     href="/forgot-password"

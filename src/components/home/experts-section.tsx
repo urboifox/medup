@@ -17,7 +17,7 @@ export default async function ExpertsSection({
 
     return (
         <section className="container py-10 flex flex-col gap-20">
-            <div className="flex flex-col gap-10 text-center items-center mx-auto">
+            <div className="flex flex-col gap-10 text-center items-center mx-auto w-full">
                 <h2 className="capitalize text-3xl lg:text-5xl font-semibold">{t("home.experts.title")}</h2>
                 <ExpertsSearchFilters showCountries />
                 {/* <p className="max-w-4xl text-dark-300 text-lg lg:text-xl"> */}

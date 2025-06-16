@@ -132,6 +132,7 @@
     },
     "labels": {
         "leaveAReview": "Leave a review and comment",
+        "otherSkills": "Other skills not included please specify",
         "submitRate": "Submit your rate",
         "rating": "Rating",
         "link": "Link",

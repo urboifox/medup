@@ -36,7 +36,7 @@ export default function StudentRegisterForm() {
     const cities = useSelectMenuStore((state) => state.cities);
     const setCities = useSelectMenuStore((state) => state.setCities);
 
-    const [selectedCollege, setSelectedCollege] = useState<number>(colleges[0].id);
+    const [selectedCollege, setSelectedCollege] = useState<number>(colleges?.[0].id);
 
     async function handleCountryChange(e: React.ChangeEvent<HTMLSelectElement>) {
         const countryId = e.target.value;

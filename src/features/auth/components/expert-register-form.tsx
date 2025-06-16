@@ -41,7 +41,7 @@ export default function ExpertRegisterForm() {
     const cities = useSelectMenuStore((state) => state.cities);
     const setCities = useSelectMenuStore((state) => state.setCities);
 
-    const [selectedCollege, setSelectedCollege] = useState<number>(colleges[0].id);
+    const [selectedCollege, setSelectedCollege] = useState<number>(colleges?.[0].id);
 
     const degreeOptions = [
         { value: "bachelor", label: "Bachelor" },
@@ -237,6 +237,11 @@ export default function ExpertRegisterForm() {
                 name="skills"
                 options={skills.map((skill) => ({ label: skill.name, value: skill.id.toString() }))}
                 label={t("labels.skills") + " " + t("labels.skillsAddition")}
+            />
+            <Input
+                label={t("labels.otherSkills")}
+                placeholder="Skill 1, Skill 2, ..."
+                name="other_skills"
             />
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select

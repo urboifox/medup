@@ -43,7 +43,10 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
                     <div className="flex flex-col gap-4 w-full">
                         <h3 className="font-semibold lg:text-2xl xl:text-4xl">{book.title}</h3>
                         <p className="text-sm">
-                            {t("common.by")}: {book.expert.user.name}
+                            {t("common.by")}:{" "}
+                            <a href={`/experts/${book.expert.id}`} className="hover:underline">
+                                {book.expert.user.name}
+                            </a>
                         </p>
                         <p className="text-primary-main font-semibold">${book.price}</p>
 

@@ -8,7 +8,8 @@ const PRIVATE_ROUTES = [
     "/collaborates/add",
     "/ideas/add",
     "/researches/add",
-    "/messages"
+    "/messages",
+    "/courses/add"
 ];
 
 export const intlMiddleware = createMiddleware(routing);

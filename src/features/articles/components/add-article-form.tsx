@@ -10,6 +10,8 @@ import { FaFilePdf } from "react-icons/fa6";
 import Textarea from "@/components/ui/textarea";
 import { useRouter } from "@/i18n/routing";
 import { toast } from "sonner";
+import MultiSelect from "@/components/ui/multi-select";
+import { useSelectMenuStore } from "@/features/select-menu/store";
 
 export default function AddArticleForm() {
     const t = useTranslations();
@@ -21,7 +23,7 @@ export default function AddArticleForm() {
 
     const [file, setFile] = useState<File>();
 
-    // const skills = useSelectMenuStore((state) => state.skills);
+    const skills = useSelectMenuStore((state) => state.skills);
 
     useEffect(() => {
         if (state.success) {
@@ -37,7 +39,6 @@ export default function AddArticleForm() {
         <form
             action={(fd) => {
                 if (file) fd.append("file", file);
-                fd.set("skills", "[]");
                 action(fd);
             }}
             className="flex flex-col gap-4 w-full"
@@ -59,6 +60,11 @@ export default function AddArticleForm() {
                 name="title"
                 defaultValue={state.formData?.get("title") as string}
                 error={state.errors?.title}
+            />
+            <Input
+                label={t("labels.abstract")}
+                defaultValue={state.formData?.get("abstract") as string}
+                error={state.errors?.abstract}
             />
             {/* <MultiSelect
                 error={state.errors?.skills}

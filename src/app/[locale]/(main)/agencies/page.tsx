@@ -111,7 +111,7 @@ export default function AgenciesPage() {
                             Are you looking for a unique career opportunity in the medical field?
                         </h3>
                         <p className="text-dark-300">
-                            we provide you with the best tablets in all medical specialties, whether
+                            we provide you with the best career opportunities in all medical specialties, whether
                             you are doctors, nurses, pharmacists, and dentists, to chemists and
                             technicians in radiology, laboratories, and physical therapy.
                         </p>

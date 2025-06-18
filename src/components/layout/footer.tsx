@@ -11,9 +11,16 @@ export default function Footer() {
             <div className="container flex flex-wrap gap-10 pb-20 pt-10 justify-between">
                 <div className="flex flex-col gap-4">
                     <Link href="/">
-                        <h3 className="text-dark-100 font-bold text-xl">MedUp</h3>
+                        <h3 className="text-dark-100 font-bold text-xl">MedUp Skills</h3>
                     </Link>
-                    <p className="text-dark-300 max-w-sm">{t("address")}</p>
+                    <p className="text-dark-300 max-w-sm">
+                        Building Name/No B#137 NAFEH AND MOHD BELSHALAT
+                    </p>
+                    <p className="text-dark-300 max-w-sm">Land Area Al Baraha</p>
+                    <p className="text-dark-300 max-w-sm">Land DM No (Affection Plan) 122-209</p>
+                    <p className="text-dark-300 max-w-sm">
+                        F-201-335 Office Office Commercial 20.00 (Sq.m)
+                    </p>
                 </div>
                 <div className="flex flex-wrap gap-10">
                     <div className="flex flex-col gap-4">
@@ -37,7 +44,10 @@ export default function Footer() {
                         <div className="flex flex-col gap-1">
                             <FooterLink href="mailto:support@medup.com" label={t("support")} />
                             <FooterLink href="/terms-and-conditions" label={t("privacyPolicy")} />
-                            <FooterLink href="/terms-and-conditions" label={t("termsAndConditions")} />
+                            <FooterLink
+                                href="/terms-and-conditions"
+                                label={t("termsAndConditions")}
+                            />
                         </div>
                     </div>
                 </div>

@@ -12,13 +12,15 @@ export async function getSkills(options?: FetcherOptions) {
 
 export default async function PopularSkillsSection({
     hide,
-    handle
+    handle,
+    specialities
 }: {
     hide?: boolean;
     handle?: string;
+    specialities?: string;
 }) {
     const t = await getTranslations();
-    const { data: skills } = await getSkills({ params: { handle: handle || "" } });
+    const { data: skills } = await getSkills({ params: { handle: handle || "", specialities: specialities || "" } });
 
     return (
         <section className={hide ? "" : "py-20 lg:py-40"}>

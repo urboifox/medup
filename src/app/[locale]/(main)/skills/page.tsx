@@ -47,7 +47,7 @@ export default async function LibraryPage({
                     <h2 className="font-semibold text-2xl">{t("labels.skills")}</h2>
                     <ErrorBoundary FallbackComponent={ErrorFallback}>
                         <Suspense fallback={<LibraryContentSkeleton />} key={newContentKey}>
-                            <PopularSkillsSection hide handle={searchParamsData?.handle as string || ""} />
+                            <PopularSkillsSection hide handle={searchParamsData?.handle as string || ""} specialities={searchParamsData?.specialities as string || ""} />
                         </Suspense>
                     </ErrorBoundary>
                 </div>

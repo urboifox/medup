@@ -12,6 +12,7 @@ import Select from "@/components/ui/select";
 import FileInput from "@/components/ui/file-input";
 import { FaImage } from "react-icons/fa6";
 import { addCourseAction } from "../actions";
+import Checkbox from "@/components/ui/checkbox";
 
 export default function AddCourseForm() {
     const t = useTranslations();
@@ -22,6 +23,7 @@ export default function AddCourseForm() {
     });
 
     const [cover, setCover] = useState<File>();
+    const [acceptTerms, setAcceptTerms] = useState(false);
 
     const specialities = useSelectMenuStore((state) => state.specialities);
     const colleges = useSelectMenuStore((state) => state.colleges);
@@ -38,6 +40,10 @@ export default function AddCourseForm() {
     return (
         <form
             action={(formData) => {
+                if (!acceptTerms) {
+                    toast.error(t("errors.acceptTerms"));
+                    return;
+                }
                 if (cover) formData.set("cover", cover);
                 action(formData);
             }}
@@ -113,6 +119,15 @@ export default function AddCourseForm() {
                 error={state.errors?.description}
                 className="min-h-32"
             />
+
+            <div className="my-4">
+                <Checkbox
+                    label={t("common.bookTerms")}
+                    name="terms"
+                    onChange={() => setAcceptTerms(!acceptTerms)}
+                    checked={acceptTerms}
+                />
+            </div>
 
             <Button type="submit" disabled={pending}>
                 {pending ? t("common.loading") : t("common.submit")}

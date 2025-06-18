@@ -131,6 +131,7 @@
         "acceptTerms": "You must accept the terms and conditions to register"
     },
     "labels": {
+        "abstract": "Abstract",
         "leaveAReview": "Leave a review and comment",
         "otherSkills": "Other skills not included please specify",
         "submitRate": "Submit your rate",
@@ -176,7 +177,8 @@
         "city": "City",
         "image": "Image",
         "skills": "Skills",
-        "skillsAddition": "(What practical skills or areas of expertise would you like to train in or teach online?)",
+        "skillsAddition": "(What practical skills or areas of expertise would you like to train in hands-on or teach online?)",
+        "skillsAdditionStudent": "(What practical skills or areas of expertise would you like to learn in hands-on or teach online?)",
         "code": "Code",
         "cover": "Cover"
     },
@@ -230,8 +232,8 @@
     },
     "home": {
         "hero": {
-            "title": "Forget the old rules. You can learn skills form the best experts.",
-            "description": "Find opportunities for every stage of your career Control when, where, and how you work and, Explore different ways to earn, and exploring additional income opportunities",
+            "title": "Forget the old rules. You can learn skills form the best experts. Now. Here.",
+            "description": "Exploring additional income opportunities.",
             "searchPlaceholder": "Expert, Skill, keyword..."
         },
         "experts": {

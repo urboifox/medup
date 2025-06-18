@@ -34,7 +34,7 @@ export default function ExpertBaseInfo({ expert }: { expert: Expert }) {
                             <span>{t("common.premium")}</span>
                         </div>
                     )}
-                    {expert.user?.type && (
+                    {expert.user?.type && expert.user.type !== UserType.Researcher && (
                         <div className="flex items-center gap-2 text-sm text-primary-main bg-white px-2 py-1 rounded-md">
                             <span>{typesMap[expert.user?.type]}</span>
                         </div>

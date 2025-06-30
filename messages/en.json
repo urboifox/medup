@@ -7,9 +7,13 @@
     },
     "common": {
         "postSkill": "Post Skill Not Included",
+        "fillInYourData": "Fill in your data",
         "acceptTerms": "I accept the terms and rules.",
+        "contractCreatedSuccessfully": "Contract created successfully",
         "noDataFound": "No data found",
+        "viewContracts": "View Contracts",
         "d1t": "Medical Service Providers Are You a Medical Service Provider?",
+        "completeMyData": "Complete My Data",
         "d1d": "Contact Us! If you provide medical services and want to expand or reach a wider audience, we are here to help! Send us information about your services, and we will help you get noticed in the market. Contact us at [Email Address] or [Phone Number] to start working together.",
         "d2t": "Do You Need a Medical Service?",
         "d2d": "Let Us Help Youl At [Your Website Name], we want to know your needs! If you are looking for a specific medical service, just tell us, and we will work to provide it for you. Reach out to us at [Email Address] or [Phone Number), and we will support you in getting what you need! Reply",
@@ -22,6 +26,7 @@
         "notifications": "Notifications",
         "markAllAsRead": "Mark all as read",
         "openDigitalContract": "Open Digital Contract",
+        "viewDigitalContract": "View Digital Contract",
         "createMyContract": "Create My Contract",
         "messages": "Messages",
         "newChat": "New chat",
@@ -131,6 +136,7 @@
         "acceptTerms": "You must accept the terms and conditions to register"
     },
     "labels": {
+        "address": "Address",
         "abstract": "Abstract",
         "leaveAReview": "Leave a review and comment",
         "otherSkills": "Other skills not included please specify",

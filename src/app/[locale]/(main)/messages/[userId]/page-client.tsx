@@ -7,6 +7,7 @@ import { useRealtimeStore } from "@/stores/realtime-store";
 import { cn } from "@/utils/cn";
 import moment from "moment";
 import { useLocale } from "next-intl";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { FaDownload } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
@@ -92,42 +93,57 @@ export default function ChatPageClient({
                                     )}
                                     <div
                                         className={cn(
-                                            "flex gap-2 py-3 px-4 rounded-xl text-dark-400 bg-light-200 w-max max-w-lg",
-                                            isCurrentUser && "bg-primary-main text-white self-end"
+                                            "flex items-center gap-2",
+                                            isCurrentUser ? "flex-row-reverse" : "flex-row"
                                         )}
                                     >
-                                        <p>{message.content}</p>
+                                        <Image
+                                            src={message.user.avatar as string}
+                                            alt={message.user.name as string}
+                                            width={32}
+                                            height={32}
+                                            className="rounded-full"
+                                        />
                                         <div
                                             className={cn(
-                                                "flex items-center gap-1",
-                                                isCurrentUser && "self-end"
+                                                "flex gap-2 py-3 px-4 rounded-xl text-dark-400 bg-light-200 w-max max-w-lg",
+                                                isCurrentUser &&
+                                                    "bg-primary-main text-white self-end"
                                             )}
                                         >
-                                            <time
+                                            <p>{message.content}</p>
+                                            <div
                                                 className={cn(
-                                                    "text-[10px] font-medium shrink-0 text-dark-300",
-                                                    isCurrentUser && "text-light-400"
+                                                    "flex items-center gap-1",
+                                                    isCurrentUser && "self-end"
                                                 )}
                                             >
-                                                {moment(message.created_at)
-                                                    .locale(locale)
-                                                    .format("hh:mm A")}
-                                            </time>
-                                            {isCurrentUser && (
-                                                <span
-                                                    className={
-                                                        isCurrentUser
-                                                            ? "text-light-400"
-                                                            : "text-dark-300"
-                                                    }
-                                                >
-                                                    {message.pending ? (
-                                                        <PiTimer />
-                                                    ) : (
-                                                        <IoCheckmarkDoneOutline />
+                                                <time
+                                                    className={cn(
+                                                        "text-[10px] font-medium shrink-0 text-dark-300",
+                                                        isCurrentUser && "text-light-400"
                                                     )}
-                                                </span>
-                                            )}
+                                                >
+                                                    {moment(message.created_at)
+                                                        .locale(locale)
+                                                        .format("hh:mm A")}
+                                                </time>
+                                                {isCurrentUser && (
+                                                    <span
+                                                        className={
+                                                            isCurrentUser
+                                                                ? "text-light-400"
+                                                                : "text-dark-300"
+                                                        }
+                                                    >
+                                                        {message.pending ? (
+                                                            <PiTimer />
+                                                        ) : (
+                                                            <IoCheckmarkDoneOutline />
+                                                        )}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

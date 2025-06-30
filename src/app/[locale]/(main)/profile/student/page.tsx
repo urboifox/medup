@@ -25,12 +25,17 @@ export default async function ProfilePage() {
                 </div>
 
                 <div className="flex flex-col gap-10">
-                    <Link href="/profile/edit" className="lg:self-end">
-                        <Button className="w-fit self-end" variant="secondary">
-                            <FaEdit size={20} />
-                            {t("experts.editProfile")}
-                        </Button>
-                    </Link>
+                    <div className="flex items-center gap-2 justify-end">
+                        <Link href="/profile/contracts" className="lg:self-end">
+                            <Button className="w-fit self-end">{t("common.viewContracts")}</Button>
+                        </Link>
+                        <Link href="/profile/edit" className="lg:self-end">
+                            <Button className="w-fit self-end" variant="secondary">
+                                <FaEdit size={20} />
+                                {t("experts.editProfile")}
+                            </Button>
+                        </Link>
+                    </div>
                     <div className="flex flex-col gap-5 max-w-lg min-w-80">
                         <InfoCardWrapper label={t("experts.transactions")}>
                             <div className="flex flex-col gap-4 items-center">

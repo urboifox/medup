@@ -7,6 +7,7 @@ import { useSelectMenuStore } from "@/features/select-menu/store";
 import { useSearchParams } from "next/navigation";
 import { BaseEntity } from "@/types";
 import useQueryString from "@/hooks/useQueryString";
+import { useEffect } from "react";
 
 interface FilterConfig {
     queryName: string;

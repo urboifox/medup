@@ -32,6 +32,7 @@ export type Chat = {
         online: false;
         last_time_seen: null;
     };
+    contract_id?: number;
     latest_message?: ChatMessage;
 };
 

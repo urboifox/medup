@@ -30,7 +30,7 @@ export default function Modal({
                             className="absolute inset-0 w-full h-full bg-black/50 backdrop-blur-sm"
                             onClick={onClose}
                         />
-                        <div className="w-full z-50 flex items-center justify-center">
+                        <div className="w-full z-50 flex items-center justify-center max-h-screen">
                             {children}
                         </div>
                     </motion.div>

@@ -1,16 +1,15 @@
-import Button from "@/components/ui/button";
 import { getMessages, getUserConversation } from "@/features/chat/services";
 import Image from "next/image";
 import ChatPageClient from "./page-client";
 import { redirect } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { AiOutlineWarning } from "react-icons/ai";
+import ContractButton from "./contract-button";
 
 export default async function ChatPage({ params }: { params: Promise<{ userId: string }> }) {
-    const t = await getTranslations();
     const { userId } = await params;
     const { data: conversation } = await getUserConversation(userId);
+
     const { data: messages } = await getMessages(conversation?.id as string);
 
     if (!conversation) {
@@ -35,9 +34,12 @@ export default async function ChatPage({ params }: { params: Promise<{ userId: s
                         <p className="line-clamp-1 text-sm text-dark-300 font-medium"></p>
                     </div>
                 </div>
-                <Link href="/contract">
-                    <Button size="sm" variant="outline">{t("common.openDigitalContract")}</Button>
-                </Link>
+                <ContractButton
+                    contractId={conversation?.contract_id}
+                    otherUserId={conversation?.other_user.id}
+                    traineeEmail={conversation?.other_user.email}
+                    traineeName={conversation?.other_user.name}
+                />
             </header>
 
             <ChatPageClient messages={messages || []} conversation={conversation} />

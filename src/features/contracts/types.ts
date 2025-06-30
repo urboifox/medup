@@ -1,0 +1,20 @@
+export type Contract = {
+    id: number;
+    paid: boolean;
+    contract: string;
+    first_member: number;
+    second_member: number;
+    service_type: string;
+    description: string;
+    sessions_per_week: number;
+    start_date: string;
+    end_date: string;
+    is_online: number;
+    contract_start_date: string;
+    contract_end_date: string;
+    price: number;
+    expert_name: string;
+    expert_email: string;
+    trainee_name: string;
+    trainee_email: string;
+};

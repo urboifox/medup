@@ -10,7 +10,6 @@ import { toast } from "sonner";
 import { addProjectAction } from "../actions";
 import { useSelectMenuStore } from "@/features/select-menu/store";
 import Select from "@/components/ui/select";
-import Checkbox from "@/components/ui/checkbox";
 import Radio from "@/components/ui/radio";
 
 export default function AddProjectForm() {

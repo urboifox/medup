@@ -27,16 +27,15 @@ export default function Footer() {
                         <h3 className="text-dark-100 font-medium text-xl">{t("quickLinks")}</h3>
                         <div className="flex flex-col gap-1">
                             <FooterLink href="/about-us" label={t("aboutUs")} />
-                            <FooterLink href="/" label={t("services")} />
-                            <FooterLink href="/" label={t("contactUs")} />
+                            <FooterLink href="mailto:support@medup.com" label={t("contactUs")} />
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">
                         <h3 className="text-dark-100 font-medium text-xl">{t("content")}</h3>
                         <div className="flex flex-col gap-1">
-                            <FooterLink href="/" label={t("exploreDoctors")} />
-                            <FooterLink href="/" label={t("exploreBooks")} />
-                            <FooterLink href="/" label={t("exploreArticles")} />
+                            <FooterLink href="/experts" label={t("exploreDoctors")} />
+                            <FooterLink href="/library" label={t("exploreBooks")} />
+                            <FooterLink href="/researches" label={t("exploreArticles")} />
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">

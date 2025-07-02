@@ -14,6 +14,7 @@ import FileInput from "@/components/ui/file-input";
 import { toast } from "sonner";
 import { useRouter } from "@/i18n/routing";
 import Checkbox from "@/components/ui/checkbox";
+import MultiSelect from "@/components/ui/multi-select";
 
 export default function StudentRegisterForm() {
     const t = useTranslations();
@@ -30,13 +31,14 @@ export default function StudentRegisterForm() {
 
     const [avatarFile, setAvatarFile] = useState<File>();
 
+    const skills = useSelectMenuStore((state) => state.skills);
     const colleges = useSelectMenuStore((state) => state.colleges);
     const specialities = useSelectMenuStore((state) => state.specialities);
     const countries = useSelectMenuStore((state) => state.countries);
     const cities = useSelectMenuStore((state) => state.cities);
     const setCities = useSelectMenuStore((state) => state.setCities);
 
-    const [selectedCollege, setSelectedCollege] = useState<number>(colleges?.[0].id);
+    const [selectedCollege, setSelectedCollege] = useState<number>(colleges?.[0]?.id);
 
     async function handleCountryChange(e: React.ChangeEvent<HTMLSelectElement>) {
         const countryId = e.target.value;
@@ -174,6 +176,18 @@ export default function StudentRegisterForm() {
                         );
                     })}
             </Select>
+            <MultiSelect
+                error={state.errors?.skills}
+                defaultValue={state.formData?.getAll("skills") as string[]}
+                name="skills"
+                options={skills.map((skill) => ({ label: skill.name, value: skill.id.toString() }))}
+                label={t("labels.skills") + " " + t("labels.skillsAdditionStudent")}
+            />
+            <Input
+                label={t("labels.otherSkills")}
+                placeholder="Skill 1, Skill 2, ..."
+                name="other_skills"
+            />
             <div className="flex items-center gap-4 flex-col sm:flex-row">
                 <Select
                     required

@@ -79,17 +79,6 @@ export default function ExpertBaseInfo({ expert }: { expert: Expert }) {
                     </div>
                     <StarsRating value={expert?.rating_average} showNumber />
                 </div>
-
-                <div className="flex flex-wrap gap-2 max-h-16 overflow-hidden">
-                    {expert?.skills.map((skill) => (
-                        <p
-                            key={skill.id}
-                            className="text-primary-main border border-primary-50 hover:bg-primary-50 cursor-default transition-colors duration-100 rounded-full text-xs line-clamp-1 px-2 py-1"
-                        >
-                            {skill.name}
-                        </p>
-                    ))}
-                </div>
             </div>
         </div>
     );
